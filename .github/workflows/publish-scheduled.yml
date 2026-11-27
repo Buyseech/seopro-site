@@ -1,0 +1,39 @@
+# Publishes scheduled blog posts. Every morning it rebuilds the site with today's date (Ljubljana time).
+# A post whose DATE has arrived appears on the blog, on the home page list, in the sitemap and in
+# links from other pages. If anything changed, the build is committed to main (Cloudflare Workers
+# Builds then deploys it) and the sitemap is resubmitted to Google Search Console.
+name: Publish scheduled posts
+on:
+  schedule:
+    - cron: "15 5 * * *"   # 06:15 Ljubljana in winter, 07:15 in summer
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency: publish
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python3 tools/build.py
+      - name: Commit if the build changed
+        id: commit
+        run: |
+          git add -A public
+          if git diff --cached --quiet; then echo "Nothing to publish today."; echo "changed=no" >> "$GITHUB_OUTPUT"; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Publish scheduled posts ($(TZ=Europe/Ljubljana date +%F))"
+          git push origin HEAD:main
+          echo "changed=yes" >> "$GITHUB_OUTPUT"
+      - name: Resubmit sitemap to Search Console
+        if: steps.commit.outputs.changed == 'yes'
+        env:
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: |
+          sleep 120   # give Cloudflare time to deploy
+          pip install -q google-auth requests
+          python3 tools/gsc_submit_sitemap.py
