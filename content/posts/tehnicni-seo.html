@@ -1,0 +1,104 @@
+TITLE: Tehnični SEO: osnove in vpliv na rezultate
+H1: Tehnični SEO: kaj je in zakaj vpliva na uvrstitve
+DESC: Kaj vključuje tehnični SEO, zakaj vpliva na uvrstitve in povpraševanja ter kako odkrijete skrite napake, ki zavirajo vašo spletno stran.
+DATE: 2026-11-27
+NUM: 30
+CLUSTER: I Tehnični SEO in hitrost
+RELATED: hitrost-spletne-strani, kako-hitro-indexiramo-stran-v-googlu, seo-audit
+ROBOTS: noindex, nofollow
+<p>Tehnični SEO je urejanje tehnične osnove spletne strani, da jo Google lahko najde, prebere, indeksira in brez zatikanja pokaže uporabnikom na telefonu. Na uvrstitve vpliva zato, ker strani, ki je Google ne vidi ali je ne razume, ne more uvrstiti, pa naj bo vsebina še tako dobra.</p>
+<p>Veliko lastnikov podjetij misli, da je to isto kot hitrost strani. Hitrost je le en del. Pogosteje rezultate zavirajo neindeksirane strani, napačne kanonične oznake ali prenova brez preusmeritev. Take napake so tihe: obiskovalcem se stran zdi v redu, v Googlu pa izgublja prikaze.</p>
+<p>V članku boste izvedeli, kaj tehnična optimizacija vključuje, po katerih znakih prepoznate skrite napake, v kakšnem vrstnem redu jih odpravljate in kdaj se popravki poznajo pri povpraševanjih in prodaji.</p>
+
+<h2>Kaj je tehnični SEO</h2>
+<p>Tehnični SEO je del optimizacije za iskalnike (SEO), ki ureja delovanje strani: kako jo Google najde, prebere in shrani. Vsebina in povratne povezave z drugih strani na njej gradita, zato mora biti podlaga trdna.</p>
+<p>V praksi zajema:</p>
+<ul>
+<li><strong>dostopnost za spletne pajke</strong> (crawlerje): robots.txt, zemljevid strani in notranje povezave,</li>
+<li><strong>indeksiranje</strong>: katere strani Google shrani v svoje kazalo in katere ne,</li>
+<li><strong>izris strani</strong> (rendering): ali Google vidi vsebino, ki jo naloži JavaScript,</li>
+<li><strong>hitrost in mobilno delovanje</strong>, merjeno s Core Web Vitals,</li>
+<li><strong>varnost</strong>: HTTPS in brskalnik brez opozoril,</li>
+<li><strong>kanonične oznake, preusmeritve in napake 404</strong>,</li>
+<li><strong>strukturirane podatke</strong> (schema).</li>
+</ul>
+<p>Pri predstavitveni strani z 20 podstranmi je tehničnih težav običajno malo. Pri spletni trgovini s tisoči izdelkov in filtri je to stalno delo, ker vsaka nova kategorija, vtičnik ali posodobitev lahko kaj pokvari.</p>
+
+<h2>Kako tehnični SEO vpliva na Google: plazenje, indeksiranje in izris</h2>
+<p>Google stran obdela v korakih: spletni pajek jo najde in prenese (plazenje), jo izriše kot brskalnik in jo nato shrani v indeks, iz katerega sestavlja rezultate iskanja. Če se veriga pretrga pri katerem koli koraku, stran v rezultatih ne obstaja. Postopek opisuje Googlov vodič <a href="https://developers.google.com/search/docs/fundamentals/how-search-works?hl=sl" target="_blank" rel="noopener">o tem, kako deluje Iskanje Google</a>.</p>
+<h3>Plazenje</h3>
+<p>Pajek pride do strani prek povezav in zemljevida strani. Datoteka robots.txt mu pove, kam ne sme, in ena napačna vrstica lahko zapre vse kategorije trgovine. Kaj sodi v to datoteko, razlagamo v članku <a href="/robots-txt/">kaj je datoteka robots.txt</a>, kako Googlu pripravite seznam pomembnih URL-jev, pa v vodiču <a href="/sitemap/">zemljevid strani (sitemap)</a>.</p>
+<h3>Indeksiranje</h3>
+<p>Plazenje še ne pomeni indeksiranja. Google lahko stran prebere in se odloči, da je ne shrani, ker je podvojena, prešibka ali ima oznako noindex. To vidite v poročilu <a href="https://support.google.com/webmasters/answer/7440203?hl=sl" target="_blank" rel="noopener">Indeksiranje strani v Google Search Consolu</a>, ki za vsak izključen URL navede razlog. Kaj storiti, ko nove strani tedne ni v rezultatih, piše v članku <a href="/kako-hitro-indexiramo-stran-v-googlu/">zakaj svoje strani ne najdete v Googlu</a>.</p>
+<h3>Izris</h3>
+<p>Strani, zgrajene z ogrodji, kot sta React ali Vue, pogosto naložijo besedilo in povezave šele z JavaScriptom. Google ga zna izvesti, vendar z zamikom in ne vedno do konca. Preverite to z orodjem Pregled URL-ja v Search Consolu, ki pokaže, kako je Google stran izrisal.</p>
+
+<h2>Core Web Vitals, mobilna različica in HTTPS</h2>
+<p>Vsi trije so med Googlovimi signali, a imajo manjšo težo kot indeksiranje. Bliskovito hitra stran, ki je ni v indeksu, ne prinese obiska.</p>
+<p><strong>Core Web Vitals</strong> (osnovni spletni vitalni podatki) so tri Googlove meritve izkušnje: LCP meri, kako hitro se naloži glavna vsebina (dobro je do 2,5 sekunde), INP, kako hitro se stran odzove na klik (do 200 milisekund), CLS pa, koliko se postavitev med nalaganjem premika (do 0,1). Mejne vrednosti so v Googlovi <a href="https://developers.google.com/search/docs/appearance/core-web-vitals?hl=sl" target="_blank" rel="noopener">dokumentaciji o Core Web Vitals</a>. Kako stran pospešite, opisujemo v članku <a href="/hitrost-spletne-strani/">hitrost spletne strani</a>.</p>
+<p><strong>Mobilna različica.</strong> Google stran indeksira po tem, kar vidi na telefonu. Če mobilna različica izpusti del besedila, filtre ali notranje povezave, jih Google pri uvrščanju ne upošteva.</p>
+<p><strong>HTTPS.</strong> Brskalniki stran brez šifrirane povezave označijo kot »ni varno«, kar marsikaterega kupca odžene, preden odda naročilo. Kako preiti s HTTP na HTTPS brez izgube uvrstitev, razlagamo v članku <a href="/http-ali-https-zakaj-bo-ssl-certifikat-nujno-zlo-za-vse-spletne-strani/">HTTPS in SSL certifikat za SEO</a>.</p>
+
+<h2>Strukturirani podatki, kanonične oznake in preusmeritve</h2>
+<p>Te oznake Googlu povedo, kaj stran je, katera različica je prava in kam se je vsebina preselila.</p>
+<p><strong>Strukturirani podatki</strong> (schema) opišejo vsebino v obliki, ki jo stroji preberejo brez ugibanja: izdelek, cena, zaloga, ocene. Google iz njih sestavi obogatene rezultate, na primer ceno in zvezdice pod naslovom. Kateri tipi so smiselni za vašo stran, preberete v članku <a href="/schema-markup/">strukturirani podatki in schema markup</a>.</p>
+<p><strong>Kanonična oznaka</strong> (canonical) pove, kateri od več podobnih URL-jev je glavni. V trgovinah je isti izdelek pogosto dosegljiv prek več naslovov, s filtri in v več kategorijah. Če oznaka kaže na napačen naslov, Google v rezultatih lahko prikaže manj vreden URL ali glavne strani sploh ne indeksira. Več v članku <a href="/canonical-url/">kaj je kanonični URL</a>.</p>
+<p><strong>Preusmeritve in napake 404.</strong> Ko stran premaknete ali preimenujete, mora stari naslov s <a href="/301-preusmeritev/">trajno preusmeritvijo 301</a> voditi na novega. Brez nje obiskovalci in Google naletijo na <a href="/404-napaka/">napako 404</a>, povratne povezave na stari URL pa izgubijo vrednost. Največ takih napak nastane pri prenovi strani.</p>
+
+<h2>Najpogostejše tehnične napake in kje jih najdete</h2>
+<p>Opazite simptom, na primer padec obiska ali stran, ki je ni v Googlu, vzrok pa je treba poiskati. Preglednica povezuje pogoste simptome z vzroki in mestom, kjer jih preverite.</p>
+<table>
+<thead><tr><th>Simptom</th><th>Pogost vzrok</th><th>Kje preverite</th></tr></thead>
+<tbody>
+<tr><td>Nove strani po več tednih ni v Googlu</td><td>Oznaka noindex, blokada v robots.txt ali brez notranjih povezav</td><td>Pregled URL-ja v Search Consolu</td></tr>
+<tr><td>Po prenovi strani obisk močno pade</td><td>Manjkajoče preusmeritve 301 s starih URL-jev</td><td>Poročilo Indeksiranje strani, napake 404</td></tr>
+<tr><td>Google v rezultatih kaže napačen URL</td><td>Napačna kanonična oznaka ali podvojene strani</td><td>Pregled URL-ja, kanonični URL, ki ga izbere Google</td></tr>
+<tr><td>Veliko odkritih, a neindeksiranih strani</td><td>Preveč podvojenih URL-jev iz filtrov in parametrov</td><td>Poročilo Indeksiranje strani</td></tr>
+<tr><td>Stran je na telefonu počasna</td><td>Prevelike slike in preveč skript</td><td>PageSpeed Insights in poročilo Core Web Vitals</td></tr>
+<tr><td>Izdelki v rezultatih nimajo cene in ocen</td><td>Manjkajoči ali napačni strukturirani podatki</td><td>Googlov preizkus obogatenih rezultatov</td></tr>
+</tbody>
+</table>
+<p>Večino teh pregledov opravite sami v brezplačnem Google Search Consolu. Pri večjih straneh pride prav še orodje za plazenje, kot je Screaming Frog.</p>
+
+<h2>Kdaj se tehnični SEO poplača</h2>
+<p>Najbolj se poplača takrat, ko odpravi napako na straneh, ki prinašajo denar. Popravek v kategoriji trgovine, ki cilja kupce, je vreden več kot sto popravkov na starih blog zapisih.</p>
+<p>Veriga je preprosta. Google mora stran najti in indeksirati, šele nato se lahko uvrsti za donosne ključne besede, to so iskanja ljudi, ki želijo kupiti ali naročiti. Uvrščena stran pripelje obiskovalca, ta pa pokliče ali kupi, če se mu stran na telefonu hitro odpre in obrazec deluje. Tehnične napake verigo pretrgajo na treh mestih:</p>
+<ul>
+<li><strong>Pred Googlom.</strong> Kategorija z oznako noindex, ki je ostala z razvojne različice, ali zaprta mapa v robots.txt. Stran ne dobi niti enega prikaza.</li>
+<li><strong>Med stranmi.</strong> Podvojeni URL-ji in napačne kanonične oznake razpršijo signale, zato se nobena različica ne uvrsti dovolj visoko. Na majhnem slovenskem trgu ima donosna ključna beseda pogosto le nekaj deset iskanj na mesec, zato šteje vsak klik.</li>
+<li><strong>Pri obiskovalcu.</strong> Počasna košarica ali obrazec, ki se na telefonu ne odda, izgubi kupca, ki ga je iskanje že pripeljalo.</li>
+</ul>
+<p>Tehnični popravki pa ne popravijo slabe ponudbe ali šibke vsebine. Ko je stran tehnično zdrava, izboljšava s 90 na 100 točk v PageSpeed Insights prodaje ne bo opazno premaknila.</p>
+<p>Pri SEOPRO tehnično delo vodi Nemanja Momčilović, ki ima za seboj več kot 300 projektov, od lokalnih trgovin do multinacionalk. Urejamo strani vseh velikosti, od majhnih do sistemov z milijoni strani. Najprej pregledamo strani, ki prinašajo ali bi lahko prinašale povpraševanja, šele nato vse ostalo. Kakšen obseg dela je smiseln za vašo stran, vam povemo po <a href="/#review">brezplačni SEO analizi</a>.</p>
+<p><a class="btn" href="/#review">Zahtevajte brezplačno SEO analizo <span aria-hidden="true">&rarr;</span></a></p>
+
+<h2>Kdaj potrebujete tehnični SEO audit</h2>
+<p>Temeljit pregled tehničnega stanja strani potrebujete pred prenovo ali selitvijo strani, po nenadnem padcu obiska in ko nove strani tedne ne pridejo v Google. Pri stabilni strani praviloma zadošča pregled enkrat na četrtletje.</p>
+<p>Ko pregled odkrije več težav, jih odpravljajte v tem vrstnem redu:</p>
+<ol>
+<li>indeksiranje in dostopnost: robots.txt, noindex, zemljevid strani,</li>
+<li>preusmeritve, napake 404 in verige preusmeritev,</li>
+<li>kanonične oznake in podvojeni URL-ji,</li>
+<li>mobilna različica in Core Web Vitals,</li>
+<li>HTTPS in mešana vsebina,</li>
+<li>strukturirani podatki.</li>
+</ol>
+<p>Najpogostejša napaka je obraten vrstni red: tedni optimizacije hitrosti, medtem ko pol kategorij ni v indeksu. Druga je dolg seznam opozoril orodja, ki ga nihče ne odpravi. Dober pregled vsako napako poveže s stranmi, ki jih zadeva, in pove, ali so te strani pomembne za prodajo. Kako poteka celoten <a href="/seo-audit/">SEO audit</a>, ki zajame tudi vsebino in povezave, opisujemo v ločenem članku.</p>
+
+<h2>Pogosta vprašanja o tehnični optimizaciji</h2>
+<h3>Kako izboljšati tehnični SEO?</h3>
+<p>Začnite v Google Search Consolu: v poročilu Indeksiranje strani preverite, katere pomembne strani niso v indeksu in zakaj. Nato popravite napake 404 in manjkajoče preusmeritve, preverite kanonične oznake, mobilno različico in Core Web Vitals. Prednost imajo strani, ki prinašajo povpraševanja ali prodajo.</p>
+<h3>Kakšna je razlika med tehničnim in on-page SEO-jem?</h3>
+<p>Tehnična optimizacija ureja delovanje strani: plazenje, indeksiranje, hitrost, preusmeritve in kodo. On-page SEO ureja vsebino posamezne strani: naslove, meta opise, besedila, ključne besede in notranje povezave. Prva poskrbi, da Google stran vidi, drugi, da jo razume kot dober odgovor na iskanje. Več o vsebinski plati preberete v članku o <a href="/on-site/">on-site optimizaciji</a>.</p>
+<h3>Kakšen rezultat v PageSpeed Insights je dober?</h3>
+<p>PageSpeed Insights rezultat od 90 do 100 točk označi kot dober, od 50 do 89 kot potreben izboljšav in pod 50 kot slab. Za Google več štejejo podatki resničnih uporabnikov v razdelku Core Web Vitals: LCP do 2,5 sekunde, INP do 200 milisekund in CLS do 0,1.</p>
+<h3>Kaj vsebuje zemljevid strani (sitemap)?</h3>
+<p>Zemljevid strani je datoteka XML s seznamom URL-jev, ki jih želite imeti v Googlu. Vsebuje naj samo kanonične strani, ki delujejo, brez preusmeritev, strani z oznako noindex in napak 404. Pošljete ga v Google Search Console, v WordPressu pa ga samodejno ustvari že sistem ali vtičnik, kot sta Yoast in Rank Math.</p>
+<h3>Ali lahko napačen canonical zniža vidnost strani?</h3>
+<p>Da. Če kanonična oznaka glavne strani kaže na drug URL, na primer na domačo stran ali različico s parametrom, Google glavne strani pogosto ne indeksira in v rezultatih pokaže drugo. To preverite z orodjem Pregled URL-ja, ki pokaže, kateri kanonični URL je izbral Google.</p>
+<h3>Ali tehnična optimizacija pomaga tudi brez novih vsebin?</h3>
+<p>Da, če napake trenutno skrivajo obstoječe strani. Ko Google spet lahko indeksira kategorije, ki jih je blokirala oznaka noindex, ali ko preusmeritve po prenovi vrnejo vrednost starih povezav, se obisk lahko vrne brez ene nove besede. Če je stran tehnično že zdrava, dodatni popravki brez boljše vsebine premaknejo malo.</p>
+
+<h2>Najprej temelji, nato vsebina in povezave</h2>
+<p>Tehnična osnova je temelj, na katerem stojijo vsebina, ključne besede in povratne povezave. Google mora vaše prodajne strani najprej najti in indeksirati, šele nato šteje, kako hitre so. Začnite pri straneh, ki prinašajo povpraševanja.</p>
+<p>Če sumite, da vas zavira kaj skritega, nam svojo stran pošljite prek <a href="/#review">obrazca za brezplačno analizo</a>. Naravnost vam bomo povedali, kaj je vredno popraviti. Kaj pri SEOPRO vključuje celotna <a href="/optimizacija-spletnih-strani/">optimizacija spletnih strani</a>, preberete na strani storitve.</p>
