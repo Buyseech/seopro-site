@@ -56,7 +56,7 @@ def footer():
         <a href="https://www.linkedin.com/in/igor-buyseech" target="_blank" rel="noopener">{ICON_LI}<span>LinkedIn</span></a>
       </div>
     </div>
-    <p class="footer-copy">© 2026 SEOPRO.si · BUYSEECH d.o.o. · <a href="/blog/">Blog</a> · <a href="/zasebnost/">Zasebnost in podatki o podjetju</a></p>
+    <p class="footer-copy">© 2026 SEOPRO.si · SEOPRO, spletna optimizacija, Igor Bajsić s.p. · <a href="/blog/">Blog</a> · <a href="/zasebnost/">Zasebnost in podatki o podjetju</a></p>
   </div>
 </footer>
 
