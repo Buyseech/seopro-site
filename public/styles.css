@@ -641,3 +641,9 @@ a:hover{color:var(--accent-hover)}
 .hero h1 .fit-1{line-height:1.02}
 .hero h1 .fit-2{line-height:1.12}
 .review-copy .h2 .yl{margin-top:.08em}
+.markets-top > div:first-child{container-type:inline-size}
+.mk-h .l{display:block;white-space:nowrap}
+.mk-h .yl{color:var(--accent)}
+.mk-h{font-size:min(84px,14.3cqi)}
+.mk-h .l:not(.yl){color:inherit}
+.stat-n{white-space:nowrap}
