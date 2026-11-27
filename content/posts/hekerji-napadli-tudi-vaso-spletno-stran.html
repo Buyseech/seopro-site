@@ -1,0 +1,104 @@
+TITLE: Vdor v spletno stran: kako rešiti SEO škodo
+H1: Hekerji napadli tudi vašo spletno stran?
+DESC: Spam strani v Googlu, opozorilo o zlonamerni programski opremi ali ročni ukrep? Kako prepoznate vdor, očistite škodo in povrnete zaupanje Googla.
+DATE: 2026-11-27
+NUM: 46
+CLUSTER: I Tehnični SEO in hitrost
+RELATED: toksicne-povezave-disavow, padec-obiska-spletne-strani, tehnicni-seo
+ROBOTS: noindex, nofollow
+<p>Če so hekerji napadli vašo spletno stran, imate običajno dve težavi hkrati: okuženo kodo na strežniku in škodo v Googlu, ki ostane tudi po čiščenju. Prvo rešite z zamenjavo gesel, posodobitvami in odstranitvijo zlonamerne kode, drugo pa z odstranitvijo spam strani iz indeksa in zahtevo za pregled v Google Search Consolu. Pregled pri Googlu traja od nekaj dni do nekaj tednov.</p>
+<p>Večina lastnikov vdor opazi pozno. Stran na videz deluje normalno, v Googlu pa se pod vašo domeno pojavljajo tisoči strani z japonskimi znaki, ponaredki ur ali tabletami. Ali pa obiskovalci v Chromu zagledajo rdeče opozorilo in odidejo, preden vidijo vašo ponudbo.</p>
+<p>V članku boste izvedeli, kako prepoznate hekerski napad na spletno stran, kaj storiti v prvih urah, kako počistite indeksirano škodo in kako se vrnete k povpraševanjem, ki ste jih imeli pred vdorom.</p>
+
+<h2>Kako prepoznati napad na spletno stran</h2>
+<p>Napad prepoznate po tem, kar se pod vašo domeno pojavi v Googlu, in po opozorilih, ki jih dobite od Googla ali brskalnika. Hekerji spletne strani manjših podjetij redko napadejo zaradi podatkov. Zanima jih ugled vaše domene, ki ga izkoristijo za spam.</p>
+<p>Najpogostejše oblike vdora, ki škodijo SEO-ju:</p>
+<ul>
+<li><strong>Spam strani z ključnimi besedami.</strong> Napadalec na vašo domeno samodejno doda tisoče strani, ki prodajajo ponaredke, zdravila ali igre na srečo. Znan primer je japonski spam s ključnimi besedami.</li>
+<li><strong>Skrite povezave in besedilo.</strong> V obstoječe strani vstavi povezave na svoje strani, ki jih obiskovalec ne vidi, spletni pajek (crawler) Googla pa jih vidi.</li>
+<li><strong>Prikrite preusmeritve.</strong> Obiskovalca, ki pride iz Googla ali s telefona, preusmeri na tujo stran, vas pa ne, ko stran odprete neposredno.</li>
+<li><strong>Zlonamerna programska oprema (malware).</strong> Koda, ki skuša okužiti naprave obiskovalcev. Zaradi nje Google in brskalniki prikažejo opozorilo.</li>
+</ul>
+<p>Google vse to v <a href="https://developers.google.com/search/docs/essentials/spam-policies?hl=sl#hacked-content" target="_blank" rel="noopener">pravilih o neželeni vsebini</a> uvršča med vdrto vsebino (hacked content). Lastnika strani ne kaznuje zaradi slabega namena, vendar okuženih strani ne bo pokazal uporabnikom, dokler težava ni odpravljena.</p>
+
+<h2>Tipični SEO spam simptomi</h2>
+<p>Spodnja tabela pokaže, kaj preverite in kaj posamezen znak pomeni.</p>
+<table>
+<thead><tr><th>Simptom</th><th>Kje ga vidite</th><th>Kaj običajno pomeni</th></tr></thead>
+<tbody>
+<tr><td>Tuji naslovi in japonski znaki pod vašo domeno</td><td>Iskanje site:vasadomena.si v Googlu</td><td>Spam strani z ključnimi besedami</td></tr>
+<tr><td>Nenaden skok indeksiranih strani</td><td>Search Console, poročilo o indeksiranju strani</td><td>Napadalec je ustvaril nove URL-je</td></tr>
+<tr><td>Poizvedbe, ki nimajo zveze z vašim poslom</td><td>Search Console, poročilo o učinkovitosti</td><td>Google vašo domeno kaže za spam iskanja</td></tr>
+<tr><td>Obvestilo o varnostnih težavah</td><td>Search Console in e-pošta lastnika</td><td>Google je potrdil vdor ali malware</td></tr>
+<tr><td>Rdeče opozorilo pred obiskom strani</td><td>Chrome, Firefox in drugi brskalniki</td><td>Stran je na seznamu nevarnih strani</td></tr>
+<tr><td>Ročni ukrep zaradi vdrte vsebine</td><td>Search Console, poročilo o ročnih ukrepih</td><td>Del strani ali cela stran je izločena</td></tr>
+<tr><td>Neznani uporabniki ali vtičniki</td><td>Skrbniški del WordPressa ali drugega sistema</td><td>Napadalec ima dostop do sistema</td></tr>
+</tbody>
+</table>
+<p>Če Search Consolea še nimate nastavljenega, ga nastavite takoj. Brez njega ne vidite Googlovih obvestil in ne morete zahtevati ponovnega pregleda. Status strani lahko preverite tudi v Googlovem orodju <a href="https://transparencyreport.google.com/safe-browsing/search?hl=sl" target="_blank" rel="noopener">Stanje spletnega mesta v Varnem brskanju</a>.</p>
+
+<h2>Kaj storiti takoj po vdoru</h2>
+<p>Najprej ustavite napadalca, šele nato čistite. Če spam strani izbrišete, dostop pa ostane odprt, se vrnejo v nekaj dneh.</p>
+<ol>
+<li><strong>Obvestite gostitelja in razvijalca.</strong> Gostitelj pogosto vidi, kdaj in kako se je napadalec prijavil, in ima varnostne kopije.</li>
+<li><strong>Zamenjajte vsa gesla.</strong> Skrbniški račun, FTP ali SFTP, podatkovno bazo, gostovanje in e-pošto, nato odstranite neznane uporabnike.</li>
+<li><strong>Naredite kopijo okuženega stanja.</strong> Razvijalec jo potrebuje, da ugotovi, kje je bila luknja.</li>
+<li><strong>Posodobite sistem, teme in vtičnike.</strong> Zastareli vtičniki so najpogostejša vstopna točka pri WordPressu.</li>
+<li><strong>Odstranite zlonamerno kodo ali obnovite čisto kopijo.</strong> Čista kopija mora biti starejša od vdora, sicer obnovite tudi okužbo.</li>
+<li><strong>Preverite datoteko .htaccess in robots.txt.</strong> Napadalci tam pogosto skrijejo preusmeritve ali ukaze, ki spremenijo, kaj vidi Google.</li>
+</ol>
+<p>Pri spletnih trgovinah in straneh z osebnimi podatki kupcev preverite še, ali je bil podatek ukraden, ker vas to lahko obvezuje k prijavi kršitve. Kaj točno zahteva zakon, preverite s pravnikom. Vdor lahko prijavite tudi nacionalnemu odzivnemu centru SI-CERT.</p>
+
+<h2>Kako očistiti indeksirano škodo</h2>
+<p>Ko je strežnik čist, morate Googlu pokazati, da spam strani ne obstajajo več. Google jih sicer sam izloči, a lahko traja tedne ali mesece, medtem pa v rezultatih še vedno nosijo vaše ime.</p>
+<ul>
+<li><strong>Spam URL-ji naj vračajo kodo 404 ali 410.</strong> To pomeni, da strani ni in je ne bo. Ne preusmerjajte jih na prvo stran, ker preusmeritev Googlu pove, da vsebina še nekje živi. Razliko pojasnjujemo v članku o <a href="/404-napaka/">napaki 404 in kdaj je pravilna</a>.</li>
+<li><strong>Za najvidnejše spam strani uporabite orodje za odstranitev.</strong> V Search Consolu jih začasno skrijete iz rezultatov, medtem ko jih Google ponovno obišče.</li>
+<li><strong>Pošljite čist zemljevid strani.</strong> Napadalci včasih dodajo svoj zemljevid strani (sitemap) s spam URL-ji. Izbrišite ga in pošljite svojega, kot opisujemo v vodiču o tem, <a href="/sitemap/">kako pripravite zemljevid strani</a>.</li>
+<li><strong>Preverite povratne povezave.</strong> Napadalci vdrto domeno pogosto povežejo s tisoči spam strani. Kako ravnate s takimi povezavami, pišemo v članku o <a href="/toksicne-povezave-disavow/">toksičnih povezavah in disavowu</a>.</li>
+</ul>
+
+<h2>Kako obnoviti zaupanje Googla</h2>
+<p>Zaupanje Googla obnovite z zahtevo za pregled v Search Consolu, ko ste prepričani, da je stran čista. Če zahtevo pošljete prezgodaj in Google najde ostanke, bo naslednji pregled trajal dlje.</p>
+<p>Odvisno od tega, kaj je Google zaznal, imate dve poti. Če je težava v <a href="https://support.google.com/webmasters/answer/9044101?hl=sl" target="_blank" rel="noopener">poročilu o varnostnih težavah</a>, izberete možnost za zahtevo pregleda in opišete, kaj ste naredili. Pri zlonamerni programski opremi pregled običajno traja nekaj dni, pri spam vsebini pa lahko traja več tednov. Če je stran dobila <a href="https://support.google.com/webmasters/answer/9044175?hl=sl" target="_blank" rel="noopener">ročni ukrep</a>, pošljete zahtevo za ponovni pregled.</p>
+<p>V zahtevi napišite konkretno: kako je napadalec prišel na stran, katere datoteke ste počistili, kaj ste posodobili in kako boste preprečili ponovitev. Splošen stavek »stran je očiščena« ni dovolj.</p>
+<p>Po odobritvi se opozorila umaknejo, uvrstitve pa se ne vrnejo vedno takoj. Pri strani, ki je bila okužena dolgo, Google potrebuje čas, da ponovno obišče vse prave strani in pozabi spam.</p>
+
+<h2>Kaj vdor pomeni za vaša povpraševanja in prihodke</h2>
+<p>Vdor vam vzame denar na dveh mestih: pri obiskovalcih, ki jih ne dobite, in pri tistih, ki pridejo in odidejo.</p>
+<p>Veriga, ki vam prinaša posel, je preprosta: prava ključna beseda pripelje kupca, stran odgovori na to, kar išče, kupec pošlje povpraševanje ali kupi. Vdor jo pretrga na vsakem členu.</p>
+<p><strong>Ključne besede.</strong> Ko Google pod vašo domeno vidi tisoče spam strani, pajek porabi čas zanje, vaše prave strani pa obišče redkeje. Pri ročnem ukrepu lahko izpadejo tudi strani, ki so prinašale največ povpraševanj.</p>
+<p><strong>Klik.</strong> Če je ob vašem rezultatu opozorilo ali je naslov v rezultatih spremenjen v spam, kupec klikne konkurenta. Na majhnem slovenskem trgu, kjer ima donosna ključna beseda morda le 30 iskanj na mesec, je vsak izgubljen klik izgubljeno povpraševanje.</p>
+<p><strong>Obisk.</strong> Rdeče opozorilo v brskalniku ustavi skoraj vsakega obiskovalca. Prikrita preusmeritev pa kupca odpelje drugam, ne da bi sploh videl vašo ponudbo.</p>
+<p>Zato po čiščenju ne merite le, ali je opozorilo izginilo. Primerjajte povpraševanja in naročila iz organskega iskanja pred vdorom in po njem. Če promet pade in ne veste, ali je kriv vdor, posodobitev Googla ali kaj tretjega, si pomagajte z vodičem o tem, kako razberete <a href="/padec-obiska-spletne-strani/">padec obiska spletne strani</a>.</p>
+<p><a class="btn" href="/#review">Zahtevajte brezplačno SEO analizo po vdoru <span aria-hidden="true">&rarr;</span></a></p>
+
+<h2>Kdaj potrebujete strokovno pomoč</h2>
+<p>Strokovno pomoč potrebujete, če se spam vrača, če po odobrenem pregledu promet ne okreva ali če ne veste, kaj je napadalec spremenil.</p>
+<p>Najpogostejše napake po vdoru:</p>
+<ul>
+<li>čiščenje brez zamenjave gesel in posodobitev, zato se okužba vrne,</li>
+<li>preusmeritev vseh spam URL-jev na prvo stran namesto kode 404 ali 410,</li>
+<li>zahteva za pregled, poslana, preden je stran res čista, ali obnova okužene varnostne kopije,</li>
+<li>brisanje pravih strani skupaj s spamom.</li>
+</ul>
+<p>Delo si razdelite. Strežnik in kodo naj počistita razvijalec ali gostitelj. Za Googlovo stran okrevanja, torej indeks, Search Console, ročni ukrep in vrnitev uvrstitev, pa potrebujete nekoga, ki dela SEO. SEOPRO dela samo SEO in nič drugega, več kot 18 let. V brezplačni analizi pregledamo, kaj je od vdora ostalo v Googlu, katere strani so izgubile promet in kaj je treba urediti, da se povpraševanja vrnejo. Kako je videti celotno delo na tehnični in vsebinski plati, opisujemo na strani <a href="/optimizacija-spletnih-strani/">optimizacija spletnih strani</a>.</p>
+
+<h2>Pogosta vprašanja o vdoru v spletno stran</h2>
+<h3>Ali bo Google sam odstranil okužene strani?</h3>
+<p>Da, a počasi. Ko spam URL-ji vračajo kodo 404 ali 410, jih Google izloči ob naslednjih obiskih, kar lahko traja od nekaj tednov do nekaj mesecev. Hitreje gre, če najvidnejše skrijete z orodjem za odstranitev v Search Consolu in pošljete čist zemljevid strani. Opozorila o varnosti pa se umaknejo šele po zahtevi za pregled.</p>
+<h3>Kako dolgo traja okrevanje po vdoru?</h3>
+<p>Čiščenje strežnika običajno traja od enega do nekaj dni. Googlov pregled varnostnih težav traja nekaj dni pri zlonamerni programski opremi in lahko več tednov pri spam vsebini. Vrnitev prometa je odvisna od tega, kako dolgo je bila stran okužena in ali je dobila ročni ukrep. Pri dolgotrajni okužbi računajte na več mesecev.</p>
+<h3>Ali lahko napad vpliva na SEO tudi po čiščenju?</h3>
+<p>Da. Spam strani lahko še tedne ostanejo v indeksu, spam povratne povezave na vašo domeno ostanejo, pajek pa potrebuje čas, da ponovno obišče prave strani. Če ste ob čiščenju izbrisali ali spremenili prave strani, ste izgubili tudi njihove uvrstitve.</p>
+<h3>Kaj narediti, če je v rezultatih iskanja še vedno spam vsebina?</h3>
+<p>Najprej preverite, da spam URL-ji res vračajo kodo 404 ali 410. Nato najvidnejše začasno skrijte z orodjem za odstranitev v Search Consolu. Če se pojavljajo novi spam URL-ji, napadalec še ima dostop do strani.</p>
+<h3>Ali naj spam strani po vdoru vračajo napako 404?</h3>
+<p>Da, koda 404 ali 410 je za izbrisane spam strani pravilna. Googlu pove, da strani ni več, in jo izloči iz indeksa. Ne preusmerjajte jih na prvo stran ali druge prave strani, ker s tem ohranite povezavo med spamom in vašo vsebino.</p>
+<h3>Ali naj po vdoru naročim SEO audit?</h3>
+<p>Smiselno je, če je bila stran okužena več tednov ali je izgubila promet. SEO audit pokaže, katere strani so izpadle iz indeksa, ali so ostale skrite povezave in preusmeritve ter kje je izgubljen promet. Kaj tak pregled vključuje, opisujemo v članku o <a href="/seo-audit/">SEO auditu</a>.</p>
+
+<h2>Hitro ukrepanje ohrani promet, ki ste ga gradili leta</h2>
+<p>Vdor v spletno stran pomeni dve težavi: okužena koda in škoda v Googlu. Prvo ustavite z gesli, posodobitvami in čisto kopijo, drugo pa s kodo 404 za spam strani, čistim zemljevidom strani in konkretno zahtevo za pregled v Search Consolu. Dlje ko čakate, več strani Google izloči in več kupcev vidi opozorilo namesto vaše ponudbe.</p>
+<p>Ko je stran čista, merite tisto, kar šteje: ali so se povpraševanja in naročila iz organskega iskanja vrnila na raven pred vdorom. Če niso ali ne veste, kje začeti, nam pošljite svojo stran. Pogledali jo bomo in vam pošteno povedali, kaj je ostalo od vdora in kaj lahko premaknemo.</p>
+<p><a class="btn" href="/#review">Pošljite nam svojo stran v brezplačno analizo <span aria-hidden="true">&rarr;</span></a></p>
