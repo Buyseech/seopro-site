@@ -115,7 +115,7 @@ def head(title, desc, url, og_type="website", extra="", robots="index, follow, m
 <link rel="manifest" href="/site.webmanifest">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.5">
+<link rel="stylesheet" href="/styles.css?v=1.6">
 {extra}</head>'''
 
 

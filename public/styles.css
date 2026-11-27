@@ -323,8 +323,8 @@ a:hover{color:var(--accent-hover)}
 .review-copy .h2{font-size:clamp(42px,5.4vw,84px);line-height:.98}
 .review-copy .h2{container-type:inline-size}
 .review-copy .h2 .ln,.review-copy .h2 .yl{display:block;white-space:nowrap}
-.review-copy .h2 .ln{color:inherit;font-size:9.9cqi}
-.review-copy .h2 .yl{color:var(--accent);font-size:17.8cqi;line-height:.95;margin-top:.04em}
+.review-copy .h2 .ln{color:inherit;font-size:9.4cqi}
+.review-copy .h2 .yl{color:var(--accent);font-size:16.9cqi;line-height:.95;margin-top:.04em}
 .review-copy p{max-width:none;margin-top:28px;font-size:20px;color:var(--soft)}
 .form-col{flex:1 1 420px;min-width:0}
 .form-col .form{width:100%}
@@ -752,3 +752,6 @@ a:hover{color:var(--accent-hover)}
 .sr-body td:first-child,.lp-prose td:first-child,.lp-t td:first-child{font-size:17px;padding-bottom:6px}
 }
 main.lp{overflow-x:clip}
+/* Mobile: long section headings may wrap instead of running off the screen */
+h1,h2,h3{overflow-wrap:break-word}
+@media (max-width:900px){:is(.results-head,.speak-head,.people-head,.review-copy) .h2 :is(.ln,.yl),.h2 .ln,.h2 .yl{white-space:normal}}
