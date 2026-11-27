@@ -9,7 +9,9 @@ window.seoproUpload = async function (sha) {
   await Promise.all(files.map(async p => {
     const r = await fetch('https://raw.githubusercontent.com/Buyseech/seopro-site/' + sha + '/' + p);
     if (!r.ok) throw new Error(p + ' ' + r.status);
-    const b = await r.arrayBuffer();
+    let b = await r.arrayBuffer();
+    // A trailing newline gives text files a new hash, so the dashboard does not reuse an earlier upload stored as text/plain.
+    if (/\.(html|css|js|xml|txt|svg)$/.test(p)) b = new Blob([b, '\n']);
     const f = new File([b], p.split('/').pop(), {type: T[p.split('.').pop()] || 'application/octet-stream'});
     Object.defineProperty(f, 'webkitRelativePath', {value: p});
     dt.items.add(f);
