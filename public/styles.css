@@ -695,3 +695,17 @@ a:hover{color:var(--accent-hover)}
 .lp-more{text-align:center;margin-top:8px}
 .lp-more a{color:var(--accent);font-weight:700}
 .lp .band > .lp-two,.lp-sec-in,.lp-faq-in{padding-block:var(--sec)}
+/* Tables in articles and landing pages */
+.sr-body table,.lp-prose table,.lp table.lp-t{width:100%;margin:22px 0 26px;border-collapse:collapse;font-size:16px;line-height:1.45;display:block;overflow-x:auto}
+.sr-body th,.sr-body td,.lp-prose th,.lp-prose td,.lp-t th,.lp-t td{padding:12px 14px;border-bottom:1px solid var(--line-card);text-align:left;vertical-align:top;color:var(--soft)}
+.sr-body th,.lp-prose th,.lp-t th{font-family:var(--cond);font-weight:700;font-size:15px;letter-spacing:1px;text-transform:uppercase;color:var(--label);border-bottom:2px solid var(--accent);white-space:nowrap}
+.sr-body td:first-child,.lp-prose td:first-child,.lp-t td:first-child{color:#fff;font-weight:600}
+.sr-body ol{padding-left:22px}
+.sr-body a:not(.btn){color:var(--accent)}
+.sr-body .btn{margin-top:6px}
+.lp-tools6 li{flex-basis:calc((100% - 100px)/6)}
+@media (max-width:1100px){.lp-tools6 li{flex-basis:calc((100% - 40px)/3)}}
+@media (max-width:640px){.lp-tools6 li{flex-basis:100%}}
+.lp-prose ol{margin:0 0 16px;padding-left:22px}
+.lp-prose ol li{margin-bottom:12px}
+.lp-prose a:not(.btn){color:var(--accent)}

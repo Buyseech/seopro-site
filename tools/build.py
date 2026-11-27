@@ -63,7 +63,7 @@ def footer():
 <script src="/site.js?v=1.1" defer></script>'''
 
 
-def head(title, desc, url, og_type="website", extra=""):
+def head(title, desc, url, og_type="website", extra="", robots="index, follow, max-image-preview:large"):
     t, d = html.escape(title), html.escape(desc)
     return f'''<!doctype html>
 <html lang="sl">
@@ -74,7 +74,7 @@ def head(title, desc, url, og_type="website", extra=""):
 <title>{t}</title>
 <meta name="description" content="{d}">
 <link rel="canonical" href="{url}">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="robots" content="{robots}">
 <meta name="author" content="Igor Bajsić">
 <meta name="theme-color" content="#04091A">
 <meta name="color-scheme" content="dark">
@@ -144,10 +144,27 @@ def build_post(p, posts):
         "image": SITE + "/assets/img/igor-buyseech.jpg",
     }
     import json
-    extra = '<script type="application/ld+json">' + json.dumps(ld, ensure_ascii=False) + "</script>\n"
+    graph = [ld, {"@type": "BreadcrumbList", "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": SITE + "/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": SITE + "/blog/"},
+        {"@type": "ListItem", "position": 3, "name": ld["headline"], "item": url}]}]
+    ld.pop("@context")
+    m = re.search(r"<h2>Pogosta vprašanja.*?</h2>(.*?)(<h2>|$)", p["body"], flags=re.S)
+    if m:
+        qa = re.findall(r"<h3>(.*?)</h3>\s*<p>(.*?)</p>", m.group(1), flags=re.S)
+        strip = lambda t: html.unescape(re.sub(r"<[^>]+>", "", t)).strip()
+        graph.append({"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": strip(q), "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in qa]})
+    extra = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False) + "</script>\n"
     others = [o for o in posts if o["slug"] != p["slug"]][:3]
     related = "\n      ".join(card(o) for o in others)
-    page = head(f"{p['TITLE']} | SEOPRO Blog", p["DESC"], url, "article", extra) + f'''
+    archive = f'<p class="sr-archive">Zapis iz arhiva SEOPRO bloga ({p['DATE'][:4]}). Osnove še vedno veljajo, nekatera orodja in številke pa so se od takrat spremenile.</p>' if p["DATE"] < "2026" else ""
+    related_html = f'''<section class="sr-related" aria-labelledby="related-title">
+      <h2 id="related-title">Preberite <span>še</span></h2>
+      <div class="sr-posts">
+      {related}
+      </div>
+    </section>''' if others else ""
+    page = head(f"{p['TITLE']} | SEOPRO Blog", p["DESC"], url, "article", extra, p.get("ROBOTS", "index, follow, max-image-preview:large")) + f'''
 <body>
 {header()}
 
@@ -156,11 +173,11 @@ def build_post(p, posts):
     <p class="eyebrow"><a href="/blog/">SEOPRO Blog</a></p>
     <h1 class="h2">{p['H1']}</h1>
     <p class="sr-meta"><time datetime="{p['DATE']}">{sl_date(p['DATE'])}</time> · Igor Bajsić · {max(1, round(p['words'] / 200))} min branja</p>
-    <p class="sr-archive">Zapis iz arhiva SEOPRO bloga ({p['DATE'][:4]}). Osnove še vedno veljajo, nekatera orodja in številke pa so se od takrat spremenile.</p>
+    {archive}
     <div class="sr-body">
 {p['body']}
     </div>
-    <p class="sr-sign">Igor Bajsić – SEOPRO</p>
+    <p class="sr-sign">Igor Bajsić, SEOPRO</p>
 
     <aside class="sr-cta" aria-label="Brezplačna analiza">
       <h2>Vas zanima, kje se vaša stran <span>zatika?</span></h2>
@@ -168,12 +185,7 @@ def build_post(p, posts):
       <a class="btn" href="/#review">Brezplačna analiza strani</a>
     </aside>
 
-    <section class="sr-related" aria-labelledby="related-title">
-      <h2 id="related-title">Preberite <span>še</span></h2>
-      <div class="sr-posts">
-      {related}
-      </div>
-    </section>
+    {related_html}
   </article>
 </main>
 
@@ -216,7 +228,7 @@ def build_blog(posts):
 
 def build_sitemap(posts, landings=()):
     urls = [(SITE + "/", "2026-11-27")] + [(f"{SITE}/{l}/", "2026-11-27") for l in landings] + [(SITE + "/blog/", "2026-11-27"), (SITE + "/trendi/", "2026-11-27"), (SITE + "/zasebnost/", "2026-11-27")]
-    urls += [(f"{SITE}/{p['slug']}/", "2026-11-27") for p in posts]
+    urls += [(f"{SITE}/{p['slug']}/", "2026-11-27") for p in posts if "noindex" not in p.get("ROBOTS", "")]
     body = "\n".join(f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in urls)
     write(PUB / "sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n')
 
