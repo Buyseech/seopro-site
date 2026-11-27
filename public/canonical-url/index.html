@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Analytics 4: add seopro.si's own GA4 snippet here (do not reuse the buyseech.com or seopack.net ID). -->
+<title>Canonical URL: kako ga pravilno nastaviti | SEOPRO Blog</title>
+<meta name="description" content="Kaj je canonical URL, kdaj ga uporabiti in kako preprečiti težave s podvojeno vsebino v Googlu, tudi v spletnih trgovinah s filtri in variantami.">
+<link rel="canonical" href="https://seopro.si/canonical-url/">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Igor Bajsić">
+<meta name="theme-color" content="#04091A">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SEOPRO.si">
+<meta property="og:title" content="Canonical URL: kako ga pravilno nastaviti | SEOPRO Blog">
+<meta property="og:description" content="Kaj je canonical URL, kdaj ga uporabiti in kako preprečiti težave s podvojeno vsebino v Googlu, tudi v spletnih trgovinah s filtri in variantami.">
+<meta property="og:url" content="https://seopro.si/canonical-url/">
+<meta property="og:image" content="https://seopro.si/assets/img/igor-buyseech.jpg">
+<meta property="og:locale" content="sl_SI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Canonical URL: kako ga pravilno nastaviti | SEOPRO Blog">
+<meta name="twitter:description" content="Kaj je canonical URL, kdaj ga uporabiti in kako preprečiti težave s podvojeno vsebino v Googlu, tudi v spletnih trgovinah s filtri in variantami.">
+<meta name="twitter:image" content="https://seopro.si/assets/img/igor-buyseech.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=1.3">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Canonical URL: kako preprečiti podvojeno vsebino", "description": "Kaj je canonical URL, kdaj ga uporabiti in kako preprečiti težave s podvojeno vsebino v Googlu, tudi v spletnih trgovinah s filtri in variantami.", "datePublished": "2026-11-27", "inLanguage": "sl-SI", "mainEntityOfPage": "https://seopro.si/canonical-url/", "author": {"@type": "Person", "name": "Igor Bajsić", "url": "https://buyseech.com/"}, "publisher": {"@type": "Organization", "name": "SEOPRO.si", "url": "https://seopro.si/"}, "image": "https://seopro.si/assets/img/igor-buyseech.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": "https://seopro.si/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seopro.si/blog/"}, {"@type": "ListItem", "position": 3, "name": "Canonical URL: kako preprečiti podvojeno vsebino", "item": "https://seopro.si/canonical-url/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kaj je canonical URL?", "acceptedAnswer": {"@type": "Answer", "text": "Canonical URL je naslov, ki ga Google izbere kot glavno različico strani, kadar je enaka vsebina dosegljiva na več naslovih. Lastnik ga predlaga z oznako rel=\"canonical\", Google pa jo upošteva skupaj s preusmeritvami, zemljevidom strani in notranjimi povezavami. Ostale različice ostanejo dosegljive, v iskanju pa se ne prikazujejo."}}, {"@type": "Question", "name": "Ali canonical izključuje stran iz indeksa?", "acceptedAnswer": {"@type": "Answer", "text": "Delno. Stran, ki s kanonično oznako kaže na drug naslov, Google običajno ne prikazuje v rezultatih, vendar jo še vedno obiskuje in njene signale pripiše glavni različici. To ni enako kot oznaka noindex, ki stran izključi brez prenosa signalov. Google lahko oznako tudi prezre, če ji drugi signali nasprotujejo."}}, {"@type": "Question", "name": "Kaj je razlika med canonical in preusmeritvijo?", "acceptedAnswer": {"@type": "Answer", "text": "Preusmeritev 301 obiskovalca in Google samodejno pošlje na nov naslov, zato stara različica za ljudi izgine. Canonical pusti obe različici dosegljivi in le predlaga, katero naj Google prikazuje. Preusmeritev uporabite, ko stran trajno zamenjate ali selite, canonical pa pri filtrih, parametrih in drugih različicah, ki jih obiskovalci še potrebujejo."}}, {"@type": "Question", "name": "Ali lahko canonical nastavim na domačo stran?", "acceptedAnswer": {"@type": "Answer", "text": "Samo na domači strani sami in na njenih različicah, na primer z dodanimi parametri. Če na domačo stran kažejo vse podstrani, Google te podstrani obravnava kot dvojnike in jih ne prikazuje v iskanju. Napako preverite na nekaj naključnih podstraneh."}}, {"@type": "Question", "name": "Kako preverim canonical v izvorni kodi?", "acceptedAnswer": {"@type": "Answer", "text": "Odprite stran v brskalniku, pritisnite Ctrl+U in z iskanjem (Ctrl+F) poiščite besedo canonical. Oznaka mora biti v razdelku head, samo ena in s celotnim naslovom, ki se začne s https. Če stran oznako dodaja z JavaScriptom, jo raje preverite s pregledom URL-ja v Search Consolu."}}, {"@type": "Question", "name": "Kaj je self-referencing canonical?", "acceptedAnswer": {"@type": "Answer", "text": "To je kanonična oznaka, ki kaže na naslov iste strani. Googlu potrdi, da je stran sama glavna različica, in prepreči, da bi naslovi z dodanimi parametri za sledenje ali razvrščanje postali samostojne različice. Priporočljiva je na vsaki strani, ki jo želite imeti v iskanju, in jo Yoast ter Rank Math dodata samodejno."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Preskoči na vsebino</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Glavni meni">
+    <a class="logo" href="/">SEOPRO<span>.</span></a>
+    <div class="nav-links">
+      <a href="/#who">Komu pomagamo</a>
+      <a href="/#services">Kako delamo</a>
+      <a href="/#results">Rezultati</a>
+      <a href="/#people">Ekipa</a>
+      <a href="/blog/">Blog</a>
+      <a class="btn btn--sm" href="/#review">Potrebujemo več strank</a>
+      <button class="nav-toggle" type="button" aria-label="Odpri meni" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="/#who">Komu pomagamo</a>
+    <a href="/#services">Kako delamo</a>
+    <a href="/#results">Rezultati</a>
+    <a href="/#people">Ekipa</a>
+    <a href="/blog/">Blog</a>
+  </div>
+</header>
+
+<main id="main" class="legal sr-article">
+  <article class="wrap legal-in">
+    <p class="eyebrow"><a href="/blog/">SEOPRO Blog</a></p>
+    <h1 class="h2">Canonical URL: kako preprečiti podvojeno vsebino</h1>
+    <p class="sr-meta"><time datetime="2026-11-27">27. november 2026</time> · Igor Bajsić · 9 min branja</p>
+    
+    <div class="sr-body">
+<p>Canonical URL je naslov, ki ga Google obravnava kot glavno različico strani, kadar je ista ali skoraj ista vsebina dosegljiva na več URL-jih. Nastavite ga z oznako rel="canonical" v glavi strani, Google pa jo upošteva kot močan namig, zato lahko izbere tudi drug naslov. Oznaka nobene strani ne izbriše. Googlu samo pove, katero različico naj pokaže v iskanju in kam naj zbere signale, kot so povratne povezave.</p>
+<p>Veliko lastnikov se podvojene vsebine boji kot kazni, vendar Google zaradi nje ne kaznuje, razen pri namernem kopiranju tujih vsebin. Težava je drugje: če mu ne poveste, kateri naslov je pravi, ga izbere sam, in to je lahko filtrirana stran, naslov s parametrom za sledenje ali stara različica brez https.</p>
+<p>V članku boste izvedeli, kdaj kanonično oznako potrebujete, kako jo uredite v trgovini s filtri in variantami, kako jo preverite v Search Consolu in kdaj napačna oznaka stane povpraševanja in naročila.</p>
+
+<h2>Kaj je canonical URL</h2>
+<p>Kanonični URL je tisti izmed več enakih naslovov, ki ga Google indeksira in prikazuje v rezultatih.</p>
+<p>Podvojena vsebina (duplicate content) pomeni, da je enaka ali zelo podobna vsebina dosegljiva na več naslovih. Za obiskovalca so spodnji naslovi ena stran, za Google pa štirje URL-ji:</p>
+<ul>
+<li>https://www.primer.si/copati/</li>
+<li>https://primer.si/copati/</li>
+<li>https://www.primer.si/copati/?utm_source=novice</li>
+<li>https://www.primer.si/copati/?barva=modra&amp;sort=cena</li>
+</ul>
+<p>Postopek, s katerim Google izmed njih izbere enega predstavnika, se imenuje kanonizacija (canonicalization). Vi mu pri tem pomagate s kanonično oznako v razdelku head: <code>&lt;link rel="canonical" href="https://www.primer.si/copati/"&gt;</code>.</p>
+<p>Oznaka ni edini signal. Google v dokumentaciji <a href="https://developers.google.com/search/docs/crawling-indexing/canonicalization?hl=sl" target="_blank" rel="noopener">Kaj je kanonizacija</a> pojasnjuje, da upošteva tudi preusmeritve 301, naslove v zemljevidu strani (sitemap), notranje povezave in to, ali stran teče na https. Kadar vsi ti signali kažejo na isti URL, ga Google skoraj vedno sprejme. Kadar si nasprotujejo, izbere po svoje.</p>
+
+<h2>Kdaj ga Google potrebuje: najpogostejši primeri</h2>
+<p>Kanonično oznako potrebujete povsod, kjer je ista vsebina dosegljiva na več naslovih. To se zgodi na skoraj vsaki strani, običajno zaradi vtičnikov, parametrov ali filtrov.</p>
+<table>
+<thead><tr><th>Vzrok podvajanja</th><th>Primer URL-ja</th><th>Kaj nastavite</th></tr></thead>
+<tbody>
+<tr><td>Različice z www in brez, http in https</td><td>http://primer.si/copati/</td><td>Preusmeritev 301 na glavno različico, canonical kot dodaten signal</td></tr>
+<tr><td>Parametri za sledenje kampanj</td><td>/copati/?utm_source=novice</td><td>Canonical na naslov brez parametra</td></tr>
+<tr><td>Filtri in razvrščanje</td><td>/copati/?barva=modra&amp;sort=cena</td><td>Canonical na kategorijo brez filtra</td></tr>
+<tr><td>Isti izdelek v več kategorijah</td><td>/moski/copati-x/ in /tek/copati-x/</td><td>Canonical na en sam naslov izdelka</td></tr>
+<tr><td>Različica za tiskanje</td><td>/clanek/natisni/</td><td>Canonical na izvirni članek</td></tr>
+<tr><td>Oštevilčene strani kategorije</td><td>/copati/?stran=2</td><td>Canonical sama nase, ne na 1. stran</td></tr>
+</tbody>
+</table>
+<p>Vsaka stran, ki jo želite imeti v Googlu, naj ima oznako, ki kaže sama nase (self-referencing canonical). Kadar mora stari naslov izginiti tudi za obiskovalce, uporabite preusmeritev, kot razlagamo v članku o tem, <a href="/301-preusmeritev/">kdaj uporabiti 301 preusmeritev</a>.</p>
+
+<h2>Canonical v trgovinah in filtrih</h2>
+<p>Spletne trgovine imajo največ podvojenih naslovov, ker vsak filter, razvrstitev in varianta izdelka ustvari nov URL. Pravilo je preprosto: kanonična je stran, ki jo želite videti v Googlu, vse ostale kombinacije pa kažejo nanjo.</p>
+<ul>
+<li><strong>Kategorija brez filtra je glavna.</strong> Kombinacije barve, velikosti in cene kažejo na osnovno kategorijo.</li>
+<li><strong>Izjema so filtri, ki jih ljudje iščejo.</strong> Če kupci pogosto iščejo prav »moški tekaški copati«, si ta izbor zasluži svojo stran z lastnim naslovom, besedilom in kanonično oznako sama nase.</li>
+<li><strong>Variante izdelka</strong> (barva, velikost) na istem izdelku s parametrom kažejo na glavni izdelek.</li>
+<li><strong>Shopify</strong> prikaže izdelek tudi pod naslovom /collections/kategorija/products/izdelek, kanonična oznaka v standardnih temah pa kaže na /products/izdelek.</li>
+<li><strong>WooCommerce in WordPress</strong>: Yoast in Rank Math samodejno dodata oznako, ki kaže sama nase, vtičniki za filtre pa ustvarijo naslove s parametri, ki jih preverite posebej.</li>
+</ul>
+<p>Canonical ne ustavi pajka: Google filtrirane naslove še vedno obiskuje. Pri velikih trgovinah zato preberite Googlova navodila za <a href="https://developers.google.com/search/docs/crawling-indexing/crawling-managing-faceted-navigation?hl=sl" target="_blank" rel="noopener">upravljanje fasetne navigacije</a>. Celoten pristop opisujemo na strani <a href="/seo-za-spletne-trgovine/">SEO za spletne trgovine</a>. V <a href="/sitemap/">zemljevid strani</a> sodijo samo kanonični naslovi.</p>
+
+<h2>Kako preverite, ali je canonical pravilen</h2>
+<p>Pravilnost preverite v štirih korakih, od posamezne strani do celotnega spletnega mesta.</p>
+<ol>
+<li><strong>Izvorna koda.</strong> Odprite stran, pritisnite Ctrl+U (na Macu Cmd+Option+U) in poiščite rel="canonical". Oznaka naj bo ena sama, naj vsebuje celoten naslov s https in naj kaže na stran, ki vrne kodo 200, ne na preusmeritev.</li>
+<li><strong>Pregled URL-ja v Search Consolu.</strong> V Google Search Console, brezplačnem Googlovem orodju za lastnike strani, vpišite naslov v polje na vrhu in primerjajte kanonični URL, ki ste ga navedli vi, s tistim, ki ga je izbral Google. Če se razlikujeta, se Google z vašo izbiro ne strinja. Več v Googlovi pomoči za <a href="https://support.google.com/webmasters/answer/9012289?hl=sl" target="_blank" rel="noopener">orodje za pregled URL-jev</a>.</li>
+<li><strong>Poročilo o indeksiranju strani.</strong> Status, pri katerem je Google izbral drug kanonični URL kot vi, zahteva pregled. Nadomestna stran z ustrezno kanonično oznako je običajno v redu.</li>
+<li><strong>Pregled s pajkom.</strong> Orodje, kot je Screaming Frog, preišče celotno stran in pokaže strani brez oznake, oznake, ki kažejo na preusmeritve ali strani z napako, in verige kanoničnih oznak.</li>
+</ol>
+<p>Če strani sploh ni v Googlu, je kanonična oznaka le eden od možnih vzrokov. Ostale, od oznake noindex do slabih notranjih povezav, opisujemo v vodiču o <a href="/kako-hitro-indexiramo-stran-v-googlu/">indeksiranju strani v Googlu</a>.</p>
+
+<h2>Kaj napačen canonical URL pomeni za povpraševanja in prodajo</h2>
+<p>Kanonična oznaka odloči, katero različico strani bo kupec videl v Googlu. Če je to napačna različica, kupec pristane na strani, ki ne prodaja, ali pa vaše strani sploh ne najde.</p>
+<p>Veriga do prihodka je kratka: donosna ključna beseda pripelje kupca, Google pokaže pravo stran, stran ga prepriča, da pošlje povpraševanje ali kupi. Kanonična oznaka deluje v drugem členu, zato se napake pokažejo na tri načine.</p>
+<p><strong>Google pokaže napačno različico.</strong> Namesto kategorije s cenami in jasnim gumbom za nakup se v iskanju pokaže filtrirana stran, razvrščena po ceni, ali varianta, ki je ni na zalogi. Obiskovalec odide.</p>
+<p><strong>Prava stran izpade iz indeksa.</strong> Pri storitvenih straneh se pogosto zgodi, da predloga vsem podstranem doda kanonično oznako na domačo stran. Stran za storitev, ki prinaša največ povpraševanj, takrat v Googlu ne obstaja. Po selitvi strani je podobna napaka oznaka, ki še vedno kaže na testno domeno.</p>
+<p><strong>Signali se razdelijo.</strong> Če povezave kažejo na tri različice iste kategorije, nobena ni dovolj močna za prvo stran Googla. Na majhnem slovenskem trgu, kjer ima donosno iskanje lahko le nekaj deset poizvedb na mesec, si ne morete privoščiti, da bi del teh obiskov izgubili.</p>
+<p>Kaj preverite sami: naštejte deset strani, ki vam prinašajo največ povpraševanj ali prodaje, in vsako preverite s pregledom URL-ja v Search Consolu. Pri SEOPRO tehnični SEO urejamo od majhnih strani do sistemov z milijoni strani. Pri velikih spletnih mestih je kanonizacija med prvimi stvarmi, ki jih pregledamo, ker se napaka v eni predlogi ponovi na tisočih naslovih.</p>
+<p><a class="btn" href="/#review">Zahtevajte brezplačen pregled canonical napak <span aria-hidden="true">&rarr;</span></a></p>
+
+<h2>Napake pri canonical tagu</h2>
+<p>Večina napak nastane v predlogah, vtičnikih ali ob selitvi, ne pri ročnem urejanju posamezne strani.</p>
+<table>
+<thead><tr><th>Napaka</th><th>Posledica</th><th>Popravek</th></tr></thead>
+<tbody>
+<tr><td>Vse strani kažejo na domačo stran</td><td>Podstrani izpadejo iz indeksa</td><td>Vsaka stran kaže sama nase</td></tr>
+<tr><td>Oznaka kaže na stran z noindex ali 404</td><td>Google oznako prezre ali izgubi obe strani</td><td>Ciljajte samo strani, ki vrnejo kodo 200</td></tr>
+<tr><td>Dve oznaki na isti strani</td><td>Google lahko ne upošteva nobene</td><td>Pustite oznako samo v temi ali samo v vtičniku</td></tr>
+<tr><td>Oznaka s http ali testno domeno</td><td>Google izbere napačno različico</td><td>Celoten naslov s končno domeno in https</td></tr>
+<tr><td>Oštevilčene strani kažejo na 1. stran</td><td>Izdelki z 2. strani dalje se težje indeksirajo</td><td>Vsaka oštevilčena stran kaže sama nase</td></tr>
+<tr><td>Jezikovne različice kažejo na eno</td><td>Tuje različice izpadejo iz iskanja</td><td>Vsak jezik kaže sam nase, povezani so s hreflang</td></tr>
+</tbody>
+</table>
+<p>Pogosta je tudi kombinacija kanonične oznake in oznake noindex na isti strani. Signala si nasprotujeta, zato za izbiro glavne različice uporabite canonical, noindex pa prihranite za strani, ki jih v iskanju ne želite. Za strani v več jezikih, kjer se canonical povezuje z oznakami hreflang, več preberete v članku o <a href="/mednarodni-seo/">mednarodnem SEO-ju za izvoznike</a>.</p>
+
+<h2>Kdaj je treba urediti tehnični SEO</h2>
+<p>Če Search Console pri več deset ali sto straneh poroča, da je Google izbral drug kanonični URL kot vi, je oznaka običajno samo simptom. Vzrok je v strukturi strani: notranje povezave kažejo na različice s parametri, zemljevid strani vsebuje preusmerjene naslove ali pa predloge ustvarjajo strani skoraj brez lastne vsebine.</p>
+<p>Takrat posamezen popravek ne zadošča. Potrebujete pregled, ki poveže kanonične oznake, preusmeritve, zemljevid strani in notranje povezovanje v celoto. Kaj tak pregled vključuje, opisujemo v članku o <a href="/tehnicni-seo/">tehničnem SEO-ju</a> in v vodiču za <a href="/seo-audit/">SEO audit</a>. Posebej previdni bodite ob prenovi, selitvi ali menjavi platforme.</p>
+<p>Če ne veste, ali vaše strani to zadeva, je dober prvi korak brezplačna SEO analiza. Pregledamo, ali Google prikazuje strani, ki prinašajo povpraševanja, in povemo, ali je popravek vreden dela.</p>
+
+<h2>Pogosta vprašanja o canonical URL-ju</h2>
+<h3>Kaj je canonical URL?</h3>
+<p>Canonical URL je naslov, ki ga Google izbere kot glavno različico strani, kadar je enaka vsebina dosegljiva na več naslovih. Lastnik ga predlaga z oznako rel="canonical", Google pa jo upošteva skupaj s preusmeritvami, zemljevidom strani in notranjimi povezavami. Ostale različice ostanejo dosegljive, v iskanju pa se ne prikazujejo.</p>
+<h3>Ali canonical izključuje stran iz indeksa?</h3>
+<p>Delno. Stran, ki s kanonično oznako kaže na drug naslov, Google običajno ne prikazuje v rezultatih, vendar jo še vedno obiskuje in njene signale pripiše glavni različici. To ni enako kot oznaka noindex, ki stran izključi brez prenosa signalov. Google lahko oznako tudi prezre, če ji drugi signali nasprotujejo.</p>
+<h3>Kaj je razlika med canonical in preusmeritvijo?</h3>
+<p>Preusmeritev 301 obiskovalca in Google samodejno pošlje na nov naslov, zato stara različica za ljudi izgine. Canonical pusti obe različici dosegljivi in le predlaga, katero naj Google prikazuje. Preusmeritev uporabite, ko stran trajno zamenjate ali selite, canonical pa pri filtrih, parametrih in drugih različicah, ki jih obiskovalci še potrebujejo.</p>
+<h3>Ali lahko canonical nastavim na domačo stran?</h3>
+<p>Samo na domači strani sami in na njenih različicah, na primer z dodanimi parametri. Če na domačo stran kažejo vse podstrani, Google te podstrani obravnava kot dvojnike in jih ne prikazuje v iskanju. Napako preverite na nekaj naključnih podstraneh.</p>
+<h3>Kako preverim canonical v izvorni kodi?</h3>
+<p>Odprite stran v brskalniku, pritisnite Ctrl+U in z iskanjem (Ctrl+F) poiščite besedo canonical. Oznaka mora biti v razdelku head, samo ena in s celotnim naslovom, ki se začne s https. Če stran oznako dodaja z JavaScriptom, jo raje preverite s pregledom URL-ja v Search Consolu.</p>
+<h3>Kaj je self-referencing canonical?</h3>
+<p>To je kanonična oznaka, ki kaže na naslov iste strani. Googlu potrdi, da je stran sama glavna različica, in prepreči, da bi naslovi z dodanimi parametri za sledenje ali razvrščanje postali samostojne različice. Priporočljiva je na vsaki strani, ki jo želite imeti v iskanju, in jo Yoast ter Rank Math dodata samodejno.</p>
+
+<h2>Ena vsebina, en naslov, ena izbira</h2>
+<p>Kanonična oznaka Googlu pove, katera različica strani je prava, in to je vredno toliko, kolikor je vredna stran, ki jo s tem zaščitite. Najprej preverite strani, ki prinašajo denar: glavne kategorije, ključne izdelke in storitvene strani. Poskrbite, da kažejo same nase in da Search Console potrjuje vašo izbiro.</p>
+<p>Če želite vedeti, ali kanonične oznake na vaši strani pošiljajo kupce na prave naslove, nam stran pošljite v <a href="/#review">brezplačno SEO analizo</a>. Pošteno vam povemo, kaj je treba popraviti in ali se popravek splača.</p>
+    </div>
+    <p class="sr-sign">Igor Bajsić, SEOPRO</p>
+
+    <aside class="sr-cta" aria-label="Brezplačna analiza">
+      <h2>Vas zanima, kje se vaša stran <span>zatika?</span></h2>
+      <p>Pošljite nam naslov spletne strani in ključne besede, za katere bi se radi prikazovali. Igor jo pregleda in vam pove, kaj bi prineslo največ.</p>
+      <a class="btn" href="/#review">Brezplačna analiza strani</a>
+    </aside>
+
+    <section class="sr-related" aria-labelledby="related-title">
+      <h2 id="related-title">Preberite <span>še</span></h2>
+      <div class="sr-posts">
+      <a class="sr-post" href="/tehnicni-seo/">
+        <time datetime="2026-11-27">27. november 2026</time>
+        <h3>Tehnični SEO: kaj je in zakaj vpliva na uvrstitve</h3>
+        <p>Kaj vključuje tehnični SEO, zakaj vpliva na uvrstitve in povpraševanja ter kako odkrijete skrite napake, ki zavirajo vašo spletno stran.</p>
+        <span class="more">Preberi več &rarr;</span>
+      </a>
+      <a class="sr-post" href="/301-preusmeritev/">
+        <time datetime="2026-11-27">27. november 2026</time>
+        <h3>301 preusmeritev: kdaj jo uporabiti in kako ne škoditi SEO</h3>
+        <p>Kdaj uporabiti 301 preusmeritev, kdaj raje 302 ali 404, kako preverite verige preusmeritev in kaj preverite po selitvi, da ne izgubite prometa.</p>
+        <span class="more">Preberi več &rarr;</span>
+      </a>
+      <a class="sr-post" href="/kako-hitro-indexiramo-stran-v-googlu/">
+        <time datetime="2026-11-27">27. november 2026</time>
+        <h3>Zakaj svoje strani ne najdemo v Googlu?</h3>
+        <p>Preverite, zakaj vaše strani ni v Googlu, kako vzrok najdete v Search Consolu in kako pospešite indeksiranje spletne strani.</p>
+        <span class="more">Preberi več &rarr;</span>
+      </a>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-top">
+      <span class="footer-logo">SEOPRO<span>.</span></span>
+      <div class="footer-links">
+        <a href="mailto:igor@seopro.si"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>igor@seopro.si</span></a>
+        <a href="https://www.youtube.com/@Buyseech" target="_blank" rel="noopener"><svg viewBox="0 0 68 48" width="24" height="17" aria-hidden="true" focusable="false"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3S12.8.3 7.5 1.7a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10z" fill="#fff"/></svg><span>YouTube</span></a>
+        <a href="https://www.linkedin.com/in/igor-buyseech" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.3H4.8V19h2.3V9.3zM6 5a1.35 1.35 0 1 0 0 2.7A1.35 1.35 0 0 0 6 5zm13.2 8.8c0-2.6-1.4-4.7-4-4.7-1.3 0-2.2.7-2.6 1.4V9.3H10.4V19h2.3v-4.8c0-1.3.3-2.6 1.9-2.6 1.6 0 1.6 1.5 1.6 2.7V19h2.3l.7-5.2z"/></svg><span>LinkedIn</span></a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 SEOPRO.si · SEOPRO, spletna optimizacija, Igor Bajsić s.p. · <a href="/blog/">Blog</a> · <a href="/zasebnost/">Zasebnost in podatki o podjetju</a></p>
+  </div>
+</footer>
+
+<script src="/site.js?v=1.1" defer></script>
+</body>
+</html>
