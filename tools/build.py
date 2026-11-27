@@ -26,12 +26,14 @@ ICON_MAIL = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke=
 ICON_YT = '<svg viewBox="0 0 68 48" width="24" height="17" aria-hidden="true" focusable="false"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3S12.8.3 7.5 1.7a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10z" fill="#fff"/></svg>'
 ICON_LI = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.3H4.8V19h2.3V9.3zM6 5a1.35 1.35 0 1 0 0 2.7A1.35 1.35 0 0 0 6 5zm13.2 8.8c0-2.6-1.4-4.7-4-4.7-1.3 0-2.2.7-2.6 1.4V9.3H10.4V19h2.3v-4.8c0-1.3.3-2.6 1.9-2.6 1.6 0 1.6 1.5 1.6 2.7V19h2.3l.7-5.2z"/></svg>'
 
+# Landing pages shown only in the mobile menu (desktop nav is already full)
+MOBILE_EXTRA = [("/optimizacija-spletnih-strani/", "Optimizacija spletnih strani"), ("/seo-za-spletne-trgovine/", "SEO za spletne trgovine")]
 NAV = [("/#who", "Komu pomagamo"), ("/#services", "Kako delamo"), ("/#results", "Rezultati"), ("/#people", "Ekipa"), ("/blog/", "Blog")]
 
 
 def header():
     links = "\n".join(f'      <a href="{h}">{t}</a>' for h, t in NAV)
-    mobile = "\n".join(f'    <a href="{h}">{t}</a>' for h, t in NAV)
+    mobile = "\n".join(f'    <a href="{h}">{t}</a>' for h, t in NAV[:2] + MOBILE_EXTRA + NAV[2:])
     return f'''<a class="skip" href="#main">Preskoči na vsebino</a>
 <header class="site-header">
   <nav class="wrap nav" aria-label="Glavni meni">
