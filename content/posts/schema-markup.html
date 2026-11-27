@@ -1,0 +1,102 @@
+TITLE: Schema markup in strukturirani podatki za SEO
+H1: Strukturirani podatki in schema markup za SEO
+DESC: Kaj je schema markup, katere tipe potrebuje podjetje, kako ga preverite v validatorju in kdaj res prinese bogatejše rezultate v Googlu in več klikov.
+DATE: 2026-11-27
+NUM: 38
+CLUSTER: I Tehnični SEO in hitrost
+RELATED: tehnicni-seo, google-search-console, aeo-geo-seo
+ROBOTS: noindex, nofollow
+<p>Schema markup je koda v ozadju strani, ki Googlu v strojno berljivi obliki pove, kaj na strani je: podjetje z naslovom in delovnim časom, izdelek s ceno in zalogo ali članek z avtorjem in datumom. Na uvrstitve neposredno ne vpliva, lahko pa vaši strani odpre bogatejši prikaz v Googlu (rich results), na primer zvezdice, ceno ali zalogo pod naslovom, in s tem več klikov.</p>
+<p>Okoli strukturiranih podatkov krožita dve zmoti. Prva je, da je schema skrivni trik za višje pozicije. Druga je, da je vtičnik za SEO že vse uredil. V praksi vtičnik doda osnovo, napake in manjkajoči tipi pa ostanejo, dokler jih nekdo ne preveri.</p>
+<p>V članku boste izvedeli, katere tipe schema potrebuje podjetje, kako jih preverite z validatorjem in kdaj se strukturirani podatki res poznajo pri klikih in povpraševanjih.</p>
+
+<h2>Kaj so strukturirani podatki</h2>
+<p>Strukturirani podatki so podatki o strani, zapisani v standardni obliki, ki jo iskalniki razumejo brez ugibanja. Človek na strani vidi »Odprto od 8. do 16. ure«, Google pa iz kode prebere točno določeno polje za delovni čas.</p>
+<p>Google stran sicer zna prebrati tudi brez tega. Strukturirani podatki mu prihranijo ugibanje in zmanjšajo možnost, da napačno razume, kdo ste, kaj prodajate in koliko stane. Google to opisuje v uvodu v <a href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data?hl=sl" target="_blank" rel="noopener">strukturirane podatke</a>, kjer našteje tudi vse vrste bogatih rezultatov, ki jih podpira.</p>
+<p>Pomembno razlikovanje: strukturirani podatki so pogoj za bogate rezultate, niso pa zagotovilo zanje. Tudi pri pravilni kodi Google sam presodi, ali bo bogati prikaz pokazal.</p>
+
+<h2>Kaj je schema markup</h2>
+<p>Schema markup so strukturirani podatki, zapisani po slovarju schema.org, ki so ga skupaj razvili Google, Microsoft, Yahoo in Yandex. Slovar določa tipe (Organization, LocalBusiness, Product, Article) in lastnosti vsakega tipa (ime, naslov, telefon, cena).</p>
+<p>Kodo lahko zapišete na tri načine: JSON-LD, Microdata ali RDFa. Google priporoča JSON-LD, ker je to ločen blok kode v glavi ali telesu strani in ga ni treba vpletati v HTML besedila.</p>
+<p>Na WordPressu ga večinoma doda vtičnik, kot sta Yoast ali Rank Math, v spletnih trgovinah pa tema ali platforma. To je dober začetek, ki pa ga je treba dopolniti, ker vtičnik ne ve, da imate tri poslovalnice, da je izdelek razprodan ali da je avtor članka vaš glavni strokovnjak.</p>
+
+<h2>Katere tipe schema uporabljamo pri podjetjih</h2>
+<p>Večina slovenskih podjetij potrebuje štiri do šest tipov, ne desetin. Izberite tiste, ki opisujejo, kar res prodajate.</p>
+<table>
+<thead><tr><th>Tip schema</th><th>Za koga</th><th>Kaj lahko prikaže ali pojasni</th></tr></thead>
+<tbody>
+<tr><td>Organization</td><td>Vsako podjetje</td><td>Ime, logotip, kontakt, profili na družbenih omrežjih</td></tr>
+<tr><td>LocalBusiness</td><td>Lokalne storitve, salon, ordinacija, obrtnik</td><td>Naslov, delovni čas, telefon, območje</td></tr>
+<tr><td>Product in Offer</td><td>Spletne trgovine</td><td>Cena, zaloga, ocene, dostava</td></tr>
+<tr><td>Article</td><td>Blog in novice</td><td>Naslov, avtor, datum objave, slika</td></tr>
+<tr><td>BreadcrumbList</td><td>Strani z več ravnmi kategorij</td><td>Pot do strani namesto dolgega URL-ja</td></tr>
+<tr><td>FAQPage</td><td>Strani z vprašanji in odgovori</td><td>Pojasni strukturo vsebine, bogat prikaz le izjemoma</td></tr>
+<tr><td>Service</td><td>Storitvena podjetja</td><td>Opis storitve, ponudnik, območje</td></tr>
+</tbody>
+</table>
+<p>Za lokalno podjetje sta najpomembnejša Organization in LocalBusiness, za trgovino Product z ažurno ceno in zalogo. Polni seznam lastnosti za lokalna podjetja najdete na strani <a href="https://schema.org/LocalBusiness" target="_blank" rel="noopener">LocalBusiness na schema.org</a>. Pri SEOPRO tipe izberemo glede na to, kaj podjetju prinaša povpraševanja, in ne po tem, koliko jih vtičnik ponuja.</p>
+
+<h2>Kako preveriti schema markup z validacijo</h2>
+<p>Schema preverite z dvema brezplačnima orodjema in s Search Consolom. Vsako vidi nekaj drugega, zato uporabite vsa tri.</p>
+<ol>
+<li><strong>Google Rich Results Test.</strong> Odprite <a href="https://search.google.com/test/rich-results?hl=sl" target="_blank" rel="noopener">Googlov preizkus bogatih rezultatov</a>, vpišite URL in počakajte minuto. Orodje pokaže, za katere bogate rezultate je stran upravičena, ter napake in opozorila. Preverja samo tipe, ki jih Google podpira.</li>
+<li><strong>Schema Markup Validator.</strong> Validator na validator.schema.org preveri vso kodo po slovarju schema.org, tudi tipe, ki jih Google ne prikazuje (na primer Service). Ta schema validator uporabite, ko želite videti celotno sliko.</li>
+<li><strong>Google Search Console.</strong> V razdelku Izboljšave (Enhancements) vidite poročila za posamezne tipe, na primer izdelke ali drobtinice, z napakami na vseh straneh hkrati, ne le na eni. Kako Search Console uporabljate tudi za druge stvari, razlagamo v vodiču <a href="/google-search-console/">Google Search Console za lastnike strani</a>.</li>
+</ol>
+<p>Rdeča napaka pomeni, da Google za to stran bogatega rezultata ne bo pokazal. Rumeno opozorilo pomeni, da manjka priporočena lastnost: stran je še vedno upravičena, prikaz pa je skromnejši. Po popravku v Search Consolu kliknite Potrdi popravek, da Google strani pregleda znova. Če stran sploh ni v indeksu, ji tudi najboljša koda ne pomaga, zato najprej preverite <a href="/kako-hitro-indexiramo-stran-v-googlu/">indeksiranje strani v Googlu</a>.</p>
+
+<h2>Google rich results in najpogostejše napake</h2>
+<p>Večina napak, ki jih vidimo, ni tehnično zahtevnih: koda pove nekaj drugega kot stran ali opisuje vsebino, ki je obiskovalec sploh ne vidi.</p>
+<ul>
+<li><strong>Cena v kodi se ne ujema s ceno na strani.</strong> Pogosto po akciji ali spremembi cenika, ko se koda ne posodobi.</li>
+<li><strong>Ocene, ki jih podjetje napiše samo o sebi.</strong> Google zvezdic za podjetje, ki ocene objavlja na lastni strani o sebi, ne prikazuje.</li>
+<li><strong>Podvojena koda.</strong> Tema in vtičnik oba dodata Organization ali Product, z različnimi podatki.</li>
+<li><strong>Označena vsebina, ki je ni na strani.</strong> Na primer vprašanja v FAQPage, ki jih obiskovalec ne vidi.</li>
+<li><strong>Manjkajoče obvezne lastnosti.</strong> Product brez cene ali brez imena.</li>
+</ul>
+<p>Zadnje tri lahko pripeljejo do ročnega ukrepa zaradi strukturiranih podatkov, kar pomeni, da Google vaši strani bogate rezultate izklopi. Kaj je dovoljeno, Google našteje v <a href="https://developers.google.com/search/docs/appearance/structured-data/sd-policies?hl=sl" target="_blank" rel="noopener">splošnih pravilih za strukturirane podatke</a>. Pravilo je preprosto: označite samo tisto, kar obiskovalec na strani tudi vidi.</p>
+
+<h2>Schema za FAQ, članke in storitve</h2>
+<p>FAQ schema je primer, kako hitro se pravila spreminjajo. Od avgusta 2023 Google bogate rezultate za pogosta vprašanja prikazuje le pri dobro znanih, avtoritativnih vladnih in zdravstvenih straneh. Za običajno podjetje FAQ schema zato ne prinese razširjenega prikaza v Googlu, še vedno pa jasno označi strukturo vprašanj in odgovorov, kar pomaga drugim iskalnikom in AI sistemom.</p>
+<p>Article na blogu Googlu pove avtorja, datum objave in zadnje posodobitve ter glavno sliko. Datum v kodi naj se ujema z datumom, ki ga vidi bralec.</p>
+<p>Za storitve Google nima posebnega bogatega rezultata. Tip Service vseeno uporabite, ker iskalniku poveže storitev, podjetje in območje, kjer storitev opravljate. Skupaj z Organization in LocalBusiness tako dobi jasno sliko o tem, kdo ste.</p>
+
+<h2>Kdaj schema pomaga SEO-ju in AI odgovorom</h2>
+<p>Schema pomaga, ko je stran že indeksirana, se uvršča na prvo stran in ima vsebino, ki jo je vredno izpostaviti. Na strani, ki je na 30. mestu, bogati rezultat ne spremeni ničesar, ker je nihče ne vidi.</p>
+<p>Pri AI odgovorih (AI pregledi v Googlu, ChatGPT, Gemini) bodite previdni pri obljubah. Javnih dokazov, da schema sama prinese navedbo v AI odgovoru, ni. Pomaga pa pri razumevanju entitet: ko ime podjetja, naslov, storitve in avtorji povsod v kodi pomenijo isto, sistemi lažje povežejo vašo znamko z vašo temo. Kako se vidnost v AI iskanju gradi širše, opisujemo v članku <a href="/aeo-geo-seo/">AEO, GEO in SEO</a>.</p>
+<p>Schema je ena od postavk tehnične osnove, poleg hitrosti, indeksiranja in kanoničnih oznak. Kako se vse skupaj poveže, razlagamo na strani o <a href="/tehnicni-seo/">tehničnem SEO-ju</a>.</p>
+
+<h2>Kaj schema markup pomeni za klike in povpraševanja</h2>
+<p>Schema prinese denar šele takrat, ko bogati rezultat pritegne pravega obiskovalca na stran, ki ga prepriča. Veriga je enaka kot pri vsem SEO-ju: prava ključna beseda, prvo stran Googla, prikaz, ki izstopa, in stran, kjer obiskovalec pokliče ali kupi.</p>
+<p>Pri spletni trgovini je učinek najbolj neposreden. Kupec, ki v rezultatu že vidi ceno in »na zalogi«, klikne z namenom nakupa. Pri lokalnem podjetju podatki o delovnem času in naslovu, povezani z Googlovim profilom podjetja, zmanjšajo možnost, da vas Google pokaže z napačnimi podatki.</p>
+<p>Kje se veriga najpogosteje pretrga:</p>
+<ul>
+<li><strong>Schema na napačnih straneh.</strong> Vsa koda na blogu, nič na izdelkih in storitvah, ki prinašajo prihodke.</li>
+<li><strong>Bogat prikaz za iskanja brez nakupnega namena.</strong> Iskanje s 30 poizvedbami na mesec od kupcev je vredno več kot 1.000 iskanj od ljudi, ki se šele učijo. Na majhnem slovenskem trgu to šteje še bolj.</li>
+<li><strong>Zastarela koda.</strong> Cena ali zaloga v rezultatu ni prava, kupec pa odide razočaran.</li>
+<li><strong>Stran brez jasnega naslednjega koraka.</strong> Klik je, povpraševanja ni.</li>
+</ul>
+<p>Lastnik naj zato preveri, ali imajo strani z največ prihodki pravilno kodo, in pripravi točne podatke: uradno ime podjetja, naslov, delovni čas, cene in zalogo.</p>
+<p><a class="btn" href="/#review">Zahtevajte brezplačno SEO analizo s preverbo schema markup <span aria-hidden="true">&rarr;</span></a></p>
+
+<h2>Naslednji koraki za vašo stran</h2>
+<p>Začnite z eno stranjo, ki vam prinaša največ povpraševanj ali prodaje, in jo preverite v Rich Results Testu.</p>
+<p>Če uporabljate WordPress, v vtičniku za SEO izpolnite podatke o podjetju (ime, logotip, naslov) in preverite, da tema ne dodaja podvojene kode. Pri trgovini preverite, ali se cena in zaloga v kodi posodobita samodejno. Po vsaki prenovi strani ali menjavi teme preverjanje ponovite, ker se koda ob tem najpogosteje izgubi.</p>
+
+<h2>Pogosta vprašanja o strukturiranih podatkih</h2>
+<h3>Ali schema markup vpliva na uvrstitve v Googlu?</h3>
+<p>Neposredno ne. Google strukturiranih podatkov ne navaja kot dejavnika za uvrstitve, pomagajo pa mu razumeti vsebino in lahko odprejo bogat prikaz. Ta lahko poveča delež klikov pri isti poziciji, kar je za prihodke pogosto pomembnejše od enega mesta višje.</p>
+<h3>Katera schema je najpomembnejša za podjetja?</h3>
+<p>Za vsako podjetje Organization, za lokalno podjetje še LocalBusiness z naslovom in delovnim časom, za spletno trgovino Product s ceno in zalogo. Article je smiseln za blog, BreadcrumbList za strani z več ravnmi kategorij.</p>
+<h3>Ali lahko napačen schema markup povzroči težave?</h3>
+<p>Lahko. Koda, ki opisuje vsebino, ki je na strani ni, ali lažne ocene lahko pripeljejo do ročnega ukrepa, s katerim Google strani izklopi bogate rezultate. Pogostejša težava je tišja: napaka v kodi pomeni, da bogatega prikaza preprosto ni, in tega nihče ne opazi.</p>
+<h3>Kako preverim, ali je schema pravilno implementirana?</h3>
+<p>URL vpišite v Google Rich Results Test, ki pokaže napake za tipe, ki jih podpira Google. Celotno kodo preverite še v Schema Markup Validatorju na validator.schema.org. Za pregled napak na vseh straneh hkrati uporabite poročila Izboljšave v Google Search Consolu.</p>
+<h3>Ali je FAQ schema še vedno uporabna?</h3>
+<p>Za bogat prikaz v Googlu pri večini podjetij ne, ker Google od avgusta 2023 razširjene pogoste odgovore kaže le pri avtoritativnih vladnih in zdravstvenih straneh. Vseeno je smiselna na straneh, ki res imajo vprašanja in odgovore, ker jasno označi strukturo vsebine.</p>
+<h3>Kaj je v sitemapu in ali ima kaj s strukturiranimi podatki?</h3>
+<p>Zemljevid strani (sitemap) je seznam URL-jev, ki jih želite v Googlovem indeksu, schema pa opisuje vsebino posamezne strani. Kaj spada v zemljevid in zakaj je še vedno pomemben, razlagamo v članku <a href="/sitemap/">kaj je sitemap</a>.</p>
+
+<h2>Schema naj opisuje strani, ki prodajajo</h2>
+<p>Schema je majhen tehnični poseg z jasnim namenom: Googlu natančno povedati, kdo ste in kaj prodajate, ter izboljšati prikaz strani, ki so že na prvi strani. Ne dvigne slabe strani in ne zamenja vsebine, ki odgovori na iskalni namen.</p>
+<p>Začnite pri straneh, ki prinašajo povpraševanja in naročila, preverite jih v validatorju in kodo posodobite ob vsaki spremembi cene ali podatkov. Če želite vedeti, kaj schema in drugi tehnični popravki lahko pomenijo za vašo stran, nam jo pošljite v <a href="/#review">brezplačno SEO analizo</a>. Pošteno vam bomo povedali, kaj se splača urediti najprej.</p>
