@@ -1,10 +1,10 @@
 # Old WordPress addresses -> new site (301 keeps their Google ranking and links)
-/kontakt /#kontakt 301
-/kontakt/ /#kontakt 301
-/pogosta-vprasanja /#vprasanja 301
-/pogosta-vprasanja/ /#vprasanja 301
-/seopro-paketi-optimizacije/ /#cene 301
-/garancija-seopro-top5/ /#cene 301
+/kontakt /#review 301
+/kontakt/ /#review 301
+/pogosta-vprasanja / 301
+/pogosta-vprasanja/ / 301
+/seopro-paketi-optimizacije/ /#review 301
+/garancija-seopro-top5/ /#review 301
 /zasebnost /zasebnost/ 301
 /privacy /zasebnost/ 301
 /zahvala/ / 301

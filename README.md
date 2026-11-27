@@ -4,8 +4,8 @@ Slovenian SEO agency site. Same setup as `Buyseech/buyseech-site` and `Buyseech/
 
 ## Where things are
 
-- `public/index.html`: the home page (hero, numbers, who needs SEO, services, "Merimo prodajo" band, process, team, 2018 SEO challenge, pricing, FAQ, latest blog posts, free-analysis form)
-- `public/styles.css`: all styling. Top part copied from seopack.net/buyseech.com so all three sites look the same. SEOpack parts are prefixed `sp-`, SEOPRO-only parts (blog, articles) `sr-` at the bottom. Accent colour is `--accent`.
+- `public/index.html`: the home page, a Slovenian translation of buyseech.com with the same sections, images and facts (hero, numbers, who we help, toolbox, "Šteje rezultat" band, 3 case studies, team, speaking, 2018 challenge, Unscripted SEO, form)
+- `public/styles.css`: all styling. Copied from buyseech.com/seopack.net so the sites look the same; the hero line sizes (`.fit-1/2/3`) are re-measured for the Slovenian text at the bottom of the file. SEOpack parts are prefixed `sp-`, SEOPRO-only parts (blog, articles) `sr-` at the bottom. Accent colour is `--accent`.
 - `public/site.js`: scroll-in animation, form handling (Slovenian messages), phone menu
 - `public/<slug>/index.html`: the 10 old blog posts, kept at **the same addresses** the old WordPress site used, so their Google rankings and backlinks carry over
 - `public/blog/`, `public/trendi/`, `public/zasebnost/` (privacy & company info, BUYSEECH d.o.o.)

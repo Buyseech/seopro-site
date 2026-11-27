@@ -623,3 +623,8 @@ a:hover{color:var(--accent-hover)}
 .h2,.challenge h2{line-height:1.1}
 .sp-hero h1{font-size:clamp(44px,5.4vw,88px);line-height:1.12}
 .sp-hero-sub{line-height:1.1}
+
+/* Hero: line sizes re-measured for the Slovenian text so each line fills the column, like on buyseech.com */
+.hero h1 .fit-1{font-size:12.4cqi}
+.hero h1 .fit-2{font-size:7.28cqi}
+.hero-sub.fit-3{font-size:6.22cqi}

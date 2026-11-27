@@ -23,7 +23,7 @@ ICON_MAIL = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke=
 ICON_YT = '<svg viewBox="0 0 68 48" width="24" height="17" aria-hidden="true" focusable="false"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3S12.8.3 7.5 1.7a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10z" fill="#fff"/></svg>'
 ICON_LI = '<svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.3H4.8V19h2.3V9.3zM6 5a1.35 1.35 0 1 0 0 2.7A1.35 1.35 0 0 0 6 5zm13.2 8.8c0-2.6-1.4-4.7-4-4.7-1.3 0-2.2.7-2.6 1.4V9.3H10.4V19h2.3v-4.8c0-1.3.3-2.6 1.9-2.6 1.6 0 1.6 1.5 1.6 2.7V19h2.3l.7-5.2z"/></svg>'
 
-NAV = [("/#storitve", "Storitve"), ("/#postopek", "Kako delamo"), ("/#ekipa", "Ekipa"), ("/#cene", "Cene"), ("/#vprasanja", "Vprašanja"), ("/blog/", "Blog")]
+NAV = [("/#who", "Komu pomagamo"), ("/#services", "Kako delamo"), ("/#results", "Rezultati"), ("/#people", "Ekipa"), ("/blog/", "Blog")]
 
 
 def header():
@@ -32,16 +32,15 @@ def header():
     return f'''<a class="skip" href="#main">Preskoči na vsebino</a>
 <header class="site-header">
   <nav class="wrap nav" aria-label="Glavni meni">
-    <a class="logo sp-logo" href="/">SEOPRO<span>.</span><i>si</i><small>by Buyseech SEO</small></a>
+    <a class="logo" href="/">SEOPRO<span>.</span></a>
     <div class="nav-links">
 {links}
-      <a class="btn btn--sm sp-nav-btn" href="/#kontakt">Brezplačna analiza</a>
+      <a class="btn btn--sm" href="/#review">Potrebujemo več strank</a>
       <button class="nav-toggle" type="button" aria-label="Odpri meni" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
   <div class="mobile-menu" id="mobile-menu" hidden>
 {mobile}
-    <a href="/#kontakt">Brezplačna analiza</a>
   </div>
 </header>'''
 
@@ -50,19 +49,18 @@ def footer():
     return f'''<footer class="site-footer">
   <div class="wrap footer-in">
     <div class="footer-top">
-      <span class="footer-logo sp-logo">SEOPRO<span>.</span><i>si</i></span>
+      <span class="footer-logo">SEOPRO<span>.</span></span>
       <div class="footer-links">
         <a href="mailto:{EMAIL}">{ICON_MAIL}<span>{EMAIL}</span></a>
-        <a href="https://buyseech.com"><span>Buyseech.com</span></a>
         <a href="https://www.youtube.com/@Buyseech" target="_blank" rel="noopener">{ICON_YT}<span>YouTube</span></a>
         <a href="https://www.linkedin.com/in/igor-buyseech" target="_blank" rel="noopener">{ICON_LI}<span>LinkedIn</span></a>
       </div>
     </div>
-    <p class="footer-copy">© 2026 SEOPRO.si · Optimizacija spletnih strani · BUYSEECH d.o.o. · <a href="/zasebnost/">Zasebnost in podatki o podjetju</a></p>
+    <p class="footer-copy">© 2026 SEOPRO.si · BUYSEECH d.o.o. · <a href="/blog/">Blog</a> · <a href="/zasebnost/">Zasebnost in podatki o podjetju</a></p>
   </div>
 </footer>
 
-<script src="/site.js?v=1.0" defer></script>'''
+<script src="/site.js?v=1.1" defer></script>'''
 
 
 def head(title, desc, url, og_type="website", extra=""):
@@ -94,7 +92,7 @@ def head(title, desc, url, og_type="website", extra=""):
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.0">
+<link rel="stylesheet" href="/styles.css?v=1.1">
 {extra}</head>'''
 
 
@@ -167,7 +165,7 @@ def build_post(p, posts):
     <aside class="sr-cta" aria-label="Brezplačna analiza">
       <h2>Vas zanima, kje se vaša stran <span>zatika?</span></h2>
       <p>Pošljite nam naslov spletne strani in ključne besede, za katere bi se radi prikazovali. Igor jo pregleda in vam pove, kaj bi prineslo največ.</p>
-      <a class="btn" href="/#kontakt">Brezplačna analiza strani</a>
+      <a class="btn" href="/#review">Brezplačna analiza strani</a>
     </aside>
 
     <section class="sr-related" aria-labelledby="related-title">
@@ -230,7 +228,7 @@ def build_home_blog(posts):
 
 def build_shared_pages():
     """Put the shared header and footer into the hand-written pages (between the HEADER/FOOTER markers)."""
-    for f in [PUB / "index.html", PUB / "zasebnost" / "index.html", PUB / "trendi" / "index.html"]:
+    for f in [PUB / "zasebnost" / "index.html", PUB / "trendi" / "index.html"]:
         s = f.read_text(encoding="utf-8")
         s = re.sub(r"<!-- HEADER -->.*?<!-- /HEADER -->", lambda m: "<!-- HEADER -->\n" + header() + "\n<!-- /HEADER -->", s, flags=re.S)
         s = re.sub(r"<!-- FOOTER -->.*?<!-- /FOOTER -->", lambda m: "<!-- FOOTER -->\n" + footer() + "\n<!-- /FOOTER -->", s, flags=re.S)
@@ -243,6 +241,5 @@ if __name__ == "__main__":
         build_post(p, posts)
     build_blog(posts)
     build_sitemap(posts)
-    build_home_blog(posts)
     build_shared_pages()
     print(f"Built {len(posts)} posts, blog list, sitemap.")
