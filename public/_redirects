@@ -4,13 +4,19 @@
 /pogosta-vprasanja / 301
 /pogosta-vprasanja/ / 301
 /seopro-paketi-optimizacije/ /#review 301
+/seopro-paketi-optimizacije /#review 301
 /garancija-seopro-top5/ /#review 301
+/garancija-seopro-top5 /#review 301
 /zasebnost /zasebnost/ 301
 /privacy /zasebnost/ 301
 /zahvala/ / 301
+/zahvala / 301
 /potrditev/ / 301
-/hello-world/ /blog/ 301
+/potrditev / 301
+/hello-world/ / 301
+/hello-world / 301
 /127/ / 301
+/127 / 301
 /author/* /blog/ 301
 /category/* /blog/ 301
 /tag/* /blog/ 301
@@ -22,14 +28,24 @@
 /post-sitemap.xml /sitemap.xml 301
 /page-sitemap.xml /sitemap.xml 301
 
-# Old blog posts (removed for now; blog coming soon)
-/25-razlogov-zakaj-je-google-1 /optimizacija-spletnih-strani/ 301
-/25-razlogov-zakaj-je-google-1/ /optimizacija-spletnih-strani/ 301
-/je-vasa-spletna-stran-zares-vasa /blog/ 301
-/je-vasa-spletna-stran-zares-vasa/ /blog/ 301
+# Old posts and pages per redirect-map.csv (Igor, 27 Nov 2026: no clear match -> front page)
+/25-razlogov-zakaj-je-google-1 / 301
+/25-razlogov-zakaj-je-google-1/ / 301
+/je-vasa-spletna-stran-zares-vasa / 301
+/je-vasa-spletna-stran-zares-vasa/ / 301
 /kaj-je-backlink /off-site-optimizacija/ 301
 /kaj-je-backlink/ /off-site-optimizacija/ 301
-/seopro-si-praznuje-4-leta-delovanja /blog/ 301
-/seopro-si-praznuje-4-leta-delovanja/ /blog/ 301
+/seopro-si-praznuje-4-leta-delovanja / 301
+/seopro-si-praznuje-4-leta-delovanja/ / 301
+/povprasevanje /#review 301
+/povprasevanje/ /#review 301
+/seo-adwords /vpliv-google-adwords-sprememb-na-seo/ 301
+/seo-adwords/ /vpliv-google-adwords-sprememb-na-seo/ 301
+/tehnicna-optimizacija /tehnicni-seo/ 301
+/tehnicna-optimizacija/ /tehnicni-seo/ 301
+/slike /optimizacija-slik/ 301
+/slike/ /optimizacija-slik/ 301
+/potrditev-paket / 301
+/potrditev-paket/ / 301
 /seo-ljubljana /optimizacija-spletnih-strani/ 301
 /seo-ljubljana/ /optimizacija-spletnih-strani/ 301
