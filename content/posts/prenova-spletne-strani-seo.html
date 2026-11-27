@@ -1,0 +1,111 @@
+TITLE: Prenova spletne strani in SEO: kako ohraniti pozicije
+H1: SEO pri prenovi spletne strani: kako ne izgubiti pozicij
+DESC: Prenova spletne strani brez izgube pozicij: kaj pripraviti pred zagonom, kako narediti mapo URL-jev in preusmeritve 301 ter kaj preveriti po zagonu.
+DATE: 2026-11-27
+NUM: 60
+CLUSTER: M SEO za WordPress in spletne trgovine
+RELATED: 301-preusmeritev, padec-obiska-spletne-strani, wordpress-seo
+ROBOTS: noindex, nofollow
+<p>Prenova spletne strani sama po sebi ne uniči pozicij v Googlu. Pozicije izgubite, ko se ob prenovi spremenijo URL-ji brez preusmeritev 301, izginejo strani, ki so prinašale obisk, ali nova stran ostane zaprta za Google. Če stare naslove pred zagonom popišete, jih preusmerite na nove in stran po zagonu nekaj tednov spremljate v Search Consolu, je nihanje običajno kratko.</p>
+<p>Večina lastnikov se s SEO-jem ukvarja šele, ko je nova stran že na spletu in povpraševanj ni več. Takrat je popravljanje počasnejše in dražje. Pri izdelavi spletnih strani se razvijalci osredotočijo na videz in delovanje, SEO pa pride na vrsto zadnji ali sploh ne.</p>
+<p>V članku boste izvedeli, kaj pripraviti pred prenovo, kako sestaviti mapo URL-jev, kaj preveriti na dan zagona in kako prenovo izpeljati tako, da obdržite obisk, ki vam prinaša povpraševanja in naročila.</p>
+
+<h2>Zakaj prenova spletne strani pogosto uniči SEO</h2>
+<p>Google vašo stran pozna kot seznam posameznih URL-jev, od katerih ima vsak svojo zgodovino, povratne povezave in uvrstitve. Ko URL izgine brez preusmeritve, izgine z njim vse, kar je ta naslov nabral v letih.</p>
+<p>URL je naslov posamezne podstrani, na primer seopro.si/blog/. Prenova je vsaka večja sprememba strani: nov dizajn, nova struktura menija, nov sistem za urejanje vsebin (CMS), na primer prehod na WordPress ali Shopify, ali nova domena. Migracija je prenova, pri kateri se spremenijo URL-ji, platforma ali domena. Za SEO je bolj tvegana, ker mora Google vsak stari naslov znova povezati z novim.</p>
+<table>
+<thead><tr><th>Vrsta spremembe</th><th>Tveganje za SEO</th><th>Na kaj pazite</th></tr></thead>
+<tbody>
+<tr><td>Nov dizajn, isti URL-ji</td><td>Nizko</td><td>Besedila, naslovi in notranje povezave ostanejo</td></tr>
+<tr><td>Nova struktura menija in URL-jev</td><td>Visoko</td><td>Preusmeritev 301 za vsak stari URL</td></tr>
+<tr><td>Nova platforma (CMS)</td><td>Visoko</td><td>URL-ji, meta podatki, hitrost nalaganja</td></tr>
+<tr><td>Nova domena</td><td>Zelo visoko</td><td>Preusmeritve in sporočilo o spremembi naslova</td></tr>
+<tr><td>Združevanje več strani v eno</td><td>Srednje</td><td>Vsebina, ki je prinašala obisk, ne sme izginiti</td></tr>
+</tbody>
+</table>
+<p>Google v vodiču o <a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes?hl=sl" target="_blank" rel="noopener">premiku spletnega mesta s spremembami URL-jev</a> sam opozarja, da se uvrstitve med selitvijo začasno spreminjajo. To je normalno. Ni pa normalno, da obisk pade in se po nekaj tednih ne začne vračati.</p>
+
+<h2>SEO pred prenovo: kaj pripravite</h2>
+<p>Najpomembnejše delo opravite, preden razvijalec začne. Potrebujete popis vsega, kar danes prinaša obisk, in posnetek trenutnega stanja, s katerim boste po zagonu primerjali rezultate.</p>
+<ol>
+<li><strong>Izvozite vse URL-je.</strong> Seznam dobite iz zemljevida strani (sitemap), z orodjem Screaming Frog in iz Google Search Console. Search Console je brezplačno Googlovo orodje, ki pokaže, za katera iskanja se stran prikazuje in koliko klikov dobi.</li>
+<li><strong>Označite strani, ki prinašajo denar.</strong> V Search Consolu izvozite klike in prikaze po straneh za zadnjih 16 mesecev, v Google Analytics 4 pa strani, ki prinesejo povpraševanja ali nakupe.</li>
+<li><strong>Popišite strani s povratnimi povezavami.</strong> Povratna povezava (backlink) je povezava z druge spletne strani na vašo. Naslovi, na katere kažejo zunanje povezave, morajo po prenovi dobiti preusmeritev.</li>
+<li><strong>Shranite meta podatke.</strong> Naslove strani (title), meta opise, naslove H1 in kanonične oznake. Kanonična oznaka (canonical) Googlu pove, katera različica strani je glavna.</li>
+<li><strong>Naredite varnostno kopijo.</strong> Kopija datotek in baze podatkov vam omogoči vrnitev, če gre ob zagonu kaj narobe.</li>
+<li><strong>Zahtevajte zaprto testno stran.</strong> Testna različica (staging) naj bo zaščitena z geslom, da je Google ne indeksira pred zagonom.</li>
+</ol>
+<p>Pri manjši storitveni strani je to delo za eno popoldne. Pri spletni trgovini s tisoči izdelkov ga brez orodja za pajkanje ne opravite, zato ga načrtujte v časovnici prenove, ne teden pred zagonom.</p>
+
+<h2>Kako zaščitite obstoječe pozicije z mapo URL-jev</h2>
+<p>Pozicije zaščitite z mapo URL-jev: preglednico, v kateri vsakemu staremu URL-ju določite novega. Na njeni podlagi razvijalec na strežniku nastavi preusmeritve 301. Preusmeritev 301 je trajna preusmeritev, ki obiskovalca in Google s starega naslova samodejno pošlje na novega, Googlu pa sporoči, naj signale stare strani pripiše novi.</p>
+<table>
+<thead><tr><th>Stari URL</th><th>Novi URL</th><th>Kaj naredite</th></tr></thead>
+<tbody>
+<tr><td>/storitve/servis-klim.html</td><td>/servis-klimatskih-naprav/</td><td>301 na enakovredno stran</td></tr>
+<tr><td>/izdelek.php?id=123</td><td>/izdelki/klima-model-x/</td><td>301 na isti izdelek</td></tr>
+<tr><td>/o-podjetju/</td><td>/o-nas/</td><td>301 na enakovredno stran</td></tr>
+<tr><td>/akcija-poletje-2019/</td><td>Ni nove strani</td><td>404, če nima obiska in povezav</td></tr>
+</tbody>
+</table>
+<p>Vsak stari URL preusmerite na najbolj podobno novo stran. Preusmeritev vseh starih naslovov na prvo stran Google obravnava podobno kot neobstoječe strani, zato tak pristop pozicij ne ohrani. Izogibajte se verigam preusmeritev, kjer stari naslov vodi na vmesnega in ta šele na končnega. Notranje povezave v meniju in besedilih popravite tako, da kažejo neposredno na nove URL-je. Podrobnosti o kodah in nastavitvah opisujemo v vodiču, <a href="/301-preusmeritev/">kako pravilno nastaviti preusmeritev 301</a>.</p>
+<p>Mapa URL-jev reši naslove, vsebine pa ne. Če nova stran besedilo storitve skrajša na dva odstavka, ker je »tako lepše«, boste pozicije izgubili tudi s popolnimi preusmeritvami. Besedila, naslove H1 in title strani, ki se uvrščajo, prenesite skoraj nespremenjene.</p>
+
+<h2>Kaj preverite na dan zagona in po njem</h2>
+<p>Na dan zagona najprej preverite, ali Google novo stran sploh lahko pajka in indeksira. Nato nekaj tednov primerjate podatke s stanjem pred prenovo.</p>
+<table>
+<thead><tr><th>Kdaj</th><th>Kaj preverite</th><th>Kje</th></tr></thead>
+<tbody>
+<tr><td>Dan zagona</td><td>Ni oznake noindex, robots.txt ne blokira strani</td><td>Izvorna koda, Search Console</td></tr>
+<tr><td>Dan zagona</td><td>Stari URL-ji vračajo 301 na prave strani</td><td>Screaming Frog</td></tr>
+<tr><td>Dan zagona</td><td>Nov zemljevid strani je oddan</td><td>Search Console, Zemljevidi strani</td></tr>
+<tr><td>Dan zagona</td><td>Obrazci in merjenje v GA4 delujejo</td><td>Testno povpraševanje, Google Analytics 4</td></tr>
+<tr><td>Prvi teden</td><td>Napake 404 in strežniške napake</td><td>Search Console, poročilo Strani</td></tr>
+<tr><td>Prvi mesec</td><td>Kliki in prikazi glavnih strani</td><td>Search Console, Učinkovitost</td></tr>
+<tr><td>Prvi trije meseci</td><td>Povpraševanja in naročila iz organskega iskanja</td><td>Google Analytics 4</td></tr>
+</tbody>
+</table>
+<p>Pri selitvi na novo domeno v Search Consolu uporabite še <a href="https://support.google.com/webmasters/answer/9370220?hl=sl" target="_blank" rel="noopener">orodje za spremembo naslova</a>. Preusmeritve pustite aktivne čim dlje, Google priporoča vsaj eno leto, staro domeno pa obdržite, da je ne prevzame kdo drug.</p>
+
+<h2>Kaj prenova pomeni za vaša povpraševanja</h2>
+<p>Pri večini podjetij pride največ povpraševanj iz Googla prek nekaj storitvenih strani ali kategorij izdelkov. Če prenova te strani potisne s prve na drugo stran Googla, povpraševanja izginejo, čeprav je stran lepša in hitrejša.</p>
+<p>Kako malo je vredna druga stran Googla, kaže seopro.si sam. V 16 mesecih ga je Google v iskanju prikazal 69.742-krat, dobil pa je le 50 klikov, ker so glavne strani stale tik pod prvo stranjo (povprečna pozicija 12,9 za »optimizacija spletnih strani«). Prenova, ki vaše ključne strani pomakne s 4. na 12. mesto, ima enak učinek.</p>
+<p>Zato mapo URL-jev uredite po denarju. Storitvena stran, ki jo vsak mesec najde 30 ljudi, pripravljenih kupiti, je pri prenovi pomembnejša od blog članka s 1.000 obiski bralcev, ki se šele učijo. Na majhnem slovenskem trgu je takih donosnih ključnih besed malo in vsaka šteje.</p>
+<p>Veriga se po zagonu najpogosteje pretrga na koncu: obrazec ne pošilja e-pošte, telefonska številka ni več klikljiva ali GA4 ne meri povpraševanj, zato padca nihče ne opazi. Prenova je hkrati priložnost. Pri mednarodni stranki, enem največjih nočnih klubov v Aziji, je SEOPRO samo s popravki načina, kako obiskovalci stopijo v stik, v prvem tednu povečal povpraševanja za rezervacije s 103 na 183 na teden, brez novih povezav in brez nove vsebine.</p>
+<p><a class="btn" href="/#review">Zahtevajte brezplačen SEO pregled pred prenovo <span aria-hidden="true">&rarr;</span></a></p>
+
+<h2>Najpogostejše napake pri prenovi</h2>
+<p>Skoraj vse napake izvirajo iz tega, da SEO nima mesta v načrtu prenove. Te vidimo najpogosteje:</p>
+<ul>
+<li><strong>Testna stran gre na splet z oznako noindex</strong> ali z datoteko robots.txt, ki prepoveduje pajkanje celotne strani.</li>
+<li><strong>Preusmeritev ni</strong> ali vse kažejo na prvo stran.</li>
+<li><strong>Izbrisane so strani z obiskom,</strong> ker »teh ne potrebujemo več«, čeprav so prinašale povpraševanja.</li>
+<li><strong>Krajša besedila in izgubljeni naslovi</strong> title, H1 in meta opisi.</li>
+<li><strong>Počasnejša stran</strong> zaradi velikih slik, videa in animacij v novem dizajnu.</li>
+<li><strong>Ni podatkov pred prenovo,</strong> zato po zagonu ne veste, kaj se je spremenilo.</li>
+<li><strong>Zagon v najmočnejši sezoni,</strong> ko si nihanja najmanj lahko privoščite.</li>
+</ul>
+<p>Če je prenova že za vami in obisk pada, začnite pri preusmeritvah in poročilu Strani v Search Consolu. Korak za korakom diagnozo opisujemo v članku o tem, <a href="/padec-obiska-spletne-strani/">kaj narediti ob padcu obiska spletne strani</a>.</p>
+
+<h2>Brezplačen SEO pregled pred prenovo</h2>
+<p>SEO strokovnjaka vključite, ko se določata struktura menija in URL-jev, torej pred izdelavo, in ponovno na dan zagona. Takrat stane najmanj in prepreči največ škode.</p>
+<p>SEOPRO spletnih strani ne izdeluje, dela samo SEO in nič drugega. Pri prenovi sodelujemo z vašim razvijalcem ali agencijo, ki stran izdeluje: pripravimo popis strani, ki prinašajo denar, in mapo URL-jev, pred zagonom pregledamo testno stran, po zagonu pa spremljamo indeksiranje, uvrstitve in povpraševanja. Kaj še obsega naše delo, opisujemo na strani <a href="/optimizacija-spletnih-strani/">optimizacija spletnih strani</a>.</p>
+<p>Obseg dela je odvisen od števila URL-jev, platforme in tega, ali se menja tudi domena. Začnemo z <a href="/#review">brezplačno SEO analizo</a>, v kateri vam povemo, kje so pri vaši prenovi največja tveganja in kaj bi pomoč pri SEO-ju obsegala.</p>
+
+<h2>Pogosta vprašanja o prenovi spletne strani</h2>
+<h3>Ali lahko prenova spletne strani poveča promet?</h3>
+<p>Da, če stara stran ni bila tehnično urejena, je bila počasna ali ni odgovarjala na to, kar ljudje iščejo. Nova struktura, hitrejše nalaganje in boljša besedila lahko izboljšajo uvrstitve. Pogoj je, da najprej ohranite tisto, kar že deluje: URL-je z obiskom, njihove preusmeritve in vsebino, ki se uvršča.</p>
+<h3>Kaj je največja napaka pri migraciji spletne strani?</h3>
+<p>Največja napaka so manjkajoče preusmeritve 301. Brez njih vsi stari URL-ji vračajo napako 404, Google jih postopoma odstrani iz indeksa, povratne povezave pa vodijo v prazno. Druga najpogostejša napaka je oznaka noindex, ki s testne strani ostane na novi strani in Googlu prepove indeksiranje.</p>
+<h3>Ali potrebujem SEO strokovnjaka pred ali po prenovi?</h3>
+<p>Pred prenovo. Ko sta struktura in seznam URL-jev določena, so popravki hitri in poceni, ko je stran že na spletu, pa izgubljate obisk vsak dan, dokler napake ne odpravite. Po zagonu je strokovnjak koristen še nekaj tednov za spremljanje indeksiranja in napak v Search Consolu.</p>
+<h3>Kako dolgo po migraciji lahko pričakujem nihanja?</h3>
+<p>Po Googlovih navedbah se pri srednje veliki strani večina URL-jev v indeksu premakne v nekaj tednih, pri velikih straneh traja dlje. Uvrstitve v tem času nihajo. Če obisk po dveh do treh mesecih ostaja precej nižji, nekaj ni v redu, najpogosteje preusmeritve ali vsebina.</p>
+<h3>Zakaj je obisk spletne strani po prenovi padel?</h3>
+<p>Najpogostejši razlogi so manjkajoče ali napačne preusmeritve, izbrisane strani z obiskom, oznaka noindex ali blokada v robots.txt, krajša besedila in počasnejša stran. V Search Consolu primerjajte klike po straneh pred prenovo in po njej, da vidite, katere strani so izgubile obisk.</p>
+<h3>Ali moram pred prenovo narediti varnostno kopijo WordPressa?</h3>
+<p>Da, vedno. Kopija mora vsebovati datoteke in bazo podatkov, naredite jo z vtičnikom za varnostne kopije ali pri ponudniku gostovanja. Shranite jo zunaj strežnika, na katerem teče stran. Kaj še uredite v WordPressu, da se stran dobro uvršča, opisujemo v vodiču <a href="/wordpress-seo/">SEO za WordPress</a>.</p>
+
+<h2>Prenova brez izgube pozicij se začne pred zagonom</h2>
+<p>Pozicije ob prenovi ohranite s tremi stvarmi: popisom strani, ki prinašajo obisk in povpraševanja, mapo URL-jev s preusmeritvami 301 in skrbnim pregledom na dan zagona. Nihanju se ne izognete povsem, trajnemu padcu pa skoraj vedno.</p>
+<p>Uspeh prenove izmerite tri mesece po zagonu: nova stran mora prinašati vsaj toliko povpraševanj in naročil kot stara. Če prenovo načrtujete, nam pošljite svojo stran, preden razvijalec začne. Pogledali jo bomo in vam pošteno povedali, kaj morate zaščititi.</p>
