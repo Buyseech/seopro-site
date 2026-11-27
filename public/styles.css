@@ -709,3 +709,23 @@ a:hover{color:var(--accent-hover)}
 .lp-prose ol{margin:0 0 16px;padding-left:22px}
 .lp-prose ol li{margin-bottom:12px}
 .lp-prose a:not(.btn){color:var(--accent)}
+
+/* Blog articles: white reading card (option A, Igor 27 Nov 2026) */
+.sr-article .legal-in{background:#fff;border-radius:10px;padding:48px 56px 56px;color:#1f2533}
+.sr-article .eyebrow,.sr-article .eyebrow a{color:#9a6c00}
+.sr-article h1.h2,.sr-body h2,.sr-related h2{color:#0b1330}
+.sr-article h1.h2 span,.sr-body h2 span,.sr-related h2 span{color:#0b1330}
+.sr-article .sr-meta,.sr-article .sr-meta a{color:#5b6479}
+.sr-body p,.sr-body li{color:#1f2533}
+.sr-body strong{color:#000}
+.sr-body h3{color:#9a6c00}
+.sr-body a:not(.btn){color:#1a56db;text-decoration:underline;text-underline-offset:2px}
+.sr-body blockquote p{color:#0b1330}
+.sr-body th{color:#5b6479;border-bottom-color:#ffc107}
+.sr-body td{color:#1f2533;border-bottom-color:#e3e6ee}
+.sr-body td:first-child{color:#000}
+.sr-article .sr-sign{color:#0b1330}
+.sr-article .sr-archive{background:#f3f5fa;border-color:#e3e6ee;color:#3b4252}
+.sr-article .sr-cta h2,.sr-article .sr-cta h2 span{color:#fff}.sr-article .sr-cta h2 span{color:var(--accent)}
+@media (max-width:700px){.sr-article .legal-in{padding:28px 20px 36px;border-radius:0}.sr-article{padding-top:0}}
+.sr-article .sr-cta p{color:var(--soft)}
