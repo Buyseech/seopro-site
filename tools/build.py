@@ -103,7 +103,7 @@ def sl_date(iso):
 
 def load_posts():
     posts = []
-    for f in sorted(POSTS.glob("*.html")):
+    for f in sorted(POSTS.glob("*.html")) if POSTS.exists() else []:
         text = f.read_text(encoding="utf-8")
         meta, body = {}, []
         lines = text.split("\n")
@@ -186,6 +186,12 @@ def build_post(p, posts):
 
 def build_blog(posts):
     cards = "\n      ".join(card(p, "h2") for p in posts)
+    if posts:
+        cards_html = '<div class="sr-posts">\n      ' + cards + '\n    </div>'
+        h1, sub = 'Nasveti o SEO, <span>brez ovinkov.</span>', 'Zapisi Igorja Bajsića o optimizaciji spletnih strani za slovenski trg.'
+    else:
+        cards_html = '<p class="sr-soon"><a class="btn" href="/#review">Povečajmo vaše prihodke <span aria-hidden="true">&rarr;</span></a></p>'
+        h1, sub = 'Blog <span>prihaja kmalu.</span>', 'Pripravljamo nove zapise o SEO, ki prinaša povpraševanja, naročila in prihodke. Do takrat nam pišite.'
     page = head("SEOPRO Blog: nasveti o optimizaciji spletnih strani", "Zapisi o SEO in optimizaciji spletnih strani: povratne povezave, on-site in off-site optimizacija, indeksiranje, varnost in lastništvo spletne strani.", SITE + "/blog/") + f'''
 <body>
 {header()}
@@ -194,12 +200,10 @@ def build_blog(posts):
   <div class="wrap">
     <div class="results-head">
       <p class="eyebrow">SEOPRO Blog</p>
-      <h1 class="h2">Nasveti o SEO, <span>brez ovinkov.</span></h1>
-      <p class="sp-sub">Zapisi Igorja Bajsića o optimizaciji spletnih strani za slovenski trg.</p>
+      <h1 class="h2">{h1}</h1>
+      <p class="sp-sub">{sub}</p>
     </div>
-    <div class="sr-posts">
-      {cards}
-    </div>
+    {cards_html}
   </div>
 </main>
 

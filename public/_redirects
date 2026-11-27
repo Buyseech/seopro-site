@@ -21,3 +21,25 @@
 /sitemap_index.xml /sitemap.xml 301
 /post-sitemap.xml /sitemap.xml 301
 /page-sitemap.xml /sitemap.xml 301
+
+# Old blog posts (removed for now; blog coming soon)
+/25-razlogov-zakaj-je-google-1 /blog/ 301
+/25-razlogov-zakaj-je-google-1/ /blog/ 301
+/hekerji-napadli-tudi-vaso-spletno-stran /blog/ 301
+/hekerji-napadli-tudi-vaso-spletno-stran/ /blog/ 301
+/http-ali-https-zakaj-bo-ssl-certifikat-nujno-zlo-za-vse-spletne-strani /blog/ 301
+/http-ali-https-zakaj-bo-ssl-certifikat-nujno-zlo-za-vse-spletne-strani/ /blog/ 301
+/je-vasa-spletna-stran-zares-vasa /blog/ 301
+/je-vasa-spletna-stran-zares-vasa/ /blog/ 301
+/kaj-je-backlink /blog/ 301
+/kaj-je-backlink/ /blog/ 301
+/kako-hitro-indexiramo-stran-v-googlu /blog/ 301
+/kako-hitro-indexiramo-stran-v-googlu/ /blog/ 301
+/off-site-optimizacija /blog/ 301
+/off-site-optimizacija/ /blog/ 301
+/on-site /blog/ 301
+/on-site/ /blog/ 301
+/seopro-si-praznuje-4-leta-delovanja /blog/ 301
+/seopro-si-praznuje-4-leta-delovanja/ /blog/ 301
+/vpliv-google-adwords-sprememb-na-seo /blog/ 301
+/vpliv-google-adwords-sprememb-na-seo/ /blog/ 301
