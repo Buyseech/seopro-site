@@ -647,3 +647,4 @@ a:hover{color:var(--accent-hover)}
 .mk-h{font-size:min(84px,14.3cqi)}
 .mk-h .l:not(.yl){color:inherit}
 .stat-n{white-space:nowrap}
+.review-copy .h2 .yl{line-height:1.1;margin-top:.12em}
