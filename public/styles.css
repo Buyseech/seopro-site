@@ -754,4 +754,12 @@ a:hover{color:var(--accent-hover)}
 main.lp{overflow-x:clip}
 /* Mobile: long section headings may wrap instead of running off the screen */
 h1,h2,h3{overflow-wrap:break-word}
-@media (max-width:900px){:is(.results-head,.speak-head,.people-head,.review-copy) .h2 :is(.ln,.yl),.h2 .ln,.h2 .yl{white-space:normal}}
+@media (max-width:900px){:is(.results-head,.speak-head,.people-head,.review-copy) .h2 :is(.ln,.yl),.h2 .ln,.h2 .yl,.statement h2 span,.case-title span,.fit,.mk-h .l,.h1-2l .l,.hero-sub.fit-3 span,.unscripted .h2{white-space:normal}}
+/* Ecommerce landing hero: title on two fitted lines, platforms as pills */
+.sp-hero h1.h1-shop{container-type:inline-size}
+.sp-hero h1.h1-shop .w{display:block;color:#fff}
+.sp-hero h1.h1-shop .w:first-child{font-size:min(20cqi,1em)}
+.sp-hero h1.h1-shop .w+.w{font-size:min(14.6cqi,1em)}
+.sp-hero h1.h1-shop .plat{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.sp-hero h1.h1-shop .plat i{font-style:normal;font-family:var(--cond);font-weight:700;font-size:clamp(18px,1.6vw,22px);letter-spacing:1px;line-height:1;color:var(--accent);border:2px solid var(--accent);border-radius:999px;padding:8px 14px}
+.sp-hero h1.h1-shop + .sp-hero-sub{margin-top:22px;font-size:min(6.1vw,44px)}
