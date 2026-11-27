@@ -1,0 +1,108 @@
+TITLE: Indeksiranje spletne strani: zakaj je ni v Googlu
+H1: Zakaj svoje strani ne najdemo v Googlu?
+DESC: Preverite, zakaj vaše strani ni v Googlu, kako vzrok najdete v Search Consolu in kako pospešite indeksiranje spletne strani.
+DATE: 2026-11-27
+NUM: 39
+CLUSTER: I Tehnični SEO in hitrost
+RELATED: sitemap, robots-txt, google-search-console
+ROBOTS: noindex, nofollow
+<p>Če vaše strani ni v Googlu, je skoraj vedno kriv eden od nekaj znanih vzrokov: Google za stran še ne ve, robots.txt mu prepoveduje dostop, na strani je oznaka noindex, za glavno različico je izbral drug URL ali pa vsebine ni ocenil kot dovolj vredne. Kateri vzrok velja za vas, v nekaj minutah vidite v orodju Google Search Console. Nova stran pride v indeks običajno v nekaj dneh do nekaj tednov.</p>
+<p>Vprašanje »zakaj Google ne najde moje spletne strani« se najpogosteje pojavi po zagonu nove strani, prenovi ali selitvi na novo domeno. Pogosta zmota je, da je stran na Googlu, takoj ko je objavljena. Indeksiranje spletne strani je ločen korak, ki ga Google opravi sam. Lahko ga pospešite, izsiliti pa ga ne morete.</p>
+<p>V članku boste izvedeli, kako najdete pravi vzrok, kaj popravite sami in zakaj vsaka manjkajoča stran pomeni izgubljena povpraševanja.</p>
+
+<h2>Kaj pomeni indeksiranje spletne strani</h2>
+<p>Indeksiranje spletne strani pomeni, da je Google stran obiskal, prebral njeno vsebino in jo shranil v svoj indeks, bazo strani, iz katere sestavlja rezultate iskanja. Strani, ki je ni v indeksu, Google ne pokaže nikomur, tudi če nekdo vpiše natanko njen naslov.</p>
+<p>Pot do rezultata ima tri korake, ki jih Google opisuje v vodiču <a href="https://developers.google.com/search/docs/fundamentals/how-search-works?hl=sl" target="_blank" rel="noopener">Kako deluje Iskanje Google</a>:</p>
+<ol>
+<li><strong>Pajkanje (crawl).</strong> Googlov spletni pajek Googlebot najde URL prek povezave ali zemljevida strani in ga obišče.</li>
+<li><strong>Indeksiranje.</strong> Google analizira besedilo in oznake ter se odloči, ali bo stran shranil.</li>
+<li><strong>Prikaz v rezultatih.</strong> Ob iskanju Google iz indeksa izbere strani, ki najbolje odgovorijo na poizvedbo.</li>
+</ol>
+<p>Google ne indeksira vsega, kar najde. Ko iščete vzrok, zato najprej ugotovite, na katerem od treh korakov se je ustavilo.</p>
+
+<h2>Najpogostejši razlogi, da stran ni v Googlu</h2>
+<p>Vzrok najhitreje najdete z orodjem za pregled URL-ja v Search Consolu: vpišete naslov strani in Google pove, ali je stran v indeksu, in če ni, zakaj. Če orodja še nimate, začnite z vodičem <a href="/google-search-console/">kako uporabljati Google Search Console</a>. Spodnja tabela je preprosto drevo odločanja.</p>
+<table>
+<thead><tr><th>Kaj pokaže Search Console</th><th>Kaj to pomeni</th><th>Kaj naredite</th></tr></thead>
+<tbody>
+<tr><td>URL ni znan Googlu</td><td>Google strani še ni odkril</td><td>Dodajte jo v sitemap in nanjo povežite</td></tr>
+<tr><td>Blokirano z robots.txt</td><td>Pajek do strani ne sme</td><td>Odstranite pravilo Disallow za ta URL</td></tr>
+<tr><td>Izključeno z oznako noindex</td><td>Stran sama prosi, naj je Google ne indeksira</td><td>Odstranite noindex v kodi ali vtičniku</td></tr>
+<tr><td>Google je izbral drug kanonični URL</td><td>Za glavno različico ima drugo stran</td><td>Uskladite canonical, povezave in sitemap</td></tr>
+<tr><td>Odkrito, trenutno ni indeksirano</td><td>Google za URL ve, a ga še ni obiskal</td><td>Okrepite notranje povezave, preverite strežnik</td></tr>
+<tr><td>Preiskano, trenutno ni indeksirano</td><td>Google je stran prebral in je ni shranil</td><td>Izboljšajte vsebino ali jo združite z drugo</td></tr>
+<tr><td>Ni najdeno (404)</td><td>Stran ne obstaja</td><td>Vrnite vsebino ali preusmerite s 301</td></tr>
+</tbody>
+</table>
+<p>Statuse vseh strani hkrati vidite v <a href="https://support.google.com/webmasters/answer/7440203?hl=sl" target="_blank" rel="noopener">poročilu o indeksiranju strani</a>. Filtri, iskalni rezultati na strani in podvojene različice naj ostanejo zunaj. Skrbeti vas mora, ko med neindeksiranimi najdete strani, ki prodajajo: storitve, kategorije, izdelke in kontakt.</p>
+
+<h2>Kako preveriti robots.txt, sitemap in noindex</h2>
+<p>Te tri nastavitve so vzrok za večino manjkajočih strani, posebej po prenovi, ko na novi strani ostanejo nastavitve iz testnega okolja. Preverite jih po vrsti:</p>
+<ol>
+<li><strong>robots.txt.</strong> Odprite naslov vasadomena.si/robots.txt. Vrstica »Disallow: /« pod »User-agent: *« pajkom prepove dostop do celotne strani. Več v vodiču <a href="/robots-txt/">robots.txt in njegov vpliv na indeksiranje</a>.</li>
+<li><strong>Noindex.</strong> V izvorni kodi strani poiščite besedo »noindex«. V WordPressu preverite še nastavitve branja, kjer je možnost, ki iskalnikom odsvetuje indeksiranje, in nastavitve vtičnika Yoast ali Rank Math.</li>
+<li><strong>Zemljevid strani (sitemap).</strong> To je datoteka s seznamom URL-jev, ki jih želite imeti v Googlu. V Search Consolu preverite, ali je oddan, kdaj ga je Google zadnjič prebral in ali v njem ni preusmerjenih naslovov. Več v članku <a href="/sitemap/">kaj je sitemap in zakaj ga potrebuje spletna stran</a>.</li>
+<li><strong>Preizkus v živo.</strong> Na koncu naslov preizkusite v orodju za pregled URL-ja. Pokaže, ali Google stran lahko pridobi in indeksira.</li>
+</ol>
+<p>Pogosta past: stran, ki jo želite odstraniti iz Googla, blokirate v robots.txt in ji dodate še noindex. Ker pajek do strani ne sme, oznake nikoli ne prebere in URL lahko v rezultatih ostane. Google v navodilih za <a href="https://developers.google.com/search/docs/crawling-indexing/block-indexing?hl=sl" target="_blank" rel="noopener">blokiranje indeksiranja z oznako noindex</a> zato svetuje, da stran z noindex pustite pajku dostopno.</p>
+
+<h2>Canonical, 404 in 301 preusmeritve pri indeksiranju</h2>
+<p>Ti signali Googlu povedo, katero različico strani naj hrani. Če so nastavljeni narobe, iz indeksa izpade prav stran, ki jo želite imeti v njem.</p>
+<ul>
+<li><strong>Kanonična oznaka (canonical)</strong> pove, kateri URL je glavna različica, kadar ima ista vsebina več naslovov. Pogosta napaka: vse podstrani kažejo canonical na domačo stran, zato jih Google obravnava kot dvojnike. Več v članku <a href="/canonical-url/">canonical URL in podvojena vsebina</a>.</li>
+<li><strong>Napaka 404</strong> pomeni, da stran ne obstaja, zato jo Google sčasoma odstrani iz indeksa. Preverite, da med napakami 404 ni strani, ki so izginile po pomoti. Več v članku <a href="/404-napaka/">404 napaka in kako jo odpraviti</a>.</li>
+<li><strong>Preusmeritev 301</strong> trajno pošlje obiskovalce in Google s starega URL-ja na novega. Pri prenovi brez preusmeritev nove strani začnejo od začetka. Pravila so v članku <a href="/301-preusmeritev/">301 preusmeritev brez škode za SEO</a>.</li>
+</ul>
+<p>Kanonično oznako Google upošteva kot namig. Če notranje povezave in sitemap kažejo na drug URL, pogosto izbere svojega, zato vse signale uskladite.</p>
+
+<h2>Kako pospešiti crawl in prvo indeksiranje</h2>
+<p>Prvo indeksiranje lahko pospešite, za določen dan pa ga ne morete naročiti. Google navaja, da pajkanje lahko traja od nekaj dni do nekaj tednov, in v vodiču <a href="https://developers.google.com/search/docs/crawling-indexing/ask-google-to-recrawl?hl=sl" target="_blank" rel="noopener">kako prositi Google za ponovno pajkanje</a> opisuje dva načina: zahtevo prek pregleda URL-ja za posamezne strani in sitemap za večje število strani.</p>
+<ul>
+<li>Za nove pomembne strani v pregledu URL-ja zahtevajte indeksiranje. Število zahtev je omejeno in ponavljanje ne pomaga.</li>
+<li>Novo stran povežite iz menija ali sorodnih člankov. Stran brez notranjih povezav Google najde pozneje.</li>
+<li>V sitemapu naj bodo samo kanonične strani s kodo 200 in brez oznake noindex.</li>
+<li>Poskrbite za stabilen strežnik. Ob pogostih napakah 5xx in počasnih odzivih Google pajka redkeje.</li>
+</ul>
+<p>Proračun za pajkanje (crawl budget) je tema predvsem pri trgovinah z več deset tisoč URL-ji, pri manjši predstavitveni strani pa skoraj nikoli ni vzrok za težave.</p>
+
+<h2>Kaj neindeksirana stran pomeni za vaša povpraševanja</h2>
+<p>Stran, ki je ni v indeksu, ima nič prikazov, nič klikov in nič povpraševanj. Veriga do prodaje gre tako: kupec vpiše iskanje, Google pokaže vašo stran, kupec klikne, prebere ponudbo in pošlje povpraševanje ali naroči. Pri indeksiranju se pretrga na prvem členu, pogosto prav pri straneh, ki prinašajo denar. Na majhnem slovenskem trgu ima donosna ključna beseda morda le 30 iskanj na mesec. Če iščejo ljudje, ki želijo kupiti, je vsako izgubljeno povpraševanje drago.</p>
+<p>Zato pri preverjanju indeksiranja spletne strani ne začnite s skupnim številom indeksiranih strani. Začnite s stranmi, ki prodajajo: storitve, glavne kategorije, najbolj prodajani izdelki, kontakt in nove strani po prenovi.</p>
+<p>Hitro ponovno pajkanje ima tudi merljiv učinek. Pri mednarodni stranki s finančnimi storitvami smo brez novih strani in brez povezav optimizirali in ponovno objavili vse obstoječe članke. Organske seje ob ponedeljkih in torkih so v primerjavi s tremi tedni prej zrasle za 56 % do 94 %, in to že v dveh dneh.</p>
+<p><a class="btn" href="/#review">Zahtevajte brezplačno SEO analizo <span aria-hidden="true">&rarr;</span></a></p>
+
+<h2>Kdaj je težava v tehniki in kdaj v vsebini</h2>
+<p>Če Google do strani ne more ali mu nastavitve to prepovedujejo, je težava tehnična. Če jo je prebral in je ni shranil, je težava skoraj vedno v vsebini.</p>
+<table>
+<thead><tr><th>Znak</th><th>Verjetni vzrok</th><th>Prvi korak</th></tr></thead>
+<tbody>
+<tr><td>Stran ni znana ali je blokirana</td><td>Tehnika</td><td>Preverite robots.txt, sitemap in povezave</td></tr>
+<tr><td>Noindex ali napačen canonical</td><td>Tehnika</td><td>Popravite nastavitve teme ali vtičnika</td></tr>
+<tr><td>Preiskano, trenutno ni indeksirano</td><td>Vsebina</td><td>Dodajte vsebino, ki je drugje ni</td></tr>
+<tr><td>Več skoraj enakih strani</td><td>Vsebina</td><td>Združite jih v eno močnejšo stran</td></tr>
+</tbody>
+</table>
+<p>Pri vsebinskih vzrokih pomaga besedilo, ki odgovori na vprašanja kupca: kaj vpliva na ceno, kakšni so roki, kako poteka postopek. Kako se tehničnega dela lotiti sistematično, opisuje vodič <a href="/tehnicni-seo/">tehnični SEO in njegov vpliv na uvrstitve</a>.</p>
+
+<h2>Kdaj nas kontaktirati za brezplačno SEO analizo</h2>
+<p>Pišite nam, ko ste preverili osnove iz tega članka, pomembne strani pa še vedno manjkajo v Googlu ali iz njega izpadajo. To se najpogosteje zgodi po prenovi ali selitvi, pri trgovinah, kjer filtri množijo neindeksirane URL-je, ali ko Google vztrajno izbira napačen kanonični URL.</p>
+<p>Ne brišite strani, ker »ne delujejo«, in ne kupujte paketov povezav, ki naj bi pospešili Google. Vzroka to ne odpravi, povezave pa lahko naredijo dodatno škodo.</p>
+<p>V brezplačni SEO analizi pri SEOPRO pregledamo indeksiranje, tehnično stanje in strani, ki bi vam morale prinašati povpraševanja, ter vam naravnost povemo, ali in kaj lahko premaknemo. Za hitro preverbo indeksiranja nekaj URL-jev jih pošljite na <a href="mailto:igor@seopro.si">igor@seopro.si</a>. Kaj vključuje celotna <a href="/optimizacija-spletnih-strani/">SEO optimizacija spletnih strani</a>, opisujemo na strani storitve.</p>
+
+<h2>Pogosta vprašanja o indeksiranju spletne strani</h2>
+<h3>Kako dolgo Google potrebuje, da indeksira novo stran?</h3>
+<p>Običajno od nekaj dni do nekaj tednov, kar navaja tudi Google. Hitreje gre pri straneh, ki jih Google redno obiskuje, imajo notranje povezave in so v sitemapu. Zahteva za indeksiranje prek pregleda URL-ja v Search Consolu postopek pospeši, datuma pa ne zagotovi.</p>
+<h3>Ali sitemap sam po sebi zagotovi indeksiranje?</h3>
+<p>Ne. Sitemap Googlu pove, katere strani obstajajo in katere so vam pomembne, odločitev o indeksiranju pa ostane njegova. Stran s tanko vsebino, oznako noindex ali napačnim canonicalom ostane zunaj, tudi če je v sitemapu.</p>
+<h3>Kako dobim sitemap za svojo spletno stran?</h3>
+<p>Večina sistemov ga ustvari sama. WordPress ima vgrajen sitemap na naslovu /wp-sitemap.xml, vtičnika Yoast in Rank Math ga ustvarita na /sitemap_index.xml, Shopify pa na /sitemap.xml. Naslov nato oddajte v Search Consolu v poročilu o zemljevidih strani. Koristi tudi majhni strani, saj tam vidite, koliko oddanih strani je indeksiranih.</p>
+<h3>Kaj pomeni, da je stran preiskana, a trenutno ni indeksirana?</h3>
+<p>Google je stran obiskal in prebral, a se je odločil, da je vsaj zaenkrat ne shrani v indeks. Najpogostejši vzroki so tanka ali podvojena vsebina, stran brez notranjih povezav in nizka kakovost celotnega spletišča. Izboljšajte vsebino, povežite stran z drugih strani in po spremembi zahtevajte ponovno indeksiranje.</p>
+<h3>Ali lahko canonical prepreči indeksiranje?</h3>
+<p>Da. Če kanonična oznaka kaže na drug URL, Google praviloma indeksira tistega, vašo stran pa obravnava kot dvojnik. To je pravilno za filtre in parametre, za samostojne strani storitev ali izdelkov pa ne. Preverite, da ima vsaka pomembna stran canonical sama nase.</p>
+<h3>Ali hitrost strani vpliva na indeksiranje?</h3>
+<p>Posredno. Pri počasnem strežniku in pogostih napakah Google pajka redkeje, zato na večjih straneh nove strani pridejo na vrsto pozneje. Na uvrstitve hitrost vpliva prek meritev uporabniške izkušnje Core Web Vitals. Kako jo izmerite s PageSpeed Insights, razlagamo v članku o <a href="/hitrost-spletne-strani/">hitrosti spletne strani</a>.</p>
+
+<h2>Stran, ki je Google ne vidi, ne more prodajati</h2>
+<p>Indeksiranje spletne strani je prvi pogoj za vse, kar SEO lahko prinese. Ko stran manjka v Googlu, je vzrok skoraj vedno eden od opisanih, Search Console pa vam pove, kateri.</p>
+<p>Najprej preverite strani, ki prinašajo povpraševanja in naročila. Če želite, da jih namesto vas pogleda nekdo z več kot 600 izpeljanimi projekti, nam pošljite svojo stran v <a href="/#review">brezplačno SEO analizo</a>. Povedali vam bomo, kaj vas drži zunaj Googla in kaj se splača popraviti najprej.</p>
