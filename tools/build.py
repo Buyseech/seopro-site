@@ -15,11 +15,11 @@ import html, pathlib, re
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PUB = ROOT / "public"
 POSTS = ROOT / "content" / "posts"
-SITE = "https://seopro.si"
+SITE = "https://www.seopro.si"
 MONTHS = ["januar", "februar", "marec", "april", "maj", "junij", "julij", "avgust", "september", "oktober", "november", "december"]
 EMAIL = "igor@seopro.si"
 # Staging: every page is noindex, nofollow. Set to False (and remove the X-Robots-Tag line in public/_headers) before seopro.si goes live.
-STAGING = True
+STAGING = False
 STAGING_ROBOTS = "noindex, nofollow"
 
 ICON_MAIL = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>'

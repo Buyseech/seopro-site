@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://seopro.si/sitemap.xml
+Sitemap: https://www.seopro.si/sitemap.xml
