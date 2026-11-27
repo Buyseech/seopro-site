@@ -1,0 +1,111 @@
+TITLE: 301 preusmeritev: pravila in napake
+H1: 301 preusmeritev: kdaj jo uporabiti in kako ne škoditi SEO
+DESC: Kdaj uporabiti 301 preusmeritev, kdaj raje 302 ali 404, kako preverite verige preusmeritev in kaj preverite po selitvi, da ne izgubite prometa.
+DATE: 2026-11-27
+NUM: 42
+CLUSTER: I Tehnični SEO in hitrost
+RELATED: prenova-spletne-strani-seo, 404-napaka, tehnicni-seo
+ROBOTS: noindex, nofollow
+<p>301 preusmeritev uporabite, kadar se je naslov strani trajno spremenil: obiskovalca in Google pošlje s starega URL-ja na novega, Google pa novi naslov sčasoma prevzame v rezultate iskanja skupaj z uvrstitvami stare strani. Če je sprememba začasna, uporabite 302. Če vsebine ni več in nima ustrezne zamenjave, je pošten odgovor 404 ali 410.</p>
+<p>Največ prometa podjetja izgubijo pri prenovi strani ali selitvi na novo domeno, ko preusmeritve manjkajo ali vse kažejo na domačo stran. Pozicije, ki ste jih gradili leta, lahko izginejo v nekaj tednih, z njimi pa povpraševanja.</p>
+<p>V članku boste izvedeli, kdaj je 301 redirect prava izbira, kdaj ni, katere napake se ponavljajo in kako po selitvi preverite, da preusmeritve res delujejo in še vedno prinašajo stranke.</p>
+
+<h2>Kaj je 301 preusmeritev</h2>
+<p>Preusmeritev 301 (301 redirect) je odgovor strežnika s statusno kodo HTTP 301 (Moved Permanently), ki brskalniku in spletnemu pajku (crawler) sporoči, da se je stran trajno preselila na drug naslov. Brskalnik obiskovalca samodejno odpelje na novi URL, zato obiskovalec spremembe skoraj ne opazi.</p>
+<p>Za Google je trajna preusmeritev močan signal, da je ciljni URL kanonični, torej tisti, ki ga želite videti v rezultatih. Kanonična oznaka (canonical) je podoben signal v kodi strani, več o njej preberete v članku o <a href="/canonical-url/">kanoničnem URL-ju in podvojeni vsebini</a>. Google v dokumentaciji <a href="https://developers.google.com/search/docs/crawling-indexing/301-redirects?hl=sl" target="_blank" rel="noopener">o preusmeritvah in Iskanju Google</a> opisuje vse vrste preusmeritev in kako jih obravnava.</p>
+<p>Na kratko o sorodnih kodah: 302 in 307 sta začasni preusmeritvi, 308 je trajna kot 301. Preusmeritev uredite na strežniku (datoteka .htaccess na Apacheju, nastavitve na Nginxu), v sistemu za urejanje vsebin, na primer z vtičnikom v WordPressu, ali v nastavitvah ponudnika, kot je Cloudflare.</p>
+
+<h2>Kdaj uporabiti trajno preusmeritev</h2>
+<p>301 uporabite vsakič, ko stara stran ne bo več živela na starem naslovu, njena vsebina pa ima jasnega naslednika. Najpogostejši primeri so v spodnji tabeli.</p>
+<table>
+<thead><tr><th>Situacija</th><th>Prava rešitev</th><th>Kam preusmerite</th></tr></thead>
+<tbody>
+<tr><td>Selitev na novo domeno</td><td>301 za vsak URL</td><td>Na enako stran na novi domeni</td></tr>
+<tr><td>Prehod s HTTP na HTTPS</td><td>301 na ravni strežnika</td><td>Na HTTPS različico istega URL-ja</td></tr>
+<tr><td>Spremenjen slug ali struktura URL-jev</td><td>301</td><td>Na novi URL iste strani</td></tr>
+<tr><td>Združitev dveh podobnih člankov</td><td>301 s šibkejšega</td><td>Na članek, ki ostane</td></tr>
+<tr><td>Izdelek trajno umaknjen, obstaja naslednik</td><td>301</td><td>Na nasledniški izdelek ali kategorijo</td></tr>
+<tr><td>Izdelek začasno ni na zalogi</td><td>Brez preusmeritve</td><td>Stran ostane, z oznako zaloge</td></tr>
+<tr><td>Vsebina izbrisana brez zamenjave</td><td>404 ali 410</td><td>Nikamor</td></tr>
+<tr><td>Kratka akcija ali vzdrževanje</td><td>302 ali 307</td><td>Na začasno stran</td></tr>
+</tbody>
+</table>
+<p>Sem sodi tudi manj znan primer: če je vaša stran dostopna tudi prek IP naslova strežnika ali prek različice z »www« in brez nje, preusmeritev IP naslova in odvečne različice s 301 na glavno domeno prepreči, da bi Google isto vsebino našel na več naslovih. Prehod na HTTPS je samostojna tema, ki jo podrobneje razlagamo v članku <a href="/http-ali-https-zakaj-bo-ssl-certifikat-nujno-zlo-za-vse-spletne-strani/">HTTPS in SSL certifikat za SEO</a>.</p>
+
+<h2>Kdaj 301 ni prava rešitev</h2>
+<p>301 ni pravo orodje, kadar sprememba ni trajna ali kadar stara stran nima vsebinskega naslednika. Takrat Googlu pošlje napačen signal.</p>
+<ul>
+<li><strong>Začasne spremembe.</strong> Sezonska ponudba, A/B test ali vzdrževanje strani zahtevajo 302 ali 307, sicer bo Google začasni URL obravnaval kot novega lastnika uvrstitev.</li>
+<li><strong>Izbrisana vsebina brez zamenjave.</strong> Preusmeritev na domačo stran Google pogosto obravnava kot mehko napako 404 (soft 404), obiskovalec pa ne najde, kar je iskal. Kako pravilno ravnati z manjkajočimi stranmi, piše v članku <a href="/404-napaka/">404 napaka: kaj pomeni in kako jo odpraviti</a>.</li>
+<li><strong>Podvojene strani, ki morajo ostati dostopne.</strong> Filtri v spletni trgovini ali različice za tisk naj ostanejo dosegljive uporabnikom, zato je tam boljša kanonična oznaka.</li>
+<li><strong>Notranje povezave.</strong> Če lahko povezavo v meniju ali besedilu popravite, jo popravite. Preusmeritev je namenjena zunanjim povezavam in zaznamkom, ki jih sami ne morete spremeniti.</li>
+</ul>
+
+<h2>Kako 301 preusmeritev vpliva na SEO in hitrost</h2>
+<p>Pravilna trajna preusmeritev na ustrezno stran ohrani večino tega, kar je stara stran zgradila: uvrstitve, povratne povezave (backlinks) z drugih strani in zgodovino. Google ob trajni preusmeritvi signale stare strani pripiše novi, vendar to traja, saj mora oba URL-ja znova obiskati in obdelati.</p>
+<p>Preusmeritev SEO moč prenese samo, če je cilj vsebinsko enakovreden. Članek o cenah preusmerjen na domačo stran ali kategorija čevljev preusmerjena na kategorijo torb ne bo obdržal svojih pozicij, ker nova stran ne odgovori na isto iskanje.</p>
+<p>Na hitrost vpliva vsak dodatni skok. Ena preusmeritev doda en krog med brskalnikom in strežnikom. Veriga treh ali štirih preusmeritev (stari URL, HTTP, HTTPS, nov slug) upočasni prvi prikaz strani, Googlov pajek pa jim sledi le do omejenega števila skokov. Zato vsak stari URL preusmerite naravnost na končni cilj. Širše o hitrosti in Core Web Vitals, Googlovih merilih izkušnje pri nalaganju strani, pišemo v članku o <a href="/hitrost-spletne-strani/">hitrosti spletne strani in PageSpeedu</a>.</p>
+
+<h2>Kaj preusmeritve pomenijo za vaša povpraševanja</h2>
+<p>Preusmeritve odločajo o tem, ali obiskovalci, ki so vas do zdaj našli v Googlu, po prenovi še vedno pridejo do vas. Veriga je preprosta: iskanje pripelje na stran, stran prepriča, obiskovalec pošlje povpraševanje ali kupi. Ko stari URL namesto na pravo stran vrne napako, se veriga pretrga že na prvem členu.</p>
+<p>Na majhnem slovenskem trgu ima donosna ključna beseda pogosto le nekaj deset iskanj na mesec, vendar jih iščejo ljudje, ki so pripravljeni kupiti. Če stran storitve ali najbolje prodajana kategorija izgubi pozicijo, ker je ob selitvi ostala brez preusmeritve, tega ne nadomesti noben nov blog članek.</p>
+<p>Veriga se najpogosteje pretrga na treh mestih:</p>
+<ul>
+<li>pri straneh z največ povpraševanji, ki jih nihče ni posebej preveril,</li>
+<li>pri straneh z zunanjimi povezavami, ki zdaj kažejo na napako,</li>
+<li>pri obrazcih in klicnih gumbih, ki na novi strani ne beležijo več konverzij v Google Analytics 4.</li>
+</ul>
+<p>Pred prenovo zato pripravite seznam strani, ki prinašajo povpraševanja in naročila, ne samo obisk. Za vsako od njih posebej določite cilj preusmeritve in ga po objavi preverite. Pri SEOPRO pred selitvijo pregledamo prav te strani in povemo, kje je tveganje največje.</p>
+<p><a class="btn" href="/#review">Zahtevajte brezplačno analizo migracije in preusmeritev <span aria-hidden="true">&rarr;</span></a></p>
+
+<h2>Najpogostejše napake pri preusmeritvah</h2>
+<p>Večina težav nastane zaradi napačnega cilja ali pozabljenih URL-jev. Sama koda je redko kriva.</p>
+<ol>
+<li><strong>Vse na domačo stran.</strong> Hitra rešitev, ki izbriše uvrstitve podstrani. Vsak URL preusmerite na najbližjo vsebinsko ustrezno stran.</li>
+<li><strong>Verige in zanke.</strong> A kaže na B, B na C, C nazaj na A. Zanka stran popolnoma onemogoči.</li>
+<li><strong>302 namesto 301.</strong> Nekateri vtičniki in gostitelji privzeto nastavijo začasno preusmeritev.</li>
+<li><strong>Pozabljene različice URL-jev.</strong> Stari parametri, velike črke, URL-ji s poševnico na koncu in brez nje, slike in PDF dokumenti.</li>
+<li><strong>Preusmeritve odstranjene prezgodaj.</strong> Po nekaj mesecih jih ob menjavi strežnika ali vtičnika nihče ne prenese.</li>
+<li><strong>Stari URL-ji ostanejo v zemljevidu strani.</strong> Sitemap mora vsebovati le končne URL-je, kot razlaga članek <a href="/sitemap/">kaj je sitemap</a>.</li>
+</ol>
+
+<h2>Kako preveriti delovanje preusmeritev</h2>
+<p>Preusmeritev preverite tako, da pogledate statusno kodo in končni cilj. Brskalnik pokaže samo stran, na kateri pristanete, vrste preusmeritve in števila skokov pa ne.</p>
+<ul>
+<li><strong>Posamezen URL:</strong> v brskalniku odprite orodja za razvijalce, zavihek Network, in poglejte statusno kodo prve zahteve. Isto pokaže ukaz curl -I v terminalu.</li>
+<li><strong>Celoten seznam:</strong> seznam starih URL-jev naložite v Screaming Frog v načinu List in preverite statusne kode ter verige preusmeritev.</li>
+<li><strong>Google Search Console:</strong> poročilo o indeksiranju strani pokaže »Stran s preusmeritvijo« in napake 404, pregled URL-ja pa, kateri URL je Google izbral za kanoničnega. Več o orodju v vodiču za <a href="/google-search-console/">Google Search Console</a>.</li>
+<li><strong>Analitika:</strong> v Google Analytics 4 primerjajte organski promet in ključne dogodke na najpomembnejših straneh pred selitvijo in po njej.</li>
+</ul>
+
+<h2>Kontrolni seznam po migraciji</h2>
+<p>Google v vodiču za <a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes?hl=sl" target="_blank" rel="noopener">selitev spletnega mesta s spremembami URL-jev</a> priporoča podoben postopek.</p>
+<ol>
+<li>Pred selitvijo izvozite vse obstoječe URL-je iz Search Consolea, analitike, zemljevida strani in orodja za pajkanje.</li>
+<li>Pripravite tabelo preslikav: stari URL, novi URL, vrsta preusmeritve.</li>
+<li>Po objavi preverite vse stare URL-je: vsak vrne 301 in v enem skoku pride na stran s statusom 200.</li>
+<li>Popravite notranje povezave, kanonične oznake in hreflang, da kažejo na nove URL-je.</li>
+<li>Objavite nov zemljevid strani in ga oddajte v Search Console.</li>
+<li>Pri selitvi domene dodajte novo lastnino v Search Console in uporabite <a href="https://support.google.com/webmasters/answer/9370220?hl=sl" target="_blank" rel="noopener">orodje za spremembo naslova</a>.</li>
+<li>Preverite, da obrazci, klicni gumbi in nakupna pot beležijo konverzije.</li>
+<li>Prve štiri tedne vsak teden spremljajte napake 404, indeksiranje in povpraševanja na ključnih straneh.</li>
+</ol>
+<p>Kako se lotiti prenove kot celote, od načrta do objave, opisujemo v članku <a href="/prenova-spletne-strani-seo/">SEO pri prenovi spletne strani</a>. Preusmeritve so en del širšega področja, ki ga pokriva <a href="/tehnicni-seo/">tehnični SEO</a>.</p>
+
+<h2>Pogosta vprašanja o 301 preusmeritvah</h2>
+<h3>Ali 301 preusmeritev vedno prenese SEO moč?</h3>
+<p>Ne vedno. Trajna preusmeritev prenese signale stare strani le, če je nova stran vsebinsko enakovredna in odgovarja na isto iskanje. Preusmeritev na nepovezano stran ali na domačo stran Google lahko obravnava kot mehko napako 404, kar pomeni, da uvrstitve stare strani izgubite. Najbolj varno je preusmeriti vsak URL na njegovega neposrednega naslednika.</p>
+<h3>Koliko časa naj ostane stara URL preusmerjena?</h3>
+<p>Google priporoča, da preusmeritve ob selitvi ohranite vsaj eno leto, v praksi pa je najbolje, da jih ne odstranite nikoli. Zunanje povezave, zaznamki in stara e-poštna sporočila na stare naslove kažejo še leta.</p>
+<h3>Ali je bolje preusmeriti na najbližjo ustrezno stran ali na domačo stran?</h3>
+<p>Na najbližjo ustrezno stran. Obiskovalec, ki je iskal določeno storitev ali izdelek, na domači strani ne najde odgovora in odide, Google pa tako preusmeritev pogosto obravnava kot mehko napako 404. Če ustrezne strani res ni, je bolje vrniti 404 ali 410 z jasno potjo naprej, na primer povezavami na glavne kategorije.</p>
+<h3>Kako preverim verigo preusmeritev?</h3>
+<p>Verigo preverite z orodjem, ki pokaže vse skoke, na primer z ukazom curl -IL, z zavihkom Network v brskalniku ali s Screaming Frogom, ki ima posebno poročilo o verigah. Vsak stari URL naj v enem skoku pripelje na končno stran s statusom 200. Daljše verige skrajšajte tako, da prvi URL preusmerite naravnost na cilj.</p>
+<h3>Ali je 302 kdaj boljša od 301?</h3>
+<p>Da, kadar je sprememba res začasna: med vzdrževanjem strani, pri kratki akciji ali pri testu nove različice strani. Pri 302 Google praviloma obdrži stari URL v rezultatih iskanja. Če pa začasna preusmeritev ostane mesece, jo Google lahko začne obravnavati kot trajno, zato trajne spremembe vedno uredite s 301.</p>
+<h3>Kako odpravim napake 404 po spremembi URL-jev?</h3>
+<p>V Search Consoleu odprite poročilo o indeksiranju strani in izvozite URL-je z napako 404. Za vsakega, ki ima zunanje povezave ali je prej prinašal obisk, nastavite 301 na najbližjo ustrezno stran. URL-ji brez prometa in brez naslednika lahko ostanejo 404, kar je za Google povsem normalno stanje.</p>
+
+<h2>Preusmeritve uredite, preden gre nova stran v živo</h2>
+<p>301 preusmeritev je trajna selitev naslova: uporabite jo, kadar ima stara stran jasnega naslednika, za začasne spremembe pa 302. Vsak URL preusmerite naravnost na najbližjo ustrezno stran, preusmeritve obdržite in po selitvi preverite statusne kode, Search Console in povpraševanja na ključnih straneh.</p>
+<p>Najceneje je napake ujeti pred objavo. Če načrtujete prenovo, novo domeno ali spremembo URL-jev, nam pošljite svojo stran ali tabelo preslikav na <a href="mailto:igor@seopro.si">igor@seopro.si</a>. SEOPRO dela samo SEO in vam pošteno pove, katere strani so pri selitvi najbolj ogrožene in kaj preverite, da obdržite povpraševanja.</p>
