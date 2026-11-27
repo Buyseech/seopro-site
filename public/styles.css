@@ -734,3 +734,5 @@ a:hover{color:var(--accent-hover)}
 .sr-posts.is-paged .sr-post{display:none}
 .sr-posts.is-paged .sr-post.is-shown{display:flex}
 .sr-more{height:1px}
+
+.toolbox-lead{margin:18px auto 0;text-align:center;max-width:52ch;font-size:1.08rem;line-height:1.55;opacity:.9}.toolbox-lead a{color:inherit;text-decoration:underline;text-decoration-color:var(--yellow,#f5c400);text-decoration-thickness:2px;text-underline-offset:4px}

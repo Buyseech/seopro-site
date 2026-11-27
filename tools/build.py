@@ -99,7 +99,7 @@ def head(title, desc, url, og_type="website", extra="", robots="index, follow, m
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.3">
+<link rel="stylesheet" href="/styles.css?v=1.4">
 {extra}</head>'''
 
 
