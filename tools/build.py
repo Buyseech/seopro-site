@@ -18,6 +18,9 @@ POSTS = ROOT / "content" / "posts"
 SITE = "https://seopro.si"
 MONTHS = ["januar", "februar", "marec", "april", "maj", "junij", "julij", "avgust", "september", "oktober", "november", "december"]
 EMAIL = "igor@seopro.si"
+# Staging: every page is noindex, nofollow. Set to False (and remove the X-Robots-Tag line in public/_headers) before seopro.si goes live.
+STAGING = True
+STAGING_ROBOTS = "noindex, nofollow"
 
 ICON_MAIL = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>'
 ICON_YT = '<svg viewBox="0 0 68 48" width="24" height="17" aria-hidden="true" focusable="false"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3S12.8.3 7.5 1.7a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10z" fill="#fff"/></svg>'
@@ -64,6 +67,8 @@ def footer():
 
 
 def head(title, desc, url, og_type="website", extra="", robots="index, follow, max-image-preview:large"):
+    if STAGING:
+        robots = STAGING_ROBOTS
     t, d = html.escape(title), html.escape(desc)
     return f'''<!doctype html>
 <html lang="sl">
@@ -92,7 +97,7 @@ def head(title, desc, url, og_type="website", extra="", robots="index, follow, m
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.2">
+<link rel="stylesheet" href="/styles.css?v=1.3">
 {extra}</head>'''
 
 
@@ -115,7 +120,7 @@ def load_posts():
         body = "\n".join(lines[i:]).strip()
         plain = re.sub(r"<[^>]+>", "", body)
         posts.append(dict(slug=f.stem, body=body, words=len(plain.split()), **meta))
-    posts.sort(key=lambda p: p["DATE"], reverse=True)
+    posts.sort(key=lambda p: (-int(p["DATE"].replace("-", "")), int(p.get("NUM", "999"))))
     return posts
 
 
@@ -155,7 +160,11 @@ def build_post(p, posts):
         strip = lambda t: html.unescape(re.sub(r"<[^>]+>", "", t)).strip()
         graph.append({"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": strip(q), "acceptedAnswer": {"@type": "Answer", "text": strip(a)}} for q, a in qa]})
     extra = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False) + "</script>\n"
-    others = [o for o in posts if o["slug"] != p["slug"]][:3]
+    by_slug = {o["slug"]: o for o in posts}
+    others = [by_slug[x.strip()] for x in p.get("RELATED", "").split(",") if x.strip() in by_slug and x.strip() != p["slug"]]
+    others += [o for o in posts if o["slug"] != p["slug"] and o not in others and o.get("CLUSTER") and o.get("CLUSTER") == p.get("CLUSTER")]
+    others += [o for o in posts if o["slug"] != p["slug"] and o not in others]
+    others = others[:3]
     related = "\n      ".join(card(o) for o in others)
     archive = f'<p class="sr-archive">Zapis iz arhiva SEOPRO bloga ({p['DATE'][:4]}). Osnove še vedno veljajo, nekatera orodja in številke pa so se od takrat spremenile.</p>' if p["DATE"] < "2026" else ""
     related_html = f'''<section class="sr-related" aria-labelledby="related-title">
@@ -196,10 +205,16 @@ def build_post(p, posts):
     write(PUB / p["slug"] / "index.html", page)
 
 
+INFINITE_JS = """(function(){var l=document.getElementById('blogroll'),s=document.getElementById('blogroll-more');if(!l||!s)return;var c=[].slice.call(l.querySelectorAll('.sr-post')),n=0,B=9;function more(){c.slice(n,n+B).forEach(function(e){e.classList.add('is-shown')});n+=B;if(n>=c.length){s.remove();if(o)o.disconnect()}}l.classList.add('is-paged');var o='IntersectionObserver' in window?new IntersectionObserver(function(e){if(e[0].isIntersecting)more()},{rootMargin:'600px 0px'}):null;more();if(o)o.observe(s);else c.forEach(function(e){e.classList.add('is-shown')})})();"""
+
+
 def build_blog(posts):
     cards = "\n      ".join(card(p, "h2") for p in posts)
     if posts:
-        cards_html = '<div class="sr-posts">\n      ' + cards + '\n    </div>'
+        cards_html = ('<div class="sr-posts" id="blogroll">\n      ' + cards + '\n    </div>\n'
+                      '    <div class="sr-more" id="blogroll-more" aria-hidden="true"></div>\n'
+                      '    <noscript><style>.sr-posts .sr-post{display:flex!important}</style></noscript>\n'
+                      '    <script>' + INFINITE_JS + '</script>')
         h1, sub = 'Nasveti o SEO, <span>brez ovinkov.</span>', 'Zapisi Igorja Bajsića o optimizaciji spletnih strani za slovenski trg.'
     else:
         cards_html = '<p class="sr-soon"><a class="btn" href="/#review">Povečajmo vaše prihodke <span aria-hidden="true">&rarr;</span></a></p>'
@@ -228,7 +243,7 @@ def build_blog(posts):
 
 def build_sitemap(posts, landings=()):
     urls = [(SITE + "/", "2026-11-27")] + [(f"{SITE}/{l}/", "2026-11-27") for l in landings] + [(SITE + "/blog/", "2026-11-27"), (SITE + "/trendi/", "2026-11-27"), (SITE + "/zasebnost/", "2026-11-27")]
-    urls += [(f"{SITE}/{p['slug']}/", "2026-11-27") for p in posts if "noindex" not in p.get("ROBOTS", "")]
+    urls += [(f"{SITE}/{p['slug']}/", p["DATE"]) for p in posts if STAGING or "noindex" not in p.get("ROBOTS", "")]
     body = "\n".join(f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in urls)
     write(PUB / "sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n')
 
@@ -244,8 +259,10 @@ def build_home_blog(posts):
 
 def build_shared_pages():
     """Put the shared header and footer into the hand-written pages (between the HEADER/FOOTER markers)."""
-    for f in [PUB / "zasebnost" / "index.html", PUB / "trendi" / "index.html"]:
+    for f in [PUB / "zasebnost" / "index.html", PUB / "trendi" / "index.html", PUB / "index.html"]:
         s = f.read_text(encoding="utf-8")
+        robots = STAGING_ROBOTS if STAGING else "index, follow, max-image-preview:large"
+        s = re.sub(r'<meta name="robots" content="[^"]*">', f'<meta name="robots" content="{robots}">', s, count=1)
         s = re.sub(r"<!-- HEADER -->.*?<!-- /HEADER -->", lambda m: "<!-- HEADER -->\n" + header() + "\n<!-- /HEADER -->", s, flags=re.S)
         s = re.sub(r"<!-- FOOTER -->.*?<!-- /FOOTER -->", lambda m: "<!-- FOOTER -->\n" + footer() + "\n<!-- /FOOTER -->", s, flags=re.S)
         f.write_text(s, encoding="utf-8")

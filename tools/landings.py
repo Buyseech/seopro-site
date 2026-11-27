@@ -50,12 +50,17 @@ def build_landings():
             k, v = lines[i].split(": ", 1); meta[k] = v.strip(); i += 1
         body = "\n".join(lines[i:])
         faqs = FAQS.get(slug, [])
+        # FAQs can also live in the page file itself: <!-- FAQ ... --> with "Q: " and "A: " lines
+        fm = re.search(r"<!-- FAQ\n(.*?)\n-->", body, flags=re.S)
+        if fm:
+            body = body.replace(fm.group(0), "")
+            faqs = re.findall(r"^Q: (.+?)\nA: (.+?)$", fm.group(1), flags=re.M)
         faq_html = "\n".join(f'      <details class="lp-q"><summary>{html.escape(q)}</summary><p>{html.escape(a)}</p></details>' for q, a in faqs)
         body = body.replace("{{PROOF}}", proof).replace("{{CASES}}", cases).replace("{{REVIEW}}", review).replace("{{FAQ}}", faq_html)
         url = f"{SITE}/{slug}/"
         graph = [
-            {"@type": "Service", "@id": url + "#service", "name": meta["H1"], "serviceType": "SEO optimizacija spletnih strani",
-             "description": meta["DESC"], "url": url, "areaServed": "SI",
+            {"@type": "Service", "@id": url + "#service", "name": meta["H1"], "serviceType": meta.get("SERVICETYPE", "SEO optimizacija spletnih strani"),
+             "description": meta["DESC"], "url": url, "areaServed": meta.get("AREA", "SI"),
              "provider": {"@type": "ProfessionalService", "@id": SITE + "/#org", "name": "SEOPRO.si",
                           "legalName": "SEOPRO, spletna optimizacija, Igor Bajsić s.p.", "url": SITE + "/", "email": "igor@seopro.si",
                           "address": {"@type": "PostalAddress", "streetAddress": "Pod kostanji 32", "postalCode": "1000", "addressLocality": "Ljubljana", "addressCountry": "SI"}}},
@@ -68,6 +73,5 @@ def build_landings():
         ld = '<script type="application/ld+json">' + json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False) + "</script>\n"
         page = head(meta["TITLE"], meta["DESC"], url, extra=ld, robots=meta.get("ROBOTS", "index, follow, max-image-preview:large")) + f"\n<body>\n{header()}\n\n<main id=\"main\" class=\"lp\">\n{body}\n</main>\n\n{footer()}\n</body>\n</html>\n"
         write(PUB / slug / "index.html", page)
-        if "noindex" not in meta.get("ROBOTS", ""):
-            built.append(slug)
+        built.append(slug)
     return built

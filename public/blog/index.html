@@ -7,7 +7,7 @@
 <title>SEOPRO Blog: nasveti o optimizaciji spletnih strani</title>
 <meta name="description" content="Zapisi o SEO in optimizaciji spletnih strani: povratne povezave, on-site in off-site optimizacija, indeksiranje, varnost in lastništvo spletne strani.">
 <link rel="canonical" href="https://seopro.si/blog/">
-<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="robots" content="noindex, nofollow">
 <meta name="author" content="Igor Bajsić">
 <meta name="theme-color" content="#04091A">
 <meta name="color-scheme" content="dark">
@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.2">
+<link rel="stylesheet" href="/styles.css?v=1.3">
 </head>
 <body>
 <a class="skip" href="#main">Preskoči na vsebino</a>
@@ -58,7 +58,7 @@
       <h1 class="h2">Nasveti o SEO, <span>brez ovinkov.</span></h1>
       <p class="sp-sub">Zapisi Igorja Bajsića o optimizaciji spletnih strani za slovenski trg.</p>
     </div>
-    <div class="sr-posts">
+    <div class="sr-posts" id="blogroll">
       <a class="sr-post" href="/kako-izbrati-seo-agencijo/">
         <time datetime="2026-11-27">27. november 2026</time>
         <h2>Kako izbrati SEO agencijo v Sloveniji</h2>
@@ -66,6 +66,9 @@
         <span class="more">Preberi več &rarr;</span>
       </a>
     </div>
+    <div class="sr-more" id="blogroll-more" aria-hidden="true"></div>
+    <noscript><style>.sr-posts .sr-post{display:flex!important}</style></noscript>
+    <script>(function(){var l=document.getElementById('blogroll'),s=document.getElementById('blogroll-more');if(!l||!s)return;var c=[].slice.call(l.querySelectorAll('.sr-post')),n=0,B=9;function more(){c.slice(n,n+B).forEach(function(e){e.classList.add('is-shown')});n+=B;if(n>=c.length){s.remove();if(o)o.disconnect()}}l.classList.add('is-paged');var o='IntersectionObserver' in window?new IntersectionObserver(function(e){if(e[0].isIntersecting)more()},{rootMargin:'600px 0px'}):null;more();if(o)o.observe(s);else c.forEach(function(e){e.classList.add('is-shown')})})();</script>
   </div>
 </main>
 
