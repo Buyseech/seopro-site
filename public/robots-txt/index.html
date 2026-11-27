@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Analytics 4: add seopro.si's own GA4 snippet here (do not reuse the buyseech.com or seopack.net ID). -->
+<title>robots.txt: kaj je in kako ga uporabljati | SEOPRO Blog</title>
+<meta name="description" content="Kaj je robots.txt, kako ga Google bere, česa z njim ne morete skriti in katere napake zaprejo pomembne strani. S preverjanjem v Search Consolu.">
+<link rel="canonical" href="https://seopro.si/robots-txt/">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Igor Bajsić">
+<meta name="theme-color" content="#04091A">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SEOPRO.si">
+<meta property="og:title" content="robots.txt: kaj je in kako ga uporabljati | SEOPRO Blog">
+<meta property="og:description" content="Kaj je robots.txt, kako ga Google bere, česa z njim ne morete skriti in katere napake zaprejo pomembne strani. S preverjanjem v Search Consolu.">
+<meta property="og:url" content="https://seopro.si/robots-txt/">
+<meta property="og:image" content="https://seopro.si/assets/img/igor-buyseech.jpg">
+<meta property="og:locale" content="sl_SI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="robots.txt: kaj je in kako ga uporabljati | SEOPRO Blog">
+<meta name="twitter:description" content="Kaj je robots.txt, kako ga Google bere, česa z njim ne morete skriti in katere napake zaprejo pomembne strani. S preverjanjem v Search Consolu.">
+<meta name="twitter:image" content="https://seopro.si/assets/img/igor-buyseech.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=1.3">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "robots.txt: kaj je in kako vpliva na indeksiranje", "description": "Kaj je robots.txt, kako ga Google bere, česa z njim ne morete skriti in katere napake zaprejo pomembne strani. S preverjanjem v Search Consolu.", "datePublished": "2026-11-27", "inLanguage": "sl-SI", "mainEntityOfPage": "https://seopro.si/robots-txt/", "author": {"@type": "Person", "name": "Igor Bajsić", "url": "https://buyseech.com/"}, "publisher": {"@type": "Organization", "name": "SEOPRO.si", "url": "https://seopro.si/"}, "image": "https://seopro.si/assets/img/igor-buyseech.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": "https://seopro.si/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seopro.si/blog/"}, {"@type": "ListItem", "position": 3, "name": "robots.txt: kaj je in kako vpliva na indeksiranje", "item": "https://seopro.si/robots-txt/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kaj je datoteka robots.txt?", "acceptedAnswer": {"@type": "Answer", "text": "Datoteka robots.txt je besedilna datoteka v korenu domene, ki spletnim pajkom pove, katerih delov strani ne smejo obiskati. Vsebuje vrstice User-agent, Disallow, Allow in pogosto Sitemap. Ureja pajkanje, ne indeksiranja, in je javna."}}, {"@type": "Question", "name": "Ali robots.txt vpliva na indeksiranje ali samo na pajkanje?", "acceptedAnswer": {"@type": "Answer", "text": "Neposredno vpliva samo na pajkanje. Google blokirane strani ne obišče in ne pozna njene vsebine, a jo lahko prikaže v rezultatih, če nanjo vodijo povezave. Posredno vpliva tudi na indeksiranje: blokirana stran se v iskanju skoraj nikoli ne uvrsti dobro."}}, {"@type": "Question", "name": "Ali lahko z robots.txt skrijem stran iz Googla?", "acceptedAnswer": {"@type": "Answer", "text": "Ne zanesljivo. Blokiran URL lahko ostane v rezultatih brez opisa. Če stran želite odstraniti iz Googla, jo pustite odprto za pajka in ji dodajte oznako noindex. Za zaupne vsebine uporabite geslo, za nujno začasno odstranitev pa orodje Odstranitve v Search Consolu."}}, {"@type": "Question", "name": "Kaj je disallow in kdaj ga uporabiti?", "acceptedAnswer": {"@type": "Answer", "text": "Disallow je pravilo, ki pajku prepove dostop do določene poti, npr. Disallow: /kosarica/. Uporabite ga za strani brez vrednosti za iskalce: košarico, blagajno, notranje iskanje, administracijo in kombinacije filtrov. Za strani, ki jih želite v Googlu, ga nikoli ne uporabite."}}, {"@type": "Question", "name": "Ali robots.txt nadomesti noindex?", "acceptedAnswer": {"@type": "Answer", "text": "Ne, saj imata različni nalogi. Datoteka prepove obisk, noindex prepove prikaz v rezultatih. Če uporabite oba hkrati, Google oznake noindex ne prebere, ker strani ne sme obiskati. Google ukaza noindex v datoteki robots.txt ne podpira od septembra 2019."}}, {"@type": "Question", "name": "Kako preverim robots.txt v Google Search Console?", "acceptedAnswer": {"@type": "Answer", "text": "V nastavitvah lastnine odprite poročilo robots.txt. Pokaže, katero različico datoteke je Google prenesel, kdaj in ali je v njej našel napake. Posamezen URL preverite z orodjem Pregled URL-ja, vse blokirane strani pa vidite v poročilu o indeksiranju strani."}}, {"@type": "Question", "name": "Kaj vsebuje sitemap in ali je še potreben?", "acceptedAnswer": {"@type": "Answer", "text": "Sitemap je seznam URL-jev, ki jih želite imeti v Googlu, pogosto z datumom zadnje spremembe. Še vedno je koristen, posebej za nove, velike ali slabo povezane strani, saj Googlu pomaga hitreje najti vsebino. Več o tem piše v vodiču o zemljevidu strani."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Preskoči na vsebino</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Glavni meni">
+    <a class="logo" href="/">SEOPRO<span>.</span></a>
+    <div class="nav-links">
+      <a href="/#who">Komu pomagamo</a>
+      <a href="/#services">Kako delamo</a>
+      <a href="/#results">Rezultati</a>
+      <a href="/#people">Ekipa</a>
+      <a href="/blog/">Blog</a>
+      <a class="btn btn--sm" href="/#review">Potrebujemo več strank</a>
+      <button class="nav-toggle" type="button" aria-label="Odpri meni" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="/#who">Komu pomagamo</a>
+    <a href="/#services">Kako delamo</a>
+    <a href="/#results">Rezultati</a>
+    <a href="/#people">Ekipa</a>
+    <a href="/blog/">Blog</a>
+  </div>
+</header>
+
+<main id="main" class="legal sr-article">
+  <article class="wrap legal-in">
+    <p class="eyebrow"><a href="/blog/">SEOPRO Blog</a></p>
+    <h1 class="h2">robots.txt: kaj je in kako vpliva na indeksiranje</h1>
+    <p class="sr-meta"><time datetime="2026-11-27">27. november 2026</time> · Igor Bajsić · 9 min branja</p>
+    
+    <div class="sr-body">
+<p>robots.txt je navadna besedilna datoteka v korenu vaše domene (npr. www.vasastran.si/robots.txt), ki spletnim pajkom pove, katerih delov strani ne smejo obiskati. Neposredno ne odloča o tem, ali bo stran v Googlu: nadzoruje pajkanje, ne indeksiranja. Ena napačna vrstica pa lahko Googlu zapre celotno trgovino ali vse kategorije storitev.</p>
+<p>Veliko lastnikov strani misli, da s to datoteko stran skrijejo iz Googla. Ne skrijejo je. Blokiran URL lahko v rezultatih ostane, le da Google ne ve, kaj je na njem. Druga pogosta zmota je, da je datoteka stvar razvijalca in na posel ne vpliva.</p>
+<p>V članku boste izvedeli, kaj datoteka vsebuje, kako jo Google bere, kaj z njo lahko blokirate in česa ne, kako preverite, ali po nesreči ne zapirate pomembnih strani, in kaj to pomeni za vaša povpraševanja.</p>
+
+<h2>Kaj je datoteka robots.txt</h2>
+<p>Datoteka je seznam pravil za spletne pajke (crawlerje), programe, s katerimi iskalniki obiskujejo strani in berejo njihovo vsebino. Googlov pajek se imenuje Googlebot. Preden obišče katerikoli URL na vaši domeni, prebere to datoteko in upošteva, kar v njej piše.</p>
+<p>Pomembno je razlikovati dva koraka. Pajkanje (crawling) pomeni, da pajek stran obišče in prenese. Indeksiranje pomeni, da Google vsebino shrani v svoj indeks, iz katerega sestavlja rezultate iskanja. Datoteka ureja samo prvi korak. Kako pride stran od obiska do rezultatov, razlagamo v članku o <a href="/kako-hitro-indexiramo-stran-v-googlu/">indeksiranju strani v Googlu</a>.</p>
+<p>Datoteka ima preprosto zgradbo. Vrstica <code>User-agent</code> pove, za katerega pajka veljajo pravila (zvezdica pomeni vse), <code>Disallow</code> pove, katere poti so prepovedane, <code>Allow</code> pa izjemo znotraj prepovedane poti. Na koncu je pogosto še vrstica <code>Sitemap</code> s potjo do zemljevida strani. Minimalna datoteka, ki pajkom dovoli vse, je videti tako: <code>User-agent: *</code> in v naslednji vrstici <code>Disallow:</code> brez poti.</p>
+
+<h2>Kako Google bere datoteko</h2>
+<p>Google datoteko išče samo na enem mestu: v korenu domene, na naslovu /robots.txt. Če je v podmapi, je ne upošteva. Pravila veljajo za točno določen protokol in poddomeno, zato www.vasastran.si, trgovina.vasastran.si in različica brez www potrebujejo vsaka svojo datoteko.</p>
+<p>Pri branju Google upošteva nekaj pravil, ki jih opisuje v dokumentu <a href="https://developers.google.com/search/docs/crawling-indexing/robots/robots_txt?hl=sl" target="_blank" rel="noopener">kako Google razlaga specifikacijo robots.txt</a>:</p>
+<ul>
+<li><strong>Najbolj specifično pravilo zmaga.</strong> Če se URL ujema z Disallow in Allow, velja tisto z daljšo potjo. Pri enako dolgih poteh velja manj omejujoče, torej Allow.</li>
+<li><strong>Poti razlikujejo velike in male črke.</strong> <code>Disallow: /Kosarica/</code> ne zapre mape /kosarica/.</li>
+<li><strong>Zvezdica in znak za dolar.</strong> <code>*</code> pomeni katerikoli niz znakov, <code>$</code> konec URL-ja. <code>Disallow: /*.pdf$</code> zapre vse datoteke PDF.</li>
+<li><strong>Velikost je omejena na 500 KiB.</strong> Kar je za tem, Google prezre.</li>
+<li><strong>Google datoteko shrani za približno 24 ur.</strong> Popravek zato ne učinkuje v trenutku.</li>
+<li><strong>Odziv strežnika šteje.</strong> Če datoteke ni (napaka 404), Google sklepa, da omejitev ni. Če strežnik vrača napako 5xx, Google pajkanje cele strani začasno ustavi. Manjkajoča datoteka torej ni težava, pokvarjen strežnik pa je.</li>
+</ul>
+
+<h2>Kaj lahko blokirate in česa ne</h2>
+<p>Blokirajte strani, ki iskalcu ne koristijo in pajku jemljejo čas: košarico, blagajno, notranje iskanje, administracijo in neskončne kombinacije filtrov. Nikoli ne blokirajte strani, ki jih želite videti v Googlu, ter datotek CSS in JavaScript, ki jih stran potrebuje za prikaz.</p>
+<table>
+<thead><tr><th>Pravilo</th><th>Kaj naredi</th><th>Posledica za SEO</th></tr></thead>
+<tbody>
+<tr><td><code>Disallow: /</code></td><td>Zapre celotno stran za izbranega pajka</td><td>Strani počasi izginejo iz rezultatov</td></tr>
+<tr><td><code>Disallow: /kosarica/</code></td><td>Zapre košarico in vse pod njo</td><td>Pajek ne zapravlja časa za nekoristne URL-je</td></tr>
+<tr><td><code>Disallow: /*?filter=</code></td><td>Zapre URL-je s parametrom filtra</td><td>Manj podvojenih kombinacij kategorij</td></tr>
+<tr><td><code>Allow: /wp-admin/admin-ajax.php</code></td><td>Dovoli eno datoteko v zaprti mapi</td><td>Stran se pravilno prikaže pajku</td></tr>
+<tr><td><code>Disallow: /wp-content/</code></td><td>Zapre slike, CSS in skripte</td><td>Google stran vidi pokvarjeno</td></tr>
+<tr><td><code>Sitemap: https://...</code></td><td>Pove pot do zemljevida strani</td><td>Pajek hitreje najde vse pomembne URL-je</td></tr>
+</tbody>
+</table>
+<p>Za večino manjših strani zadošča nekaj vrstic. WordPress ustvari osnovno datoteko sam, z zaprto administracijo in potjo do zemljevida strani. Splošna navodila za pisanje pravil ima Google v vodiču <a href="https://developers.google.com/search/docs/crawling-indexing/robots/create-robots-txt?hl=sl" target="_blank" rel="noopener">kako napisati in oddati datoteko robots.txt</a>.</p>
+<p>Ločena pravila lahko napišete tudi za pajke umetne inteligence. Žeton Google-Extended npr. ureja, ali Google vsebino uporablja za modele Gemini, na prikaz v iskanju pa ne vpliva.</p>
+
+<h2>robots.txt, noindex in sitemap</h2>
+<p>Ta trojica se najpogosteje meša. robots.txt pajku pove, kam ne sme. Oznaka noindex v kodi strani Googlu pove, naj strani ne prikazuje v rezultatih. Zemljevid strani (sitemap) mu pove, katere strani so pomembne in kdaj ste jih spremenili.</p>
+<p>Iz tega sledi pravilo, ki ga je dobro zapomniti: noindex deluje samo, če pajek stran lahko obišče. Če URL blokirate v datoteki robots.txt in mu dodate noindex, Google oznake nikoli ne prebere. Stran, na katero vodijo povezave, lahko v rezultatih ostane brez opisa. </p>
+<p>Zemljevid in pravila za pajke delujeta skupaj: v datoteko dodate vrstico s potjo do zemljevida, da ga najdejo vsi iskalniki. Kaj zemljevid vsebuje in kako ga oddate, opisujemo v vodiču <a href="/sitemap/">kaj je sitemap in zakaj ga potrebujete</a>.</p>
+
+<h2>Kako preveriti, ali nekaj blokirate</h2>
+<p>Osnovno preverjanje naredite sami v nekaj minutah, z brskalnikom in brezplačnim Googlovim orodjem Google Search Console, ki pokaže, kako Google vidi vašo stran.</p>
+<ol>
+<li><strong>Odprite datoteko.</strong> V brskalnik vpišite svojo domeno in dodajte /robots.txt. Iščite vrstico <code>Disallow: /</code> pod <code>User-agent: *</code> ali pod <code>User-agent: Googlebot</code>.</li>
+<li><strong>Odprite poročilo robots.txt v Search Consolu.</strong> V nastavitvah lastnine pokaže, katero različico datoteke je Google nazadnje prenesel, kdaj in ali je naletel na napake. Opis poročila je v Googlovi <a href="https://support.google.com/webmasters/answer/6062598?hl=sl" target="_blank" rel="noopener">pomoči za poročilo robots.txt</a>.</li>
+<li><strong>Preverite pomemben URL.</strong> V orodje Pregled URL-ja vpišite naslov ključne kategorije ali storitve. Če piše, da je pajkanje blokirano, ste težavo našli.</li>
+<li><strong>Poglejte poročilo o indeksiranju strani.</strong> Razloga »blokirano z datoteko robots.txt« in »indeksirano, čeprav blokirano« pokažeta vse prizadete URL-je naenkrat.</li>
+<li><strong>Po spremembi preverite znova.</strong> Ker Google datoteko hrani do 24 ur, rezultat preverite naslednji dan.</li>
+</ol>
+<p>Najzanesljivejši robots.txt validator je to poročilo, ker kaže, kako datoteko res bere Google. Zunanja orodja so uporabna za preizkus pravil pred objavo.</p>
+
+<h2>Kaj napačna vrstica pomeni za vaša povpraševanja</h2>
+<p>Stran, do katere Google ne sme, ne prinese niti enega klika. Veriga do denarja je preprosta: prava ključna beseda pripelje pravega obiskovalca na stran, ki odgovori na njegovo vprašanje, obiskovalec pa pošlje povpraševanje ali kupi. Napačno pravilo to verigo pretrga, še preden se začne.</p>
+<p>Najdražja napaka nastane pri prenovi. Razvojna različica ima zaradi zasebnosti v datoteki <code>Disallow: /</code>, ob selitvi na živo domeno pa vrstica ostane. Promet ne pade isti dan, zato napako pogosto opazijo šele, ko povpraševanja že upadejo. Kaj vse preveriti ob selitvi, opisujemo v članku o <a href="/prenova-spletne-strani-seo/">SEO-ju pri prenovi spletne strani</a>.</p>
+<p>Pri spletnih trgovinah je pogosta tišja različica: pravilo, ki naj bi zaprlo filtre, po nesreči zapre tudi kategorije. Kategorije so na majhnem slovenskem trgu pogosto strani, ki zbirajo donosne ključne besede, torej iskanja ljudi, ki želijo kupiti. Če jih Google ne vidi, ostanejo prodajne strani brez obiska iz iskanja.</p>
+<p>Pri velikih straneh dobro napisana datoteka pajku prihrani čas za strani, ki prodajajo. Pri SEOPRO vodimo tudi spletna mesta z več kot 20 milijoni strani, kjer je to vsakdanje delo. Za stran z nekaj sto URL-ji je dovolj, da ne zapira ničesar pomembnega.</p>
+<p>Kaj naj preverite: ali so vse strani, ki prinašajo povpraševanja, odprte za Googlebot in ali so v zemljevidu strani.</p>
+<p><a class="btn" href="/#review">Zahtevajte brezplačno preverbo robots.txt in indeksiranja <span aria-hidden="true">&rarr;</span></a></p>
+
+<h2>Pogoste napake pri robots.txt</h2>
+<p>Večina napak nastane, ker nekdo pravilo doda »za vsak primer« ali ga prepiše z druge strani:</p>
+<ul>
+<li><strong>Disallow: / ostane po prenovi.</strong> Po vsaki selitvi najprej odprite datoteko na živi domeni.</li>
+<li><strong>Blokiranje namesto noindex.</strong> Stran, ki je ne želite v rezultatih, pustite odprto in ji dodajte noindex.</li>
+<li><strong>Zaprte mape s CSS in skriptami.</strong> Google stran prikaže brez oblikovanja in jo slabše razume.</li>
+<li><strong>Preširoko pravilo.</strong> <code>Disallow: /p</code> zapre vse, kar se začne s /p, tudi /produkti/ in /povprasevanje/.</li>
+<li><strong>Datoteka samo za eno različico domene.</strong> Poddomena trgovine ali različica brez www ostane brez pravil ali z napačnimi.</li>
+<li><strong>Zaupne poti v javni datoteki.</strong> Datoteko lahko prebere vsak, zato za zaščito uporabite geslo na strežniku.</li>
+</ul>
+<p>Pravila za pajke so le en del tehnične osnove strani. Kako se povezujejo s hitrostjo, preusmeritvami in kanoničnimi oznakami, opisujemo v vodiču <a href="/tehnicni-seo/">tehnični SEO in vpliv na uvrstitve</a>.</p>
+
+<h2>Kdaj potrebujete pomoč specialista</h2>
+<p>Pomoč je smiselna, ko Search Console kaže blokirane pomembne strani in ne veste, katero pravilo je krivo, ko po prenovi pade organski promet ali ko ima trgovina tisoče filtrov in parametrov.</p>
+<p>Pri SEOPRO pravila za pajke, oznake noindex, zemljevid strani in poročila v Search Consolu pregledamo v okviru brezplačne SEO analize. Povemo vam, ali kaj blokira strani, ki bi vam lahko prinesle povpraševanja, in kaj bi popravili najprej.</p>
+
+<h2>Pogosta vprašanja o datoteki robots.txt</h2>
+<h3>Kaj je datoteka robots.txt?</h3>
+<p>Datoteka robots.txt je besedilna datoteka v korenu domene, ki spletnim pajkom pove, katerih delov strani ne smejo obiskati. Vsebuje vrstice User-agent, Disallow, Allow in pogosto Sitemap. Ureja pajkanje, ne indeksiranja, in je javna.</p>
+<h3>Ali robots.txt vpliva na indeksiranje ali samo na pajkanje?</h3>
+<p>Neposredno vpliva samo na pajkanje. Google blokirane strani ne obišče in ne pozna njene vsebine, a jo lahko prikaže v rezultatih, če nanjo vodijo povezave. Posredno vpliva tudi na indeksiranje: blokirana stran se v iskanju skoraj nikoli ne uvrsti dobro.</p>
+<h3>Ali lahko z robots.txt skrijem stran iz Googla?</h3>
+<p>Ne zanesljivo. Blokiran URL lahko ostane v rezultatih brez opisa. Če stran želite odstraniti iz Googla, jo pustite odprto za pajka in ji dodajte oznako noindex. Za zaupne vsebine uporabite geslo, za nujno začasno odstranitev pa orodje Odstranitve v Search Consolu.</p>
+<h3>Kaj je disallow in kdaj ga uporabiti?</h3>
+<p>Disallow je pravilo, ki pajku prepove dostop do določene poti, npr. <code>Disallow: /kosarica/</code>. Uporabite ga za strani brez vrednosti za iskalce: košarico, blagajno, notranje iskanje, administracijo in kombinacije filtrov. Za strani, ki jih želite v Googlu, ga nikoli ne uporabite.</p>
+<h3>Ali robots.txt nadomesti noindex?</h3>
+<p>Ne, saj imata različni nalogi. Datoteka prepove obisk, noindex prepove prikaz v rezultatih. Če uporabite oba hkrati, Google oznake noindex ne prebere, ker strani ne sme obiskati. Google ukaza noindex v datoteki robots.txt ne podpira od septembra 2019.</p>
+<h3>Kako preverim robots.txt v Google Search Console?</h3>
+<p>V nastavitvah lastnine odprite poročilo robots.txt. Pokaže, katero različico datoteke je Google prenesel, kdaj in ali je v njej našel napake. Posamezen URL preverite z orodjem Pregled URL-ja, vse blokirane strani pa vidite v poročilu o indeksiranju strani.</p>
+<h3>Kaj vsebuje sitemap in ali je še potreben?</h3>
+<p>Sitemap je seznam URL-jev, ki jih želite imeti v Googlu, pogosto z datumom zadnje spremembe. Še vedno je koristen, posebej za nove, velike ali slabo povezane strani, saj Googlu pomaga hitreje najti vsebino. Več o tem piše v vodiču o zemljevidu strani.</p>
+
+<h2>Odprta pot do strani, ki prodajajo</h2>
+<p>robots.txt je kratka datoteka z velikim vplivom. Prav napisana pajku prihrani čas za pomembne strani, napačna vrstica pa lahko Googlu zapre kategorije, storitve ali celotno domeno. Strani iz rezultatov ne skrije in oznake noindex ne nadomesti.</p>
+<p>Odprite svojo datoteko še danes in preverite, ali so strani, ki prinašajo povpraševanja in naročila, odprte za Googlebot. Če niste prepričani, kaj vidite, nam pošljite svojo stran. Pogledali bomo pravila za pajke in indeksiranje ter vam pošteno povedali, ali kaj ovira vaše prihodke.</p>
+<p><a class="btn" href="/#review">Pošljite nam svojo stran v brezplačno analizo <span aria-hidden="true">&rarr;</span></a></p>
+    </div>
+    <p class="sr-sign">Igor Bajsić, SEOPRO</p>
+
+    <aside class="sr-cta" aria-label="Brezplačna analiza">
+      <h2>Vas zanima, kje se vaša stran <span>zatika?</span></h2>
+      <p>Pošljite nam naslov spletne strani in ključne besede, za katere bi se radi prikazovali. Igor jo pregleda in vam pove, kaj bi prineslo največ.</p>
+      <a class="btn" href="/#review">Brezplačna analiza strani</a>
+    </aside>
+
+    <section class="sr-related" aria-labelledby="related-title">
+      <h2 id="related-title">Preberite <span>še</span></h2>
+      <div class="sr-posts">
+      <a class="sr-post" href="/kako-hitro-indexiramo-stran-v-googlu/">
+        <time datetime="2026-11-27">27. november 2026</time>
+        <h3>Zakaj svoje strani ne najdemo v Googlu?</h3>
+        <p>Preverite, zakaj vaše strani ni v Googlu, kako vzrok najdete v Search Consolu in kako pospešite indeksiranje spletne strani.</p>
+        <span class="more">Preberi več &rarr;</span>
+      </a>
+      <a class="sr-post" href="/sitemap/">
+        <time datetime="2026-11-27">27. november 2026</time>
+        <h3>Kaj je sitemap in zakaj ga potrebuje spletna stran</h3>
+        <p>Kaj je sitemap, kaj vsebuje, kako ga dobite brezplačno, oddate v Search Console in preverite, ali Googlu res pomaga najti vaše strani.</p>
+        <span class="more">Preberi več &rarr;</span>
+      </a>
+      <a class="sr-post" href="/tehnicni-seo/">
+        <time datetime="2026-11-27">27. november 2026</time>
+        <h3>Tehnični SEO: kaj je in zakaj vpliva na uvrstitve</h3>
+        <p>Kaj vključuje tehnični SEO, zakaj vpliva na uvrstitve in povpraševanja ter kako odkrijete skrite napake, ki zavirajo vašo spletno stran.</p>
+        <span class="more">Preberi več &rarr;</span>
+      </a>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-top">
+      <span class="footer-logo">SEOPRO<span>.</span></span>
+      <div class="footer-links">
+        <a href="mailto:igor@seopro.si"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>igor@seopro.si</span></a>
+        <a href="https://www.youtube.com/@Buyseech" target="_blank" rel="noopener"><svg viewBox="0 0 68 48" width="24" height="17" aria-hidden="true" focusable="false"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3S12.8.3 7.5 1.7a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10z" fill="#fff"/></svg><span>YouTube</span></a>
+        <a href="https://www.linkedin.com/in/igor-buyseech" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.3H4.8V19h2.3V9.3zM6 5a1.35 1.35 0 1 0 0 2.7A1.35 1.35 0 0 0 6 5zm13.2 8.8c0-2.6-1.4-4.7-4-4.7-1.3 0-2.2.7-2.6 1.4V9.3H10.4V19h2.3v-4.8c0-1.3.3-2.6 1.9-2.6 1.6 0 1.6 1.5 1.6 2.7V19h2.3l.7-5.2z"/></svg><span>LinkedIn</span></a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 SEOPRO.si · SEOPRO, spletna optimizacija, Igor Bajsić s.p. · <a href="/blog/">Blog</a> · <a href="/zasebnost/">Zasebnost in podatki o podjetju</a></p>
+  </div>
+</footer>
+
+<script src="/site.js?v=1.1" defer></script>
+</body>
+</html>
