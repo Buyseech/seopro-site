@@ -214,8 +214,8 @@ def build_blog(posts):
     write(PUB / "blog" / "index.html", page)
 
 
-def build_sitemap(posts):
-    urls = [(SITE + "/", "2026-11-27"), (SITE + "/blog/", "2026-11-27"), (SITE + "/trendi/", "2026-11-27"), (SITE + "/zasebnost/", "2026-11-27")]
+def build_sitemap(posts, landings=()):
+    urls = [(SITE + "/", "2026-11-27")] + [(f"{SITE}/{l}/", "2026-11-27") for l in landings] + [(SITE + "/blog/", "2026-11-27"), (SITE + "/trendi/", "2026-11-27"), (SITE + "/zasebnost/", "2026-11-27")]
     urls += [(f"{SITE}/{p['slug']}/", "2026-11-27") for p in posts]
     body = "\n".join(f"  <url><loc>{u}</loc><lastmod>{d}</lastmod></url>" for u, d in urls)
     write(PUB / "sitemap.xml", f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n')
@@ -246,4 +246,7 @@ if __name__ == "__main__":
     build_blog(posts)
     build_sitemap(posts)
     build_shared_pages()
-    print(f"Built {len(posts)} posts, blog list, sitemap.")
+    from landings import build_landings
+    landings = build_landings()
+    build_sitemap(posts, landings)
+    print(f"Built {len(posts)} posts, {len(landings)} landing pages, blog list, sitemap.")
