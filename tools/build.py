@@ -205,7 +205,7 @@ def build_post(p, posts):
     write(PUB / p["slug"] / "index.html", page)
 
 
-INFINITE_JS = """(function(){var l=document.getElementById('blogroll'),s=document.getElementById('blogroll-more');if(!l||!s)return;var c=[].slice.call(l.querySelectorAll('.sr-post')),n=0,B=9;function more(){c.slice(n,n+B).forEach(function(e){e.classList.add('is-shown')});n+=B;if(n>=c.length){s.remove();if(o)o.disconnect()}}l.classList.add('is-paged');var o='IntersectionObserver' in window?new IntersectionObserver(function(e){if(e[0].isIntersecting)more()},{rootMargin:'600px 0px'}):null;more();if(o)o.observe(s);else c.forEach(function(e){e.classList.add('is-shown')})})();"""
+INFINITE_JS = """(function(){var l=document.getElementById('blogroll'),s=document.getElementById('blogroll-more');if(!l||!s)return;var c=[].slice.call(l.querySelectorAll('.sr-post')),n=0,B=9;l.classList.add('is-paged');function more(){c.slice(n,n+B).forEach(function(e){e.classList.add('is-shown')});n+=B;if(n>=c.length){s.remove();window.removeEventListener('scroll',check);window.removeEventListener('resize',check);if(o)o.disconnect()}}function check(){if(n<c.length&&s.getBoundingClientRect().top<window.innerHeight+600){more();requestAnimationFrame(check)}}var o='IntersectionObserver' in window?new IntersectionObserver(check,{rootMargin:'600px 0px'}):null;more();if(o)o.observe(s);window.addEventListener('scroll',check,{passive:true});window.addEventListener('resize',check);check()})();"""
 
 
 def build_blog(posts):
