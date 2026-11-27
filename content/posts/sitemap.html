@@ -1,0 +1,119 @@
+TITLE: Kaj je sitemap in zakaj ga potrebuje vaša stran
+H1: Kaj je sitemap in zakaj ga potrebuje spletna stran
+DESC: Kaj je sitemap, kaj vsebuje, kako ga dobite brezplačno, oddate v Search Console in preverite, ali Googlu res pomaga najti vaše strani.
+DATE: 2026-11-27
+NUM: 53
+CLUSTER: I Tehnični SEO in hitrost
+RELATED: kako-hitro-indexiramo-stran-v-googlu, robots-txt, tehnicni-seo
+ROBOTS: noindex, nofollow
+<p>Kaj je sitemap? To je datoteka, običajno z imenom sitemap.xml, v kateri je seznam URL-jev vaše spletne strani, ki jih želite imeti v Googlu. Googlu pove, katere strani obstajajo in kdaj ste jih nazadnje spremenili, zato jih hitreje odkrije. Večina sistemov, od WordPressa do Shopifyja, ga ustvari sama in brezplačno.</p>
+<p>Pogosta zmota je, da sitemap stran spravi na Google. Ne spravi je. Je zemljevid, ki Googlovemu pajku pokaže pot, odločitev o indeksiranju in uvrstitvi pa ostane Googlova. Druga zmota je, da je sitemap zastarel. Ni, le njegova vloga je skromnejša, kot obljubljajo generatorji.</p>
+<p>V članku boste izvedeli, kaj sitemap vsebuje, kako ga najdete in oddate, kako preverite, ali je pravilen, in kdaj vpliva na to, ali vas stranke najdejo.</p>
+
+<h2>Kaj je sitemap.xml</h2>
+<p>Sitemap.xml je strojno berljiv seznam strani, napisan v jeziku XML po javnem <a href="https://www.sitemaps.org/protocol.html" target="_blank" rel="noopener">protokolu sitemaps.org</a>, ki ga podpirajo Google, Bing in drugi iskalniki. Google ga v slovenski dokumentaciji imenuje zemljevid spletnega mesta.</p>
+<p>Vsak vnos v datoteki ima obvezen element »loc«, to je polni URL strani, na primer https://www.vasastran.si/storitve/. Neobvezni elementi so:</p>
+<ul>
+<li><strong>lastmod:</strong> datum zadnje vsebinske spremembe strani,</li>
+<li><strong>changefreq:</strong> kako pogosto se stran spreminja,</li>
+<li><strong>priority:</strong> relativna pomembnost strani na vašem mestu.</li>
+</ul>
+<p>Google upošteva le lastmod in še tega samo, če je datum dosledno točen. Elementa changefreq in priority prezre, zato z njima ne izgubljajte časa.</p>
+<p>Obstajajo tudi posebni sitemapi za slike, videe in novice ter kazalo sitemapov (sitemap index), ki združuje več manjših datotek. Ena datoteka sme imeti največ 50.000 URL-jev ali 50 MB nestisnjene velikosti.</p>
+<p>Ne zamenjujte ga s HTML zemljevidom strani, navadno podstranjo s povezavami za obiskovalce.</p>
+
+<h2>Zakaj sitemap pomaga Googlu</h2>
+<p>Google strani odkriva predvsem tako, da sledi povezavam. Sitemap mu da dodatno, zanesljivo pot do strani, ki jih prek povezav težko najde, in mu pove, katere so se spremenile. Sitemap je eden od signalov za izbiro kanoničnega URL-ja, torej glavne različice strani, kadar obstaja več podobnih.</p>
+<p>Google v vodiču <a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview?hl=sl" target="_blank" rel="noopener">Več o zemljevidih spletnih mest</a> navaja, kdaj sitemap najbolj koristi:</p>
+<table>
+<thead><tr><th>Vrsta strani</th><th>Ali sitemap potrebuje</th><th>Zakaj</th></tr></thead>
+<tbody>
+<tr><td>Spletna trgovina s stotinami izdelkov</td><td>Da</td><td>Globoke strani izdelkov Google težje najde</td></tr>
+<tr><td>Nova stran z malo zunanjimi povezavami</td><td>Da</td><td>Drugje skoraj ni poti do nje</td></tr>
+<tr><td>Stran z veliko novimi članki ali novicami</td><td>Da</td><td>Google hitreje vidi nove in spremenjene URL-je</td></tr>
+<tr><td>Stran z veliko slikami ali videi</td><td>Priporočljivo</td><td>Posebni vnosi pomagajo pri iskanju slik in videov</td></tr>
+<tr><td>Majhna stran z do 500 dobro povezanimi stranmi</td><td>Ni nujno</td><td>Google jo najde prek menija in povezav</td></tr>
+</tbody>
+</table>
+<p>Tudi pri majhni strani sitemap priporočamo, ker je brezplačen, v Search Consoleu pa vidite, koliko oddanih strani je Google res indeksiral.</p>
+
+<h2>Kako deluje v praksi</h2>
+<p>Sitemap dobite v nekaj minutah, največkrat brez ročnega dela. Postopek je enak za skoraj vsako stran:</p>
+<ol>
+<li><strong>Poiščite obstoječi sitemap.</strong> WordPress ga od različice 5.5 ustvari sam na naslovu /wp-sitemap.xml. Vtičnika Yoast in Rank Math ga nadomestita s /sitemap_index.xml. Shopify ga ustvari na /sitemap.xml. Vpišite naslov v brskalnik in preverite, ali se odpre.</li>
+<li><strong>Če ga sistem ne ustvari, uporabite generator sitemapa.</strong> Orodja, kot je Screaming Frog, preiščejo stran in izdelajo datoteko, ki jo naložite v korensko mapo. Ročno izdelanega morate posodabljati sami.</li>
+<li><strong>Dodajte vrstico v robots.txt.</strong> Na konec datoteke napišite »Sitemap: https://www.vasastran.si/sitemap.xml«. Tako ga najdejo tudi drugi iskalniki.</li>
+<li><strong>Oddajte ga v Google Search Console.</strong> To je brezplačno Googlovo orodje za spremljanje strani v iskanju. Odprite poročilo Zemljevidi spletnih mest, vpišite naslov sitemapa in kliknite Pošlji.</li>
+<li><strong>Čez nekaj dni preverite stanje.</strong> Google pokaže, ali je datoteko prebral, kdaj in koliko URL-jev je v njej našel.</li>
+</ol>
+<p>Sitemap oddate enkrat, samodejni sistem pa ga ob vsaki novi strani posodobi sam. Kako robots.txt usmerja pajka in v čem se razlikuje od sitemapa, razlagamo v članku <a href="/robots-txt/">robots.txt in vpliv na indeksiranje</a>.</p>
+
+<h2>Kako preveriti, ali je sitemap pravilen</h2>
+<p>Sitemap je pravilen, ko so v njem vse strani, ki naj bodo v Googlu, in nobena, ki naj ne bo. Brezplačen sitemap validator ali sitemap checker preveri samo zapis XML. Ali so v datoteki prave strani, morate preveriti sami.</p>
+<table>
+<thead><tr><th>Kaj preverite</th><th>Kje</th><th>Kaj je pravilno</th></tr></thead>
+<tbody>
+<tr><td>Ali Google datoteko prebere</td><td>Search Console, Zemljevidi spletnih mest</td><td>Stanje »Uspešno«</td></tr>
+<tr><td>Koliko oddanih strani je indeksiranih</td><td>Search Console, Indeksiranje strani, filter po sitemapu</td><td>Večina pomembnih strani je indeksiranih</td></tr>
+<tr><td>Statusne kode URL-jev</td><td>Screaming Frog v načinu seznama</td><td>Vsi URL-ji vrnejo kodo 200</td></tr>
+<tr><td>Oznaka noindex</td><td>Screaming Frog ali vtičnik za SEO</td><td>V sitemapu ni nobene strani z noindex</td></tr>
+<tr><td>Kanonični URL-ji</td><td>Izvorna koda strani</td><td>Kanonična oznaka vsakega URL-ja kaže nase</td></tr>
+<tr><td>Pomembne strani</td><td>Primerjava z menijem in seznamom izdelkov</td><td>Nobena ključna stran ne manjka</td></tr>
+</tbody>
+</table>
+<p>Kako brati poročilo in kaj pomenijo posamezna sporočila o napakah, opisuje Googlova pomoč za <a href="https://support.google.com/webmasters/answer/7451001?hl=sl" target="_blank" rel="noopener">poročilo o zemljevidih spletnega mesta</a>. Največ pove razlika med številom oddanih in indeksiranih strani. Če je oddanih 400 strani in indeksiranih 150, imate nalogo, ki je sitemap sam ne bo rešil.</p>
+
+<h2>Kaj sitemap pomeni za povpraševanja in prodajo</h2>
+<p>Sitemap sam ne prinese nobenega povpraševanja. Je prvi člen verige: Google stran odkrije, jo indeksira, uvrsti za iskanje, obiskovalec pride, nato pokliče ali kupi. Če se veriga pretrga na začetku, ostali členi nimajo možnosti.</p>
+<p>Vzemimo spletno trgovino, ki doda novo kategorijo izdelkov z dobro maržo. Če kategorije ni v sitemapu in nanjo kaže le povezava globoko v filtrih, jo Google lahko odkrije pozno. Dokler je ni v indeksu, ni prodaje iz organskega iskanja, tudi če je stran odlična.</p>
+<p>Na majhnem slovenskem trgu je to še pomembneje. Iskanj je malo, zato je vsaka stran, ki cilja donosno ključno besedo, vredna veliko. Ključna beseda s 30 iskanji na mesec od ljudi, ki želijo kupiti, prinese več kot 1.000 iskanj ljudi, ki se šele učijo. Če prav ta stran manjka v indeksu, izgubljate najdražji promet.</p>
+<p>Veriga se najpogosteje pretrga na treh mestih:</p>
+<ul>
+<li>v sitemapu so preusmerjene, izbrisane ali testne strani, prave pa manjkajo,</li>
+<li>stran je v sitemapu, a jo Google odkrije in ne indeksira, ker je vsebina tanka ali podvojena,</li>
+<li>stran je indeksirana, a ne odgovori na iskalni namen in nima jasnega naslednjega koraka za obiskovalca.</li>
+</ul>
+<p>Pri SEOPRO zato v brezplačni SEO analizi ne gledamo le, ali sitemap obstaja. Preverimo, ali so v indeksu prav tiste strani, ki vam lahko prinesejo stranke.</p>
+<p><a class="btn" href="/#review">Zahtevajte brezplačno SEO analizo <span aria-hidden="true">&rarr;</span></a></p>
+
+<h2>Kdaj sitemap ne reši težav z indeksacijo</h2>
+<p>Sitemap ne pomaga, kadar Google stran pozna in se je zavestno odločil, da je ne indeksira. V Search Consoleu to vidite kot stanje »Odkrito, trenutno ni indeksirano« ali »Pajek je obiskal, trenutno ni indeksirano«. Vzrok je takrat v strani sami: tanka ali podvojena vsebina, oznaka noindex, napačna kanonična oznaka ali premalo notranjih povezav.</p>
+<p>Ponovno oddajanje sitemapa v takem primeru ne spremeni ničesar. Pomaga, če stran izboljšate, nanjo povežete z drugih strani in šele nato prosite za ponovni pregled. Vse vzroke in postopek po korakih opisujemo v članku o tem, <a href="/kako-hitro-indexiramo-stran-v-googlu/">zakaj strani ni v Googlu in kako poteka indeksiranje strani</a>.</p>
+
+<h2>Pogoste napake pri sitemapu</h2>
+<p>Večina napak nastane, ker sitemap nekdo nastavi enkrat in nanj pozabi. Najpogosteje vidimo te:</p>
+<ul>
+<li><strong>Dva sitemapa hkrati.</strong> WordPressov vgrajeni in tisti iz vtičnika, z različnimi URL-ji. Pustite enega in oddajte samo njega.</li>
+<li><strong>Preusmerjeni in izbrisani URL-ji.</strong> Po prenovi strani ostanejo v sitemapu stari naslovi s preusmeritvijo 301 ali napako 404.</li>
+<li><strong>Strani z noindex.</strong> Sitemap reče »indeksiraj«, stran reče »ne indeksiraj«. Odstranite jih iz datoteke.</li>
+<li><strong>Napačna domena ali protokol.</strong> URL-ji s http namesto https ali brez www, čeprav stran deluje na www.</li>
+<li><strong>Lastmod, ki se spremeni vsak dan.</strong> Če se datum posodobi brez prave spremembe vsebine, ga Google preneha upoštevati.</li>
+<li><strong>Sitemap, blokiran v robots.txt.</strong> Datoteka obstaja, pajek pa do nje ne sme.</li>
+<li><strong>Arhivi oznak in avtorjev.</strong> Stotine tankih strani, ki zameglijo, katere strani so res pomembne.</li>
+</ul>
+<p>Sitemap je le en del tehnične osnove strani. Kaj še spada vanjo, od hitrosti do preusmeritev, pregledno opisujemo v članku o tem, <a href="/tehnicni-seo/">kaj je tehnični SEO</a>.</p>
+
+<h2>Kdaj potrebujete SEO pomoč</h2>
+<p>Sitemap nastavite sami, če imate WordPress ali Shopify in pol ure časa. Pomoč potrebujete, ko je razlika med oddanimi in indeksiranimi stranmi velika, ko po prenovi strani pade obisk ali ko pomembne strani mesece ostajajo zunaj indeksa.</p>
+<p>V brezplačni SEO analizi pri SEOPRO pregledamo, katere strani Google ima in katere mu manjkajo, zakaj, ter ali so med njimi tiste, ki vam lahko prinesejo povpraševanja. Odgovor dobite naravnost: kaj bi premaknili in kakšen doprinos lahko pričakujete. Če vam ne moremo pomagati, vam to povemo. Če želite stran pregledati najprej sami, vam bo v pomoč <a href="/seo-kontrolni-seznam/">SEO kontrolni seznam</a>.</p>
+
+<h2>Pogosta vprašanja o sitemapu</h2>
+<h3>Kaj vsebuje sitemap?</h3>
+<p>Sitemap vsebuje seznam URL-jev strani, ki jih želite imeti v Googlu, in za vsakega po želji datum zadnje spremembe (lastmod). Vanj spadajo samo kanonične strani, ki vrnejo kodo 200 in nimajo oznake noindex.</p>
+<h3>Kako dobim sitemap za svojo spletno stran in ali je brezplačen?</h3>
+<p>Sitemap je brezplačen. WordPress ga ustvari sam na /wp-sitemap.xml, Yoast in Rank Math na /sitemap_index.xml, Shopify na /sitemap.xml. Če ga vaš sistem nima, uporabite generator sitemapa, na primer brezplačno različico Screaming Froga do 500 URL-jev. Naslov nato oddajte v Google Search Console, kar je prav tako brezplačno.</p>
+<h3>Ali je sitemap še pomemben?</h3>
+<p>Da. Google ga še vedno uporablja za odkrivanje novih in spremenjenih strani, posebej pri spletnih trgovinah, novih straneh in straneh z veliko vsebine. Opustil je le ločen »ping« za obveščanje o spremembah, ker sitemap redno bere sam.</p>
+<h3>Ali ima vsaka spletna stran svoj sitemap?</h3>
+<p>Ne vsaka, ima pa ga večina sodobnih. WordPress od različice 5.5, Shopify in večina drugih sistemov ga ustvarijo samodejno. Starejše ali ročno izdelane strani ga pogosto nimajo. Preverite tako, da za domeno vpišete /sitemap.xml ali pogledate vrstico Sitemap v datoteki robots.txt.</p>
+<h3>Kaj je razlika med sitemap.xml in robots.txt?</h3>
+<p>Sitemap.xml Googlu pove, katere strani naj obišče, robots.txt pa, katerih delov strani ne sme pajkati. Prvi je seznam priporočil, drugi seznam omejitev. Delujeta skupaj: v robots.txt dodate vrstico s potjo do sitemapa, da ga iskalniki najdejo sami.</p>
+<h3>Ali je lahko sitemap prevelik?</h3>
+<p>Da. Ena datoteka sme imeti največ 50.000 URL-jev ali 50 MB nestisnjene velikosti. Večjo stran razdelite na več sitemapov in jih povežite v kazalo sitemapov (sitemap index), ki ga oddate v Search Console. Delitev po vrsti strani, na primer izdelki in članki, olajša iskanje napak.</p>
+<h3>Ali sitemap pomaga tudi pri novih vsebinah?</h3>
+<p>Da, to je ena njegovih glavnih nalog. Ko objavite nov članek ali izdelek, ga samodejni sitemap doda s svežim datumom lastmod, Google pa ga ob naslednjem branju odkrije. Indeksiranja to ne zagotovi, zato na novo stran povežite tudi z obstoječih strani.</p>
+
+<h2>Sitemap pokaže pot, stranke pripeljejo strani</h2>
+<p>Kaj je sitemap v eni povedi? Brezplačna datoteka, ki Googlu pokaže, katere strani imate in katere ste spremenili. Nastavite ga enkrat, oddate v Search Console in občasno preverite, ali so v njem prave strani: brez preusmeritev, napak 404 in oznak noindex.</p>
+<p>Največ vam pove razlika med oddanimi in indeksiranimi stranmi. Če manjkajo prav strani, ki ciljajo donosne ključne besede, izgubljate povpraševanja, ne le prikaze. Če želite vedeti, ali Google vidi strani, ki vam prinašajo stranke, nam pošljite svojo stran.</p>
+<p><a class="btn" href="/#review">Poglejmo, kaj lahko premaknemo <span aria-hidden="true">&rarr;</span></a></p>
