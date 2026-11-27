@@ -1,0 +1,96 @@
+TITLE: Hitrost spletne strani: PageSpeed in Core Web Vitals
+H1: Hitrost spletne strani in PageSpeed
+DESC: Kaj pomeni PageSpeed rezultat, kako Google meri Core Web Vitals, zakaj je stran počasna in katere popravke se splača narediti najprej.
+DATE: 2026-11-27
+NUM: 29
+CLUSTER: I Tehnični SEO in hitrost
+RELATED: tehnicni-seo, optimizacija-slik, wordpress-seo
+ROBOTS: noindex, nofollow
+<p>Hitrost spletne strani vpliva na uvrstitve v Googlu, vendar manj, kot obljubljajo mnogi ponudniki. Google pri razvrščanju upošteva Core Web Vitals, odločilna pa ostaja vsebina, ki odgovori na iskanje. Dobra meja je, da se glavna vsebina na telefonu prikaže v 2,5 sekunde, PageSpeed rezultat 90 ali več pa pomeni, da hitrost skoraj gotovo ni vaša glavna težava.</p>
+<p>Veliko lastnikov strani v orodju PageSpeed Insights zagleda rdečo številko 38 in misli, da je to razlog, da jih ni na prvi strani Googla. Včasih je, pogosto pa ni. Bolj kot uvrstitve hitrost navadno prizadene obiskovalce, ki odidejo, preden se stran naloži.</p>
+<p>V članku boste izvedeli, kako Google meri hitrost, kaj stran najpogosteje upočasni, kaj lahko popravite sami in kdaj počasna stran res stane povpraševanja in naročila.</p>
+
+<h2>Kaj pomeni hitrost spletne strani</h2>
+<p>Hitrost spletne strani je čas, v katerem obiskovalec vidi vsebino in lahko z njo nekaj naredi: prebere naslov, klikne gumb ali vpiše podatke v obrazec. Gre za zaporedje trenutkov, ki jih obiskovalec doživi kot »stran je hitra« ali »stran se vleče«, zato ga ena sama številka v sekundah slabo opiše.</p>
+<p>Google ta doživetja meri s tremi metrikami, ki jih imenuje Core Web Vitals (osnovni spletni vitalni podatki). Merijo, kako hitro se prikaže glavna vsebina, kako hitro se stran odzove na klik in ali se vsebina med nalaganjem premika. Skupaj z varno povezavo HTTPS in prijaznostjo do mobilnih naprav sodijo v t. i. izkušnjo na strani (page experience).</p>
+<p>Ločiti morate dve vrsti podatkov. Laboratorijski podatki nastanejo, ko orodje stran naloži enkrat, v simuliranih pogojih. Terenski podatki so zbrani od resničnih obiskovalcev, ki uporabljajo Chrome, v zadnjih 28 dneh. Google pri razvrščanju uporablja terenske podatke, vi pa laboratorijske potrebujete, da najdete vzrok.</p>
+
+<h2>Kako Google meri PageSpeed in Core Web Vitals</h2>
+<p>PageSpeed Insights je brezplačno Googlovo orodje, ki za vsak URL pokaže oboje: zgoraj terenske podatke o Core Web Vitals, spodaj laboratorijski test Lighthouse z oceno od 0 do 100. Ocena 90 ali več je zelena, 50 do 89 oranžna, pod 50 rdeča. Kako ocena nastane, Google razlaga v <a href="https://developers.google.com/speed/docs/insights/v5/about" target="_blank" rel="noopener">opisu orodja PageSpeed Insights</a>.</p>
+<p>Za uvrstitve šteje predvsem, ali vaša stran prestane Core Web Vitals. Mejne vrednosti so take:</p>
+<table>
+<thead><tr><th>Metrika</th><th>Kaj meri</th><th>Dobro</th><th>Slabo</th></tr></thead>
+<tbody>
+<tr><td>LCP (Largest Contentful Paint)</td><td>Kdaj se prikaže največji element vsebine</td><td>Do 2,5 sekunde</td><td>Več kot 4 sekunde</td></tr>
+<tr><td>INP (Interaction to Next Paint)</td><td>Kako hitro se stran odzove na klik ali dotik</td><td>Do 200 milisekund</td><td>Več kot 500 milisekund</td></tr>
+<tr><td>CLS (Cumulative Layout Shift)</td><td>Koliko se vsebina med nalaganjem premika</td><td>Do 0,1</td><td>Več kot 0,25</td></tr>
+</tbody>
+</table>
+<p>Stran prestane oceno, če so vse tri vrednosti dobre pri vsaj 75 % obiskov. Google v <a href="https://developers.google.com/search/docs/appearance/core-web-vitals?hl=sl" target="_blank" rel="noopener">dokumentaciji o Core Web Vitals</a> jasno pove, da jih njegovi sistemi za razvrščanje upoštevajo, a da dobra izkušnja ne nadomesti ustrezne vsebine.</p>
+<p>Za slovenske strani je tu past. Terenske podatke Google pokaže le, če ima stran dovolj obiskov iz Chroma. Manjše strani jih pogosto nimajo, zato orodje pokaže samo laboratorijski test, ki je navadno strožji od resnične izkušnje. Za pregled vseh strani hkrati uporabite poročilo o Core Web Vitals v Search Consoleu, ki ga opisuje <a href="https://support.google.com/webmasters/answer/9205520?hl=sl" target="_blank" rel="noopener">Googlova pomoč za Search Console</a>.</p>
+
+<h2>Najpogostejši razlogi za počasno stran</h2>
+<p>Pri večini počasnih strani krivca najdete v nekaj tipičnih vzrokih. Najprej preverite te:</p>
+<table>
+<thead><tr><th>Vzrok</th><th>Kako ga prepoznate</th><th>Kaj prizadene</th></tr></thead>
+<tbody>
+<tr><td>Prevelike slike</td><td>Fotografije po več MB, brez formata WebP</td><td>LCP</td></tr>
+<tr><td>Počasen strežnik ali gostovanje</td><td>Dolg odziv strežnika v diagnostiki testa</td><td>Vse metrike</td></tr>
+<tr><td>Preveč zunanjih skript</td><td>Klepet, sledilne kode, oglasi, pasica za piškotke</td><td>INP in LCP</td></tr>
+<tr><td>Težka tema ali graditelj strani</td><td>Velike datoteke CSS in JavaScript</td><td>LCP in INP</td></tr>
+<tr><td>Slike in pasice brez določene velikosti</td><td>Besedilo med nalaganjem skoči navzdol</td><td>CLS</td></tr>
+<tr><td>Verige preusmeritev</td><td>http, nato https, nato www pred pravim URL-jem</td><td>Prvi prikaz</td></tr>
+</tbody>
+</table>
+<p>Verige preusmeritev pogosto spregledate, ker jih obiskovalec ne vidi. Vsak dodaten skok med naslovi doda čas, preden se stran sploh začne nalagati. Kako jih uredite pravilno, opisujemo v članku o <a href="/301-preusmeritev/">301 preusmeritvah</a>.</p>
+
+<h2>Kako pospešiti WordPress, slike in skripte</h2>
+<p>Največ pridobite z nekaj popravki v pravem vrstnem redu. Večino strani v Sloveniji poganja WordPress, zato so koraki zapisani zanj, a načela veljajo za vse sisteme.</p>
+<ol>
+<li><strong>Stisnite slike in jim določite velikost.</strong> Fotografija na naslovnici naj ima nekaj sto KB, ne nekaj MB, v formatu WebP ali AVIF. Več o tem v vodiču za <a href="/optimizacija-slik/">optimizacijo slik</a>.</li>
+<li><strong>Vklopite predpomnjenje (cache).</strong> Vtičnik za predpomnjenje ali predpomnjenje na strežniku stran postreže že pripravljeno, namesto da jo sestavlja ob vsakem obisku.</li>
+<li><strong>Odstranite vtičnike, ki jih ne uporabljate.</strong> Vsak aktiven vtičnik lahko doda svoje skripte in sloge na vsako stran.</li>
+<li><strong>Preglejte zunanje skripte.</strong> Klepetalno okno, ki se naloži takoj, upočasni vsak obisk. Naložite ga z zamikom ali ga odstranite s strani, kjer ni potrebno.</li>
+<li><strong>Preverite odziv strežnika.</strong> Če je dolg tudi pri predpomnjeni strani, je težava v gostovanju, ne v kodi.</li>
+</ol>
+<p>Po vsakem koraku stran ponovno testirajte, ker posamezen popravek včasih pokvari kaj drugega. Širši pregled nastavitev WordPressa za iskalnike najdete v članku <a href="/wordpress-seo/">SEO za WordPress</a>.</p>
+
+<h2>Kaj storiti pri novi spletni strani</h2>
+<p>Pri novi spletni strani je hitrost najceneje urediti pred objavo. Kasneje vsak popravek pomeni poseg v temo, ki jo je izdelal nekdo drug.</p>
+<p>Izvajalcu v naročilo zapišite, da mora stran na telefonu prestati Core Web Vitals v laboratorijskem testu, in to preverite na testni povezavi, ne šele na živi strani. Preverite tudi, da stari URL-ji vodijo na nove z eno samo preusmeritvijo. Kaj vse še preveriti, da ob menjavi ne izgubite obiska iz Googla, opisujemo v vodiču za <a href="/prenova-spletne-strani-seo/">SEO pri prenovi spletne strani</a>.</p>
+
+<h2>Kdaj hitrost vpliva na konverzije in SEO</h2>
+<p>Popravki hitrosti se poplačajo, ko je počasnost ozko grlo med obiskom in povpraševanjem. Veriga je preprosta: prava ključna beseda pripelje obiskovalca, stran odgovori na njegovo vprašanje, obiskovalec pokliče, pošlje obrazec ali kupi. Počasna stran to verigo pretrga na prvem koraku, še preden obiskovalec prebere vašo ponudbo.</p>
+<p>Najbolj boli tam, kjer obiskovalec pride s telefona in hitro primerja. Nekdo, ki v Mariboru išče vodovodarja, odpre tri rezultate in pokliče prvega, ki se naloži. Kupec v spletni trgovini, ki predolgo čaka, da se naloži košarica, odide k drugemu ponudniku. Na majhnem slovenskem trgu ima donosna ključna beseda morda le 30 iskanj na mesec, zato vsak izgubljen obiskovalec šteje.</p>
+<p>Za uvrstitve je hitrost pogosto odločilna šele med stranmi, ki so si vsebinsko podobne. Stran z rezultatom 45, ki natančno odgovori na iskanje, lahko prehiti stran z rezultatom 98, ki ne. Če vas ni na prvi strani Googla, je razlog redko samo hitrost.</p>
+<p>Hitrost je samo en člen te verige. Pri mednarodni stranki, enem največjih nočnih klubov v Aziji, smo povpraševanja za rezervacije v prvem tednu povečali s 103 na 183 na teden, samo s popravki tega, kako obiskovalci stopijo v stik. Hitra stran brez jasnega naslednjega koraka ne prinese povpraševanj.</p>
+<p>Preden plačate za popravke, preverite v Google Analytics 4, ali obiskovalci s telefonov odhajajo pogosteje kot tisti z računalnikov, in katere strani prinašajo povpraševanja. Najprej pospešite tiste.</p>
+<p><a class="btn" href="/#review">Zahtevajte brezplačno SEO analizo <span aria-hidden="true">&rarr;</span></a></p>
+
+<h2>Kdaj naročiti optimizacijo hitrosti</h2>
+<p>Optimizacijo hitrosti naročite, ko stran ne prestane Core Web Vitals na straneh, ki prinašajo denar, in ko osnovni popravki niso pomagali. Pogoste napake so znane. Lastniki lovijo oceno 100 na naslovnici, medtem ko so strani izdelkov rdeče. Kupijo dražje gostovanje, čeprav je težava v slikah. Ali pa namestijo tri vtičnike za pospeševanje, ki si med seboj nagajajo.</p>
+<p>Hitrost je del širšega tehničnega SEO-ja, ki vključuje tudi indeksiranje, preusmeritve in strukturo strani. Več o tem v članku <a href="/tehnicni-seo/">tehnični SEO</a>.</p>
+<p>Dober izvajalec vam pred delom pokaže, katere strani in katere metrike bo popravil, in po delu primerja terenske podatke, ne le oceno v laboratorijskem testu. Kako se hitrost poveže s ključnimi besedami, vsebino in povezavami v eno celoto, opisujemo na strani <a href="/optimizacija-spletnih-strani/">optimizacija spletnih strani</a>.</p>
+
+<h2>Pogosta vprašanja o hitrosti spletne strani</h2>
+<h3>Kaj je PageSpeed?</h3>
+<p>PageSpeed Insights je brezplačno Googlovo orodje, ki izmeri hitrost posamezne strani na telefonu in računalniku. Pokaže oceno od 0 do 100, podatke resničnih obiskovalcev o Core Web Vitals, kadar jih ima dovolj, in seznam konkretnih predlogov, kaj stran upočasnjuje.</p>
+<h3>Kakšen PageSpeed rezultat je dober?</h3>
+<p>Ocena 90 ali več je dobra, 50 do 89 potrebuje izboljšave, pod 50 je slaba. Za Google je pomembnejše, ali stran prestane Core Web Vitals pri resničnih obiskovalcih. Stran z oceno 70, ki jih prestane, je v boljšem položaju kot stran z oceno 90 brez terenskih podatkov.</p>
+<h3>Kako hitro naj se naloži spletna stran?</h3>
+<p>Glavna vsebina naj se prikaže v največ 2,5 sekunde, stran naj se na klik odzove v največ 200 milisekundah, vsebina pa se med nalaganjem ne sme opazno premikati. To so Googlove meje za dobre Core Web Vitals, ki morajo veljati za vsaj 75 % obiskov.</p>
+<h3>Kako preverim hitrost strani v Googlu?</h3>
+<p>Posamezen URL vpišite v PageSpeed Insights in najprej poglejte rezultat za telefon. Za pregled vseh strani odprite poročilo o Core Web Vitals v Search Consoleu, ki strani združi v skupine s podobnimi težavami. Kako orodje nastavite in kaj še pokaže, opisujemo v vodiču za <a href="/google-search-console/">Google Search Console</a>.</p>
+<h3>Ali PageSpeed rezultat 100 pomeni najboljšo SEO optimizacijo?</h3>
+<p>Ne. Rezultat 100 pomeni, da je stran hitra v enem laboratorijskem testu, ne da odgovarja na iskanje ali ima zaupanja vredne povezave. Med 90 in 100 obiskovalec razlike skoraj ne opazi, zato je čas, porabljen za zadnjih nekaj točk, navadno bolje vložiti v vsebino.</p>
+<h3>Kakšna je razlika med Lighthouse in PageSpeed Insights?</h3>
+<p>Lighthouse je Googlov test, ki stran naloži v simuliranih pogojih in jo oceni. Vgrajen je v brskalnik Chrome in v PageSpeed Insights, ki ob rezultatu Lighthouse pokaže še terenske podatke resničnih obiskovalcev, ki jih Google uporablja pri razvrščanju.</p>
+<h3>Kako preverim, ali je problem v strežniku ali v kodi?</h3>
+<p>V rezultatih testa hitrosti poglejte čas odziva strežnika (TTFB). Če je dolg, je težava v gostovanju ali manjkajočem predpomnjenju. Če strežnik odgovori hitro, glavna vsebina pa se prikaže pozno, so krive slike, skripte ali tema, torej koda strani.</p>
+<h3>Ali je optimizacija hitrosti enkratni projekt ali stalna naloga?</h3>
+<p>Oboje. Prvi večji popravek je projekt, nato pa stran upočasni vsak nov vtičnik, sledilna koda ali nepomanjšana fotografija. Hitrost strani, ki prinašajo povpraševanja, preverite vsaj enkrat na mesec in po vsaki večji spremembi na strani.</p>
+
+<h2>Hitra stran, ki tudi prodaja</h2>
+<p>Hitrost spletne strani je vredno urediti, ko počasnost na straneh, ki prinašajo denar, odganja obiskovalce s telefonov. Cilj je stran, ki prestane Core Web Vitals, ocena 100 pa je stranski učinek. Najprej uredite slike, predpomnjenje, odvečne vtičnike in zunanje skripte, nato preverite strežnik.</p>
+<p>Hitrost sama ne prinese povpraševanj, lahko pa jih izgubi. Pri SEOPRO hitrost pregledamo v okviru brezplačne SEO analize in vam naravnost povemo, kateri popravki bodo na straneh, ki prinašajo povpraševanja, res kaj premaknili, in kateri ne. Če želite pregled samo hitrosti, nam pišite na <a href="mailto:igor@seopro.si">igor@seopro.si</a>.</p>
+<p><a class="btn" href="/#review">Pošljite nam svojo stran <span aria-hidden="true">&rarr;</span></a></p>
