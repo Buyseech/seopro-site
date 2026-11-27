@@ -10,7 +10,20 @@ This script only (re)generates:
 Run it after adding or editing a post:  python3 tools/build.py
 Each post file starts with a few header lines (TITLE, H1, DESC, DATE), then the article HTML.
 """
-import html, pathlib, re
+import datetime, html, os, pathlib, re, shutil
+
+# Scheduled publishing: a post whose DATE is after today (Ljubljana time) is not built.
+# It is left out of the blog list, the home page, the sitemap and "Preberite še",
+# and links to it from other pages are shown as plain text until it is published.
+# Override the day with BUILD_DATE=YYYY-MM-DD.
+def _today():
+    try:
+        from zoneinfo import ZoneInfo
+        return datetime.datetime.now(ZoneInfo("Europe/Ljubljana")).date().isoformat()
+    except Exception:
+        return datetime.date.today().isoformat()
+TODAY = os.environ.get("BUILD_DATE") or _today()
+UNPUBLISHED = set()
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 PUB = ROOT / "public"
@@ -121,6 +134,9 @@ def load_posts():
             i += 1
         body = "\n".join(lines[i:]).strip()
         plain = re.sub(r"<[^>]+>", "", body)
+        if meta.get("DATE", "") > TODAY:
+            UNPUBLISHED.add(f.stem)
+            continue
         posts.append(dict(slug=f.stem, body=body, words=len(plain.split()), **meta))
     posts.sort(key=lambda p: (-int(p["DATE"].replace("-", "")), int(p.get("NUM", "999"))))
     return posts
@@ -154,7 +170,18 @@ def label_tables(content):
     return re.sub(r"<table[^>]*>.*?</table>", one, content, flags=re.S)
 
 
+def unlink_unpublished(content):
+    """Turn links to not-yet-published posts into plain text."""
+    if not UNPUBLISHED:
+        return content
+    alt = "|".join(re.escape(x) for x in UNPUBLISHED)
+    pat = r'<a\b[^>]*\bhref="(?:https://(?:www\.)?seopro\.si)?/(?:' + alt + r')/[^"]*"[^>]*>(.*?)</a>'
+    return re.sub(pat, r"\1", content, flags=re.S)
+
+
 def write(path, content):
+    if str(path).endswith(".html"):
+        content = unlink_unpublished(content)
     if str(path).endswith(".html") and "<table" in content:
         content = label_tables(content)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -288,17 +315,37 @@ def build_shared_pages():
         s = re.sub(r'<meta name="robots" content="[^"]*">', f'<meta name="robots" content="{robots}">', s, count=1)
         s = re.sub(r"<!-- HEADER -->.*?<!-- /HEADER -->", lambda m: "<!-- HEADER -->\n" + header() + "\n<!-- /HEADER -->", s, flags=re.S)
         s = re.sub(r"<!-- FOOTER -->.*?<!-- /FOOTER -->", lambda m: "<!-- FOOTER -->\n" + footer() + "\n<!-- /FOOTER -->", s, flags=re.S)
-        f.write_text(s, encoding="utf-8")
+        f.write_text(unlink_unpublished(s), encoding="utf-8")
+
+
+def build_redirects():
+    out = []
+    for line in (ROOT / "tools" / "redirects.src").read_text(encoding="utf-8").splitlines():
+        parts = line.split()
+        if line.startswith("#") or len(parts) < 3:
+            out.append(line)
+            continue
+        src, dst, code = parts[:3]
+        fb = next((x.split(":", 1)[1] for x in parts[3:] if x.startswith("until-published:")), "/")
+        if dst.strip("/").split("/")[0].split("#")[0] in UNPUBLISHED:
+            dst, code = fb, "302"
+        out.append(f"{src} {dst} {code}")
+    (PUB / "_redirects").write_text("\n".join(out) + "\n", encoding="utf-8")
 
 
 if __name__ == "__main__":
     posts = load_posts()
+    for slug in UNPUBLISHED:
+        shutil.rmtree(PUB / slug, ignore_errors=True)
     for p in posts:
         build_post(p, posts)
     build_blog(posts)
     build_sitemap(posts)
     build_shared_pages()
+    import build as _self  # landings.py imports this file as a separate module
+    _self.UNPUBLISHED.update(UNPUBLISHED)
     from landings import build_landings
     landings = build_landings()
     build_sitemap(posts, landings)
-    print(f"Built {len(posts)} posts, {len(landings)} landing pages, blog list, sitemap.")
+    build_redirects()
+    print(f"Built {len(posts)} posts, {len(landings)} landing pages, blog list, sitemap. Scheduled (not built): {len(UNPUBLISHED)}.")

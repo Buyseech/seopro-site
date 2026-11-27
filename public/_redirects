@@ -1,3 +1,5 @@
+# Source for public/_redirects (tools/build.py writes that file).
+# If a target post is still scheduled, build.py sends the old URL to the page after 'until-published:' with a 302 instead.
 # Old WordPress addresses -> new site (301 keeps their Google ranking and links)
 /kontakt /#review 301
 /kontakt/ /#review 301
@@ -39,12 +41,12 @@
 /seopro-si-praznuje-4-leta-delovanja/ / 301
 /povprasevanje /#review 301
 /povprasevanje/ /#review 301
-/seo-adwords /vpliv-google-adwords-sprememb-na-seo/ 301
-/seo-adwords/ /vpliv-google-adwords-sprememb-na-seo/ 301
-/tehnicna-optimizacija /tehnicni-seo/ 301
-/tehnicna-optimizacija/ /tehnicni-seo/ 301
-/slike /optimizacija-slik/ 301
-/slike/ /optimizacija-slik/ 301
+/seo-adwords / 302
+/seo-adwords/ / 302
+/tehnicna-optimizacija /seo-audit/ 302
+/tehnicna-optimizacija/ /seo-audit/ 302
+/slike /on-site/ 302
+/slike/ /on-site/ 302
 /potrditev-paket / 301
 /potrditev-paket/ / 301
 /seo-ljubljana /optimizacija-spletnih-strani/ 301
