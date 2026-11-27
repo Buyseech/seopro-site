@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.4">
+<link rel="stylesheet" href="/styles.css?v=1.5">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Optimizacija slik za SEO", "description": "Optimizacija slik za SEO: ime datoteke, alt besedilo, velikost, format WebP ali AVIF in hitrost na telefonu. S kontrolnim seznamom pred objavo.", "datePublished": "2026-11-27", "inLanguage": "sl-SI", "mainEntityOfPage": "https://seopro.si/optimizacija-slik/", "author": {"@type": "Person", "name": "Igor Bajsić", "url": "https://buyseech.com/"}, "publisher": {"@type": "Organization", "name": "SEOPRO.si", "url": "https://seopro.si/"}, "image": "https://seopro.si/assets/img/igor-buyseech.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": "https://seopro.si/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seopro.si/blog/"}, {"@type": "ListItem", "position": 3, "name": "Optimizacija slik za SEO", "item": "https://seopro.si/optimizacija-slik/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ali alt besedilo pomaga pri SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Alt besedilo je najmočnejši namig, iz katerega Google razbere, kaj je na sliki, zato vpliva na uvrstitev v Google Slikah in na razumevanje strani. Hkrati ga bralniki zaslona preberejo slepim in slabovidnim. Napišite en stavek, ki sliko opiše, in ključno besedo uporabite le, če res sodi zraven."}}, {"@type": "Question", "name": "Kateri format slike je najboljši za splet?", "acceptedAnswer": {"@type": "Answer", "text": "Za fotografije je danes najboljša privzeta izbira WebP, ker da pri enaki kakovosti opazno manjšo datoteko kot JPEG in ga podpirajo vsi sodobni brskalniki. AVIF stisne še bolj, a se počasneje ustvari. PNG uporabite za posnetke zaslona in grafike s prosojnostjo, SVG pa za logotipe in ikone."}}, {"@type": "Question", "name": "Ali naj ime datoteke slike vsebuje ključno besedo?", "acceptedAnswer": {"@type": "Answer", "text": "Da, če ključna beseda opisuje, kaj je na sliki. Ime »sivi-trosed-hrastove-noge.jpg« Googlu pove več kot »IMG_4821.jpg«, vendar je ime datoteke šibak namig v primerjavi z alt besedilom in besedilom okoli slike. Uporabite male črke, vezaje in ime brez šumnikov, ključnih besed pa ne nizajte."}}, {"@type": "Question", "name": "Kako stisniti slike brez izgube kakovosti?", "acceptedAnswer": {"@type": "Answer", "text": "Sliko najprej zmanjšajte na širino, v kateri se prikaže, nato jo shranite kot WebP pri kakovosti okoli 75 do 85. Razlike na zaslonu večinoma ne boste videli, datoteka pa bo večkrat manjša. Kjer ne sme izginiti niti en piksel, na primer pri posnetkih zaslona in grafikah, izberite stiskanje brez izgube."}}, {"@type": "Question", "name": "Ali nalaganje slik z zamikom (lazy loading) škodi SEO-ju?", "acceptedAnswer": {"@type": "Answer", "text": "Ne, če ga uporabite pravilno. Pri slikah nižje na strani pospeši prikaz, Google pa jih pri upodabljanju strani vseeno najde. Škodi le pri prvi, največji sliki na vidnem delu strani, ker poslabša meritev LCP."}}]}]}</script>
 </head>
 <body>
@@ -75,10 +75,10 @@
 <table>
 <thead><tr><th>Slika</th><th>Slabo alt besedilo</th><th>Dobro alt besedilo</th></tr></thead>
 <tbody>
-<tr><td>Izdelek v spletni trgovini</td><td>»kavč«</td><td>»Sivi trosed iz blaga s hrastovimi nogami«</td></tr>
-<tr><td>Fotografija opravljenega dela</td><td>»slika1«</td><td>»Prenovljena kopalnica z velikimi sivimi ploščicami v Celju«</td></tr>
-<tr><td>Fotografija ekipe</td><td>»zobozdravnik ljubljana zobozdravnik zobje«</td><td>»Ekipa zobne ordinacije v čakalnici«</td></tr>
-<tr><td>Dekorativna črta ali ozadje</td><td>»dekoracija«</td><td>Prazen atribut alt=""</td></tr>
+<tr><td data-label="Slika">Izdelek v spletni trgovini</td><td data-label="Slabo alt besedilo">»kavč«</td><td data-label="Dobro alt besedilo">»Sivi trosed iz blaga s hrastovimi nogami«</td></tr>
+<tr><td data-label="Slika">Fotografija opravljenega dela</td><td data-label="Slabo alt besedilo">»slika1«</td><td data-label="Dobro alt besedilo">»Prenovljena kopalnica z velikimi sivimi ploščicami v Celju«</td></tr>
+<tr><td data-label="Slika">Fotografija ekipe</td><td data-label="Slabo alt besedilo">»zobozdravnik ljubljana zobozdravnik zobje«</td><td data-label="Dobro alt besedilo">»Ekipa zobne ordinacije v čakalnici«</td></tr>
+<tr><td data-label="Slika">Dekorativna črta ali ozadje</td><td data-label="Slabo alt besedilo">»dekoracija«</td><td data-label="Dobro alt besedilo">Prazen atribut alt=""</td></tr>
 </tbody>
 </table>
 <p>Običajno zadostuje od 5 do 15 besed. Besed »slika« in »fotografija« ne pišite, ker bralnik zaslona to pove sam.</p>
@@ -90,11 +90,11 @@
 <table>
 <thead><tr><th>Format</th><th>Kdaj ga uporabite</th><th>Na kaj pazite</th></tr></thead>
 <tbody>
-<tr><td>JPEG</td><td>Fotografije, kjer potrebujete največjo združljivost</td><td>Večje datoteke kot WebP in AVIF</td></tr>
-<tr><td>PNG</td><td>Posnetki zaslona, grafike s prosojnim ozadjem</td><td>Za fotografije je pretežak</td></tr>
-<tr><td>WebP</td><td>Privzeta izbira za fotografije in grafike</td><td>Starejši programi za urejanje ga ne odprejo</td></tr>
-<tr><td>AVIF</td><td>Velike fotografije, kjer šteje vsak kilobajt</td><td>Počasnejše pretvarjanje, preverite podporo sistema</td></tr>
-<tr><td>SVG</td><td>Logotipi, ikone, preproste ilustracije</td><td>Ni primeren za fotografije</td></tr>
+<tr><td data-label="Format">JPEG</td><td data-label="Kdaj ga uporabite">Fotografije, kjer potrebujete največjo združljivost</td><td data-label="Na kaj pazite">Večje datoteke kot WebP in AVIF</td></tr>
+<tr><td data-label="Format">PNG</td><td data-label="Kdaj ga uporabite">Posnetki zaslona, grafike s prosojnim ozadjem</td><td data-label="Na kaj pazite">Za fotografije je pretežak</td></tr>
+<tr><td data-label="Format">WebP</td><td data-label="Kdaj ga uporabite">Privzeta izbira za fotografije in grafike</td><td data-label="Na kaj pazite">Starejši programi za urejanje ga ne odprejo</td></tr>
+<tr><td data-label="Format">AVIF</td><td data-label="Kdaj ga uporabite">Velike fotografije, kjer šteje vsak kilobajt</td><td data-label="Na kaj pazite">Počasnejše pretvarjanje, preverite podporo sistema</td></tr>
+<tr><td data-label="Format">SVG</td><td data-label="Kdaj ga uporabite">Logotipi, ikone, preproste ilustracije</td><td data-label="Na kaj pazite">Ni primeren za fotografije</td></tr>
 </tbody>
 </table>
 <p>Vse te formate Google indeksira. Za večino podjetniških strani in trgovin je WebP danes varna privzeta izbira.</p>
@@ -151,14 +151,14 @@
 <table>
 <thead><tr><th>Kaj preverite</th><th>Kakšen je cilj</th></tr></thead>
 <tbody>
-<tr><td>Ime datoteke</td><td>Opisno, male črke, besede z vezaji</td></tr>
-<tr><td>Alt besedilo</td><td>En stavek, ki opiše sliko</td></tr>
-<tr><td>Širina slike</td><td>Največ dvakratna širina prikaza</td></tr>
-<tr><td>Format</td><td>WebP ali AVIF za fotografije, SVG za logotip</td></tr>
-<tr><td>Velikost datoteke</td><td>Vsebinska fotografija praviloma pod 200 KB</td></tr>
-<tr><td>Atributa width in height</td><td>Določena pri vsaki sliki</td></tr>
-<tr><td>Nalaganje z zamikom</td><td>Pri vseh slikah razen prve na vidnem delu</td></tr>
-<tr><td>Hitrost na telefonu</td><td>LCP pod 2,5 sekunde v PageSpeed Insights</td></tr>
+<tr><td data-label="Kaj preverite">Ime datoteke</td><td data-label="Kakšen je cilj">Opisno, male črke, besede z vezaji</td></tr>
+<tr><td data-label="Kaj preverite">Alt besedilo</td><td data-label="Kakšen je cilj">En stavek, ki opiše sliko</td></tr>
+<tr><td data-label="Kaj preverite">Širina slike</td><td data-label="Kakšen je cilj">Največ dvakratna širina prikaza</td></tr>
+<tr><td data-label="Kaj preverite">Format</td><td data-label="Kakšen je cilj">WebP ali AVIF za fotografije, SVG za logotip</td></tr>
+<tr><td data-label="Kaj preverite">Velikost datoteke</td><td data-label="Kakšen je cilj">Vsebinska fotografija praviloma pod 200 KB</td></tr>
+<tr><td data-label="Kaj preverite">Atributa width in height</td><td data-label="Kakšen je cilj">Določena pri vsaki sliki</td></tr>
+<tr><td data-label="Kaj preverite">Nalaganje z zamikom</td><td data-label="Kakšen je cilj">Pri vseh slikah razen prve na vidnem delu</td></tr>
+<tr><td data-label="Kaj preverite">Hitrost na telefonu</td><td data-label="Kakšen je cilj">LCP pod 2,5 sekunde v PageSpeed Insights</td></tr>
 </tbody>
 </table>
 <p>Meja 200 KB je praktično vodilo, ne Googlovo pravilo. Naslovna fotografija čez cel zaslon je lahko nekoliko večja.</p>

@@ -99,7 +99,7 @@ def head(title, desc, url, og_type="website", extra="", robots="index, follow, m
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.4">
+<link rel="stylesheet" href="/styles.css?v=1.5">
 {extra}</head>'''
 
 
@@ -135,7 +135,28 @@ def card(p, level="h3"):
       </a>'''
 
 
+def label_tables(content):
+    """Give each <td> a data-label with its column header, so tables can stack as cards on mobile."""
+    def one(m):
+        t = m.group(0)
+        heads = [re.sub(r"<[^>]+>", "", h).strip() for h in re.findall(r"<th[^>]*>(.*?)</th>", t, re.S)]
+        if not heads:
+            return t
+        def row(r):
+            i = [0]
+            def cell(c):
+                k = i[0]; i[0] += 1
+                if "data-label" in c.group(0) or k >= len(heads):
+                    return c.group(0)
+                return c.group(0)[:-1] + f' data-label="{html.escape(heads[k], quote=True)}">'
+            return re.sub(r"<td(?:\s[^>]*)?>", cell, r.group(0))
+        return re.sub(r"<tr[^>]*>.*?</tr>", row, t, flags=re.S)
+    return re.sub(r"<table[^>]*>.*?</table>", one, content, flags=re.S)
+
+
 def write(path, content):
+    if str(path).endswith(".html") and "<table" in content:
+        content = label_tables(content)
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(content, encoding="utf-8")
 

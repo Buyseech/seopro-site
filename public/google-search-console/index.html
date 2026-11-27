@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.4">
+<link rel="stylesheet" href="/styles.css?v=1.5">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Google Search Console: kaj pove o SEO in kako jo uporabljati", "description": "Kaj je Google Search Console, kako orodje nastavite in kako iz klikov, prikazov in poizvedb dobite SEO izboljšave, ki prinesejo povpraševanja.", "datePublished": "2026-11-27", "inLanguage": "sl-SI", "mainEntityOfPage": "https://seopro.si/google-search-console/", "author": {"@type": "Person", "name": "Igor Bajsić", "url": "https://buyseech.com/"}, "publisher": {"@type": "Organization", "name": "SEOPRO.si", "url": "https://seopro.si/"}, "image": "https://seopro.si/assets/img/igor-buyseech.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": "https://seopro.si/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seopro.si/blog/"}, {"@type": "ListItem", "position": 3, "name": "Google Search Console: kaj pove o SEO in kako jo uporabljati", "item": "https://seopro.si/google-search-console/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ali je Google Search Console brezplačen?", "acceptedAnswer": {"@type": "Answer", "text": "Da, Google Search Console je popolnoma brezplačen. Potrebujete le Google račun in dostop do strani ali nastavitev domene, da potrdite lastništvo. Plačljive različice ni, vsi podatki in poročila so na voljo vsem lastnikom strani."}}, {"@type": "Question", "name": "Ali je Search Console dober za SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Da, za SEO je to osnovno orodje, ker podatki prihajajo neposredno od Googla. Pokaže, kje ste blizu prve strani, kje naslov ne dobi klikov in katere strani niso v indeksu. Konkurence in povpraševanj ne pokaže, zato ga dopolnite z GA4."}}, {"@type": "Question", "name": "Kako pogosto se osvežujejo podatki v Search Consoleu?", "acceptedAnswer": {"@type": "Answer", "text": "Podatki o učinkovitosti se osvežujejo vsak dan, običajno z zamikom približno dveh dni, zato so zadnji dnevi lahko še nepopolni. Orodje hrani podatke za zadnjih 16 mesecev. Če želite daljšo zgodovino, podatke redno izvažajte."}}, {"@type": "Question", "name": "Kaj pomeni, če imam veliko prikazov in malo klikov?", "acceptedAnswer": {"@type": "Answer", "text": "Najpogosteje pomeni, da ste na 2. strani Googla ali nižje, kjer skoraj nihče ne klikne. Če ste na prvi strani in je CTR vseeno nizek, naslov in meta opis ne prepričata ali pa iskalni namen ni pravi. Preverite pozicijo za vsako poizvedbo posebej."}}, {"@type": "Question", "name": "Ali Search Console pokaže vse ključne besede?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Google zaradi zasebnosti skrije redke poizvedbe, ki jih je vpisalo malo ljudi, tabele v vmesniku pa pokažejo največ 1.000 vrstic. Seštevek klikov po poizvedbah je zato skoraj vedno manjši od skupnega števila klikov."}}, {"@type": "Question", "name": "Kako vem, ali je moja stran indeksirana pravilno?", "acceptedAnswer": {"@type": "Answer", "text": "Vpišite naslov strani v pregled URL-ja na vrhu Search Consolea. Orodje pokaže, ali je stran v Googlu, katero kanonično različico je izbral Google in kdaj jo je nazadnje obiskal. Za celotno stran preverite poročilo o indeksiranju strani."}}, {"@type": "Question", "name": "Kakšna je razlika med Google Search Consoleom in GA4?", "acceptedAnswer": {"@type": "Answer", "text": "Search Console pokaže, kaj se dogaja pred klikom: prikaze, poizvedbe in pozicije v Googlu. GA4 pokaže, kaj se zgodi po kliku: obiske, vedenje in povpraševanja. Za SEO odločitve potrebujete obe orodji, najbolje povezani."}}]}]}</script>
 </head>
 <body>
@@ -86,10 +86,10 @@
 <table>
 <thead><tr><th>Podatek</th><th>Kaj pomeni</th><th>Na kaj pazite</th></tr></thead>
 <tbody>
-<tr><td>Prikazi</td><td>Kolikokrat se je stran pokazala v rezultatih</td><td>Prikaz na 2. strani Googla skoraj nikoli ne prinese klika</td></tr>
-<tr><td>Kliki</td><td>Kolikokrat je nekdo kliknil na vašo stran</td><td>Klik še ni povpraševanje</td></tr>
-<tr><td>CTR</td><td>Delež prikazov, ki so se končali s klikom</td><td>Nizek CTR pri dobri poziciji kaže na slab naslov ali opis</td></tr>
-<tr><td>Povprečna pozicija</td><td>Povprečno mesto vaše strani v rezultatih</td><td>Povprečje več poizvedb skrije, kje stran res stoji</td></tr>
+<tr><td data-label="Podatek">Prikazi</td><td data-label="Kaj pomeni">Kolikokrat se je stran pokazala v rezultatih</td><td data-label="Na kaj pazite">Prikaz na 2. strani Googla skoraj nikoli ne prinese klika</td></tr>
+<tr><td data-label="Podatek">Kliki</td><td data-label="Kaj pomeni">Kolikokrat je nekdo kliknil na vašo stran</td><td data-label="Na kaj pazite">Klik še ni povpraševanje</td></tr>
+<tr><td data-label="Podatek">CTR</td><td data-label="Kaj pomeni">Delež prikazov, ki so se končali s klikom</td><td data-label="Na kaj pazite">Nizek CTR pri dobri poziciji kaže na slab naslov ali opis</td></tr>
+<tr><td data-label="Podatek">Povprečna pozicija</td><td data-label="Kaj pomeni">Povprečno mesto vaše strani v rezultatih</td><td data-label="Na kaj pazite">Povprečje več poizvedb skrije, kje stran res stoji</td></tr>
 </tbody>
 </table>
 <p>Pozicijo vedno preverite po posamezni poizvedbi in strani. Povprečna pozicija 8 lahko pomeni, da ste za eno besedo na 2. mestu, za drugo pa na 30. Uporabite filtre na vrhu poročila (obdobje, poizvedba, stran, država, naprava), saj v Sloveniji večina ljudi išče na telefonu. Kako Google izračuna vsako številko, natančno opisuje pomoč za <a href="https://support.google.com/webmasters/answer/7576553?hl=sl" target="_blank" rel="noopener">poročilo o učinkovitosti</a>.</p>
@@ -129,11 +129,11 @@
 <table>
 <thead><tr><th>Vprašanje</th><th>Search Console</th><th>Google Analytics 4</th></tr></thead>
 <tbody>
-<tr><td>Za katera iskanja se prikazujem?</td><td>Da</td><td>Le prek povezave s Search Consoleom</td></tr>
-<tr><td>Kaj obiskovalci naredijo na strani?</td><td>Ne</td><td>Da</td></tr>
-<tr><td>Ali je stran indeksirana?</td><td>Da</td><td>Ne</td></tr>
-<tr><td>Koliko povpraševanj prinese organski promet?</td><td>Ne</td><td>Da, če so nastavljeni ključni dogodki</td></tr>
-<tr><td>Kakšen je promet iz drugih virov?</td><td>Ne</td><td>Da</td></tr>
+<tr><td data-label="Vprašanje">Za katera iskanja se prikazujem?</td><td data-label="Search Console">Da</td><td data-label="Google Analytics 4">Le prek povezave s Search Consoleom</td></tr>
+<tr><td data-label="Vprašanje">Kaj obiskovalci naredijo na strani?</td><td data-label="Search Console">Ne</td><td data-label="Google Analytics 4">Da</td></tr>
+<tr><td data-label="Vprašanje">Ali je stran indeksirana?</td><td data-label="Search Console">Da</td><td data-label="Google Analytics 4">Ne</td></tr>
+<tr><td data-label="Vprašanje">Koliko povpraševanj prinese organski promet?</td><td data-label="Search Console">Ne</td><td data-label="Google Analytics 4">Da, če so nastavljeni ključni dogodki</td></tr>
+<tr><td data-label="Vprašanje">Kakšen je promet iz drugih virov?</td><td data-label="Search Console">Ne</td><td data-label="Google Analytics 4">Da</td></tr>
 </tbody>
 </table>
 <p>Kliki v Search Consoleu in seje v GA4 se nikoli ne ujemajo povsem, ker orodji štejeta različno, GA4 pa ne zabeleži obiskovalcev, ki zavrnejo piškotke. Velika razlika pogosto pomeni napako v sledenju.</p>

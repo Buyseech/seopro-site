@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.4">
+<link rel="stylesheet" href="/styles.css?v=1.5">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "HTTPS in SSL certifikat: zakaj sta pomembna za SEO", "description": "HTTP vs HTTPS za SEO: koliko certifikat vpliva na uvrstitve, kaj se zgodi, če stran ostane na HTTP, in katere napake pri prehodu stanejo povpraševanja.", "datePublished": "2026-11-27", "inLanguage": "sl-SI", "mainEntityOfPage": "https://seopro.si/http-ali-https-zakaj-bo-ssl-certifikat-nujno-zlo-za-vse-spletne-strani/", "author": {"@type": "Person", "name": "Igor Bajsić", "url": "https://buyseech.com/"}, "publisher": {"@type": "Organization", "name": "SEOPRO.si", "url": "https://seopro.si/"}, "image": "https://seopro.si/assets/img/igor-buyseech.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": "https://seopro.si/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seopro.si/blog/"}, {"@type": "ListItem", "position": 3, "name": "HTTPS in SSL certifikat: zakaj sta pomembna za SEO", "item": "https://seopro.si/http-ali-https-zakaj-bo-ssl-certifikat-nujno-zlo-za-vse-spletne-strani/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ali HTTPS sam izboljša uvrstitve?", "acceptedAnswer": {"@type": "Answer", "text": "Le malo. Google HTTPS od leta 2014 upošteva kot lahek signal, ki je ob začetku vplival na manj kot 1 % poizvedb. Vsebina in povratne povezave odločajo veliko več. Pomembnejše je, da HTTPS prepreči opozorila v brskalniku in podvojene različice strani, ki razdelijo signale."}}, {"@type": "Question", "name": "Kaj je mixed content in zakaj je problem?", "acceptedAnswer": {"@type": "Answer", "text": "Mixed content ali mešana vsebina pomeni, da se stran naloži prek HTTPS, posamezne slike, skripte ali pisave pa prek HTTP. Brskalnik jih nadgradi ali blokira, zato se lahko pokvarita videz strani ali obrazec, obiskovalec pa vidi opozorilo. Rešitev je, da vse vire nalagate prek HTTPS."}}, {"@type": "Question", "name": "Ali je brezplačen SSL dovolj?", "acceptedAnswer": {"@type": "Answer", "text": "Za večino podjetij in spletnih trgovin da. Brezplačni certifikati za spletno stran (DV) šifrirajo podatke enako kot plačljivi, Google pa med njimi pri uvrstitvah ne dela razlike. Plačljiv certifikat OV ali EV izberite, če ga zahteva vaš plačilni ponudnik ali notranja pravila."}}, {"@type": "Question", "name": "Kako preverim, ali je vse na strani res pod HTTPS?", "acceptedAnswer": {"@type": "Answer", "text": "Odprite ključne strani, tudi obrazec in blagajno, in preverite, da brskalnik ne kaže opozorila. V orodjih za razvijalce brskalnika (tipka F12) zavihek Console izpiše mešano vsebino. Za celotno stran uporabite pajka, ki najde vse notranje povezave in vire na http://."}}, {"@type": "Question", "name": "Ali moram po prehodu na HTTPS urediti še preusmeritve?", "acceptedAnswer": {"@type": "Answer", "text": "Da, to je najpomembnejši korak. Vsak stari naslov HTTP mora s trajno preusmeritvijo 301 voditi na svoj par na HTTPS, ne na domačo stran. Brez tega Google indeksira dve različici. Posodobite tudi kanonične oznake, notranje povezave in zemljevid strani."}}, {"@type": "Question", "name": "Kako zavarujem WordPress stran?", "acceptedAnswer": {"@type": "Answer", "text": "Začnite s HTTPS na celotni strani, nato redno posodabljajte WordPress, teme in vtičnike ter odstranite tiste, ki jih ne uporabljate. Uporabite močna gesla in dvostopenjsko prijavo za skrbnike ter nastavite samodejne varnostne kopije. Certifikat ščiti samo prenos podatkov."}}]}]}</script>
 </head>
 <body>
@@ -71,12 +71,12 @@
 <table>
 <thead><tr><th>Lastnost</th><th>HTTP</th><th>HTTPS</th></tr></thead>
 <tbody>
-<tr><td>Začetek naslova</td><td>http://</td><td>https://</td></tr>
-<tr><td>Prenos podatkov</td><td>Nešifriran</td><td>Šifriran s TLS</td></tr>
-<tr><td>Oznaka v Chromu</td><td>»Ni varno«</td><td>Brez opozorila</td></tr>
-<tr><td>Obrazci in plačila</td><td>Opozorilo ob vnosu podatkov</td><td>Brez opozorila</td></tr>
-<tr><td>Protokol HTTP/2 v brskalnikih</td><td>Ne deluje</td><td>Deluje</td></tr>
-<tr><td>Signal za Google</td><td>Brez prednosti</td><td>Majhen pozitiven signal</td></tr>
+<tr><td data-label="Lastnost">Začetek naslova</td><td data-label="HTTP">http://</td><td data-label="HTTPS">https://</td></tr>
+<tr><td data-label="Lastnost">Prenos podatkov</td><td data-label="HTTP">Nešifriran</td><td data-label="HTTPS">Šifriran s TLS</td></tr>
+<tr><td data-label="Lastnost">Oznaka v Chromu</td><td data-label="HTTP">»Ni varno«</td><td data-label="HTTPS">Brez opozorila</td></tr>
+<tr><td data-label="Lastnost">Obrazci in plačila</td><td data-label="HTTP">Opozorilo ob vnosu podatkov</td><td data-label="HTTPS">Brez opozorila</td></tr>
+<tr><td data-label="Lastnost">Protokol HTTP/2 v brskalnikih</td><td data-label="HTTP">Ne deluje</td><td data-label="HTTPS">Deluje</td></tr>
+<tr><td data-label="Lastnost">Signal za Google</td><td data-label="HTTP">Brez prednosti</td><td data-label="HTTPS">Majhen pozitiven signal</td></tr>
 </tbody>
 </table>
 <p>SSL certifikati se ločijo po stopnji preverjanja. Certifikat DV potrdi samo lastništvo domene in ga pri večini gostiteljev dobite brezplačno. Certifikata OV in EV preverita tudi podjetje, ki stoji za domeno. Za Google med njimi ni razlike: šifriranje je enako in signal za uvrstitve tudi.</p>
@@ -104,14 +104,14 @@
 <table>
 <thead><tr><th>Napaka</th><th>Posledica</th><th>Rešitev</th></tr></thead>
 <tbody>
-<tr><td>Brez preusmeritev 301</td><td>Dve različici strani v indeksu</td><td>Vsak naslov HTTP preusmerite na HTTPS</td></tr>
-<tr><td>Vse stare strani preusmerjene na domačo</td><td>Podstrani izgubijo uvrstitve</td><td>Vsako stran preusmerite na njen par</td></tr>
-<tr><td>Veriga več preusmeritev</td><td>Počasnejše nalaganje in šibkejši signali</td><td>Ena preusmeritev na končni naslov</td></tr>
-<tr><td>Kanonična oznaka kaže na HTTP</td><td>Google dobi nasprotujoča si navodila</td><td>Vse kanonične oznake na HTTPS</td></tr>
-<tr><td>Mešana vsebina</td><td>Opozorilo ali blokirane slike in skripte</td><td>Vse vire nalagajte prek HTTPS</td></tr>
-<tr><td>Stare notranje povezave</td><td>Nepotrebne preusmeritve pri vsakem kliku</td><td>Posodobite meni, vsebino in nogo</td></tr>
-<tr><td>Zemljevid strani s starimi naslovi</td><td>Google obiskuje stare naslove</td><td>V sitemap samo naslovi HTTPS</td></tr>
-<tr><td>Potekel certifikat</td><td>Brskalnik pokaže celozaslonsko opozorilo</td><td>Samodejno podaljševanje</td></tr>
+<tr><td data-label="Napaka">Brez preusmeritev 301</td><td data-label="Posledica">Dve različici strani v indeksu</td><td data-label="Rešitev">Vsak naslov HTTP preusmerite na HTTPS</td></tr>
+<tr><td data-label="Napaka">Vse stare strani preusmerjene na domačo</td><td data-label="Posledica">Podstrani izgubijo uvrstitve</td><td data-label="Rešitev">Vsako stran preusmerite na njen par</td></tr>
+<tr><td data-label="Napaka">Veriga več preusmeritev</td><td data-label="Posledica">Počasnejše nalaganje in šibkejši signali</td><td data-label="Rešitev">Ena preusmeritev na končni naslov</td></tr>
+<tr><td data-label="Napaka">Kanonična oznaka kaže na HTTP</td><td data-label="Posledica">Google dobi nasprotujoča si navodila</td><td data-label="Rešitev">Vse kanonične oznake na HTTPS</td></tr>
+<tr><td data-label="Napaka">Mešana vsebina</td><td data-label="Posledica">Opozorilo ali blokirane slike in skripte</td><td data-label="Rešitev">Vse vire nalagajte prek HTTPS</td></tr>
+<tr><td data-label="Napaka">Stare notranje povezave</td><td data-label="Posledica">Nepotrebne preusmeritve pri vsakem kliku</td><td data-label="Rešitev">Posodobite meni, vsebino in nogo</td></tr>
+<tr><td data-label="Napaka">Zemljevid strani s starimi naslovi</td><td data-label="Posledica">Google obiskuje stare naslove</td><td data-label="Rešitev">V sitemap samo naslovi HTTPS</td></tr>
+<tr><td data-label="Napaka">Potekel certifikat</td><td data-label="Posledica">Brskalnik pokaže celozaslonsko opozorilo</td><td data-label="Rešitev">Samodejno podaljševanje</td></tr>
 </tbody>
 </table>
 <p>Pri mešani vsebini (mixed content) brskalnik vire na HTTP samodejno nadgradi ali blokira, kot pojasnjuje web.dev v članku <a href="https://web.dev/articles/what-is-mixed-content" target="_blank" rel="noopener">kaj je mešana vsebina</a>. Pri certifikatih pazite na novost: od 15. marca 2026 javni certifikati veljajo največ 200 dni, do leta 2029 pa se bo rok skrajšal na 47 dni. Ročno podaljševanje zato ni več realna možnost.</p>

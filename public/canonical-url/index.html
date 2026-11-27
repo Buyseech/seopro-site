@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.4">
+<link rel="stylesheet" href="/styles.css?v=1.5">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Canonical URL: kako preprečiti podvojeno vsebino", "description": "Kaj je canonical URL, kdaj ga uporabiti in kako preprečiti težave s podvojeno vsebino v Googlu, tudi v spletnih trgovinah s filtri in variantami.", "datePublished": "2026-11-27", "inLanguage": "sl-SI", "mainEntityOfPage": "https://seopro.si/canonical-url/", "author": {"@type": "Person", "name": "Igor Bajsić", "url": "https://buyseech.com/"}, "publisher": {"@type": "Organization", "name": "SEOPRO.si", "url": "https://seopro.si/"}, "image": "https://seopro.si/assets/img/igor-buyseech.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": "https://seopro.si/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seopro.si/blog/"}, {"@type": "ListItem", "position": 3, "name": "Canonical URL: kako preprečiti podvojeno vsebino", "item": "https://seopro.si/canonical-url/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kaj je canonical URL?", "acceptedAnswer": {"@type": "Answer", "text": "Canonical URL je naslov, ki ga Google izbere kot glavno različico strani, kadar je enaka vsebina dosegljiva na več naslovih. Lastnik ga predlaga z oznako rel=\"canonical\", Google pa jo upošteva skupaj s preusmeritvami, zemljevidom strani in notranjimi povezavami. Ostale različice ostanejo dosegljive, v iskanju pa se ne prikazujejo."}}, {"@type": "Question", "name": "Ali canonical izključuje stran iz indeksa?", "acceptedAnswer": {"@type": "Answer", "text": "Delno. Stran, ki s kanonično oznako kaže na drug naslov, Google običajno ne prikazuje v rezultatih, vendar jo še vedno obiskuje in njene signale pripiše glavni različici. To ni enako kot oznaka noindex, ki stran izključi brez prenosa signalov. Google lahko oznako tudi prezre, če ji drugi signali nasprotujejo."}}, {"@type": "Question", "name": "Kaj je razlika med canonical in preusmeritvijo?", "acceptedAnswer": {"@type": "Answer", "text": "Preusmeritev 301 obiskovalca in Google samodejno pošlje na nov naslov, zato stara različica za ljudi izgine. Canonical pusti obe različici dosegljivi in le predlaga, katero naj Google prikazuje. Preusmeritev uporabite, ko stran trajno zamenjate ali selite, canonical pa pri filtrih, parametrih in drugih različicah, ki jih obiskovalci še potrebujejo."}}, {"@type": "Question", "name": "Ali lahko canonical nastavim na domačo stran?", "acceptedAnswer": {"@type": "Answer", "text": "Samo na domači strani sami in na njenih različicah, na primer z dodanimi parametri. Če na domačo stran kažejo vse podstrani, Google te podstrani obravnava kot dvojnike in jih ne prikazuje v iskanju. Napako preverite na nekaj naključnih podstraneh."}}, {"@type": "Question", "name": "Kako preverim canonical v izvorni kodi?", "acceptedAnswer": {"@type": "Answer", "text": "Odprite stran v brskalniku, pritisnite Ctrl+U in z iskanjem (Ctrl+F) poiščite besedo canonical. Oznaka mora biti v razdelku head, samo ena in s celotnim naslovom, ki se začne s https. Če stran oznako dodaja z JavaScriptom, jo raje preverite s pregledom URL-ja v Search Consolu."}}, {"@type": "Question", "name": "Kaj je self-referencing canonical?", "acceptedAnswer": {"@type": "Answer", "text": "To je kanonična oznaka, ki kaže na naslov iste strani. Googlu potrdi, da je stran sama glavna različica, in prepreči, da bi naslovi z dodanimi parametri za sledenje ali razvrščanje postali samostojne različice. Priporočljiva je na vsaki strani, ki jo želite imeti v iskanju, in jo Yoast ter Rank Math dodata samodejno."}}]}]}</script>
 </head>
 <body>
@@ -82,12 +82,12 @@
 <table>
 <thead><tr><th>Vzrok podvajanja</th><th>Primer URL-ja</th><th>Kaj nastavite</th></tr></thead>
 <tbody>
-<tr><td>Različice z www in brez, http in https</td><td>http://primer.si/copati/</td><td>Preusmeritev 301 na glavno različico, canonical kot dodaten signal</td></tr>
-<tr><td>Parametri za sledenje kampanj</td><td>/copati/?utm_source=novice</td><td>Canonical na naslov brez parametra</td></tr>
-<tr><td>Filtri in razvrščanje</td><td>/copati/?barva=modra&amp;sort=cena</td><td>Canonical na kategorijo brez filtra</td></tr>
-<tr><td>Isti izdelek v več kategorijah</td><td>/moski/copati-x/ in /tek/copati-x/</td><td>Canonical na en sam naslov izdelka</td></tr>
-<tr><td>Različica za tiskanje</td><td>/clanek/natisni/</td><td>Canonical na izvirni članek</td></tr>
-<tr><td>Oštevilčene strani kategorije</td><td>/copati/?stran=2</td><td>Canonical sama nase, ne na 1. stran</td></tr>
+<tr><td data-label="Vzrok podvajanja">Različice z www in brez, http in https</td><td data-label="Primer URL-ja">http://primer.si/copati/</td><td data-label="Kaj nastavite">Preusmeritev 301 na glavno različico, canonical kot dodaten signal</td></tr>
+<tr><td data-label="Vzrok podvajanja">Parametri za sledenje kampanj</td><td data-label="Primer URL-ja">/copati/?utm_source=novice</td><td data-label="Kaj nastavite">Canonical na naslov brez parametra</td></tr>
+<tr><td data-label="Vzrok podvajanja">Filtri in razvrščanje</td><td data-label="Primer URL-ja">/copati/?barva=modra&amp;sort=cena</td><td data-label="Kaj nastavite">Canonical na kategorijo brez filtra</td></tr>
+<tr><td data-label="Vzrok podvajanja">Isti izdelek v več kategorijah</td><td data-label="Primer URL-ja">/moski/copati-x/ in /tek/copati-x/</td><td data-label="Kaj nastavite">Canonical na en sam naslov izdelka</td></tr>
+<tr><td data-label="Vzrok podvajanja">Različica za tiskanje</td><td data-label="Primer URL-ja">/clanek/natisni/</td><td data-label="Kaj nastavite">Canonical na izvirni članek</td></tr>
+<tr><td data-label="Vzrok podvajanja">Oštevilčene strani kategorije</td><td data-label="Primer URL-ja">/copati/?stran=2</td><td data-label="Kaj nastavite">Canonical sama nase, ne na 1. stran</td></tr>
 </tbody>
 </table>
 <p>Vsaka stran, ki jo želite imeti v Googlu, naj ima oznako, ki kaže sama nase (self-referencing canonical). Kadar mora stari naslov izginiti tudi za obiskovalce, uporabite preusmeritev, kot razlagamo v članku o tem, <a href="/301-preusmeritev/">kdaj uporabiti 301 preusmeritev</a>.</p>
@@ -127,12 +127,12 @@
 <table>
 <thead><tr><th>Napaka</th><th>Posledica</th><th>Popravek</th></tr></thead>
 <tbody>
-<tr><td>Vse strani kažejo na domačo stran</td><td>Podstrani izpadejo iz indeksa</td><td>Vsaka stran kaže sama nase</td></tr>
-<tr><td>Oznaka kaže na stran z noindex ali 404</td><td>Google oznako prezre ali izgubi obe strani</td><td>Ciljajte samo strani, ki vrnejo kodo 200</td></tr>
-<tr><td>Dve oznaki na isti strani</td><td>Google lahko ne upošteva nobene</td><td>Pustite oznako samo v temi ali samo v vtičniku</td></tr>
-<tr><td>Oznaka s http ali testno domeno</td><td>Google izbere napačno različico</td><td>Celoten naslov s končno domeno in https</td></tr>
-<tr><td>Oštevilčene strani kažejo na 1. stran</td><td>Izdelki z 2. strani dalje se težje indeksirajo</td><td>Vsaka oštevilčena stran kaže sama nase</td></tr>
-<tr><td>Jezikovne različice kažejo na eno</td><td>Tuje različice izpadejo iz iskanja</td><td>Vsak jezik kaže sam nase, povezani so s hreflang</td></tr>
+<tr><td data-label="Napaka">Vse strani kažejo na domačo stran</td><td data-label="Posledica">Podstrani izpadejo iz indeksa</td><td data-label="Popravek">Vsaka stran kaže sama nase</td></tr>
+<tr><td data-label="Napaka">Oznaka kaže na stran z noindex ali 404</td><td data-label="Posledica">Google oznako prezre ali izgubi obe strani</td><td data-label="Popravek">Ciljajte samo strani, ki vrnejo kodo 200</td></tr>
+<tr><td data-label="Napaka">Dve oznaki na isti strani</td><td data-label="Posledica">Google lahko ne upošteva nobene</td><td data-label="Popravek">Pustite oznako samo v temi ali samo v vtičniku</td></tr>
+<tr><td data-label="Napaka">Oznaka s http ali testno domeno</td><td data-label="Posledica">Google izbere napačno različico</td><td data-label="Popravek">Celoten naslov s končno domeno in https</td></tr>
+<tr><td data-label="Napaka">Oštevilčene strani kažejo na 1. stran</td><td data-label="Posledica">Izdelki z 2. strani dalje se težje indeksirajo</td><td data-label="Popravek">Vsaka oštevilčena stran kaže sama nase</td></tr>
+<tr><td data-label="Napaka">Jezikovne različice kažejo na eno</td><td data-label="Posledica">Tuje različice izpadejo iz iskanja</td><td data-label="Popravek">Vsak jezik kaže sam nase, povezani so s hreflang</td></tr>
 </tbody>
 </table>
 <p>Pogosta je tudi kombinacija kanonične oznake in oznake noindex na isti strani. Signala si nasprotujeta, zato za izbiro glavne različice uporabite canonical, noindex pa prihranite za strani, ki jih v iskanju ne želite. Za strani v več jezikih, kjer se canonical povezuje z oznakami hreflang, več preberete v članku o <a href="/mednarodni-seo/">mednarodnem SEO-ju za izvoznike</a>.</p>

@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.4">
+<link rel="stylesheet" href="/styles.css?v=1.5">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Toksične povezave in disavow: kako zaščititi SEO", "description": "Kako prepoznati toksične in spam povezave, kaj je negativni SEO in kdaj uporabiti disavow. Praktičen vodič z realnim primerom seopro.si.", "datePublished": "2026-11-27", "inLanguage": "sl-SI", "mainEntityOfPage": "https://seopro.si/toksicne-povezave-disavow/", "author": {"@type": "Person", "name": "Igor Bajsić", "url": "https://buyseech.com/"}, "publisher": {"@type": "Organization", "name": "SEOPRO.si", "url": "https://seopro.si/"}, "image": "https://seopro.si/assets/img/igor-buyseech.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": "https://seopro.si/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seopro.si/blog/"}, {"@type": "ListItem", "position": 3, "name": "Toksične povezave in disavow: kako zaščititi SEO", "item": "https://seopro.si/toksicne-povezave-disavow/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kaj je povratna povezava pri SEO?", "acceptedAnswer": {"@type": "Answer", "text": "Povratna povezava (backlink) je povezava z drugega spletnega mesta na vašo stran, ki jo Google razume kot priporočilo. Več o tem, katere povezave štejejo, preberete v članku o off-site optimizaciji."}}, {"@type": "Question", "name": "Ali so povratne povezave v letu 2026 še pomembne?", "acceptedAnswer": {"@type": "Answer", "text": "Da, povratne povezave so še vedno eden od signalov, po katerih Google ocenjuje zaupanje v stran. Google pa množične in kupljene povezave vse bolje prezre, zato imajo vrednost predvsem omembe partnerjev, medijev in strokovnih združenj."}}, {"@type": "Question", "name": "Kako pridobiti povratne povezave na varen način?", "acceptedAnswer": {"@type": "Answer", "text": "Tako, da imajo drugi razlog, da vas omenijo: partnerji, mediji, panožna združenja in koristna vsebina. Izogibajte se poceni paketom povezav, ker so skoraj vedno spam. Postopke opisujemo v članku o off-site optimizaciji."}}, {"@type": "Question", "name": "Ali lahko spam povezave res povzročijo padec pozicij?", "acceptedAnswer": {"@type": "Answer", "text": "Lahko, vendar redko. Google večino spam povezav prepozna in prezre, zato posamezne čudne povezave pozicij praviloma ne znižajo. Resna tveganja so ročni ukrep, kupljene povezave iz preteklosti in zelo obsežni valovi spama. Pri padcu pozicij najprej preverite tehnične napake in posodobitve Googla."}}, {"@type": "Question", "name": "Kdaj je disavow nepotreben?", "acceptedAnswer": {"@type": "Answer", "text": "Disavow je nepotreben, kadar nimate ročnega ukrepa, povezav niste nikoli kupovali in vidite le posamezne čudne domene. Nepotreben je tudi, kadar vas skrbi samo nizka ocena v SEO orodju, ker ta ni Googlova ocena. Čas raje vložite v vsebino in dobre povezave."}}, {"@type": "Question", "name": "Kako dolgo traja, da Google upošteva disavow?", "acceptedAnswer": {"@type": "Answer", "text": "Običajno več tednov. Google zavrnjene povezave upošteva šele, ko strani, na katerih so, znova obišče, kar pri stotinah domen ne poteka naenkrat. Medtem datoteke ne nalagajte vsak dan znova."}}, {"@type": "Question", "name": "Ali je bolje najprej odstraniti povezave ali jih takoj zavrniti?", "acceptedAnswer": {"@type": "Answer", "text": "Pri kupljenih povezavah najprej poskusite z odstranitvijo, ker lastnika strani poznate ali ga lahko dosežete. Pri ročnem ukrepu Google pričakuje opis vašega truda. Pri link farmah odstranitev ni realna, zato jih takoj zavrnite na ravni domene."}}]}]}</script>
 </head>
 <body>
@@ -75,11 +75,11 @@
 <table>
 <thead><tr><th>Znak</th><th>Kako je videti</th><th>Kje preverite</th></tr></thead>
 <tbody>
-<tr><td>Nenavadne končnice domen</td><td>Stotine domen .shop, .store ali .xyz z naključnimi imeni</td><td>Seznam povezujočih spletnih mest v Search Consolu</td></tr>
-<tr><td>Spam sidrno besedilo</td><td>Cele prodajne povedi, npr. »buy backlinks cheap«</td><td>Seznam sidrnih besedil v Search Consolu ali SEO orodju</td></tr>
-<tr><td>Nenaden val</td><td>Več sto novih domen v nekaj tednih</td><td>Zgodovina povezav v SEO orodju</td></tr>
-<tr><td>Strani brez prave vsebine</td><td>Seznami povezav in samodejno ustvarjeno besedilo</td><td>Ročni ogled nekaj strani</td></tr>
-<tr><td>Povezave na neobstoječe URL-je</td><td>Povezave na podstrani, ki jih na vaši strani ni</td><td>Seznam ciljnih strani v Search Consolu</td></tr>
+<tr><td data-label="Znak">Nenavadne končnice domen</td><td data-label="Kako je videti">Stotine domen .shop, .store ali .xyz z naključnimi imeni</td><td data-label="Kje preverite">Seznam povezujočih spletnih mest v Search Consolu</td></tr>
+<tr><td data-label="Znak">Spam sidrno besedilo</td><td data-label="Kako je videti">Cele prodajne povedi, npr. »buy backlinks cheap«</td><td data-label="Kje preverite">Seznam sidrnih besedil v Search Consolu ali SEO orodju</td></tr>
+<tr><td data-label="Znak">Nenaden val</td><td data-label="Kako je videti">Več sto novih domen v nekaj tednih</td><td data-label="Kje preverite">Zgodovina povezav v SEO orodju</td></tr>
+<tr><td data-label="Znak">Strani brez prave vsebine</td><td data-label="Kako je videti">Seznami povezav in samodejno ustvarjeno besedilo</td><td data-label="Kje preverite">Ročni ogled nekaj strani</td></tr>
+<tr><td data-label="Znak">Povezave na neobstoječe URL-je</td><td data-label="Kako je videti">Povezave na podstrani, ki jih na vaši strani ni</td><td data-label="Kje preverite">Seznam ciljnih strani v Search Consolu</td></tr>
 </tbody>
 </table>
 <p>Osnovni vir je poročilo <a href="https://support.google.com/webmasters/answer/9049606?hl=sl" target="_blank" rel="noopener">Povezave v Google Search Consolu</a>, iz katerega izvozite zunanje povezave in povezujoča spletna mesta. Search Console ne pokaže vseh povezav, zato ga mnogi dopolnijo z orodjem, kot je Ahrefs, vendar ocena »toksičnosti« v takem orodju ni Googlova ocena. Več o tem orodju pišemo v vodiču <a href="/google-search-console/">Google Search Console za SEO</a>.</p>
@@ -99,12 +99,12 @@
 <table>
 <thead><tr><th>Položaj</th><th>Disavow</th><th>Kaj naredite</th></tr></thead>
 <tbody>
-<tr><td>Ročni ukrep zaradi nenaravnih povezav</td><td>Da</td><td>Odstranite, kar lahko, ostalo zavrnite, nato zaprosite za ponoven pregled</td></tr>
-<tr><td>Kupljene povezave iz preteklosti</td><td>Da</td><td>Zavrnite domene, s katerih so bile povezave plačane</td></tr>
-<tr><td>Množičen val očitnih spam domen</td><td>Pogosto da</td><td>Zavrnite na ravni domene</td></tr>
-<tr><td>Posamezne čudne povezave</td><td>Ne</td><td>Google jih prezre sam</td></tr>
-<tr><td>Nizka ocena v SEO orodju</td><td>Ne</td><td>Ocena orodja ni Googlova ocena</td></tr>
-<tr><td>Padec obiska brez znakov spama</td><td>Ne</td><td>Najprej poiščite pravi vzrok</td></tr>
+<tr><td data-label="Položaj">Ročni ukrep zaradi nenaravnih povezav</td><td data-label="Disavow">Da</td><td data-label="Kaj naredite">Odstranite, kar lahko, ostalo zavrnite, nato zaprosite za ponoven pregled</td></tr>
+<tr><td data-label="Položaj">Kupljene povezave iz preteklosti</td><td data-label="Disavow">Da</td><td data-label="Kaj naredite">Zavrnite domene, s katerih so bile povezave plačane</td></tr>
+<tr><td data-label="Položaj">Množičen val očitnih spam domen</td><td data-label="Disavow">Pogosto da</td><td data-label="Kaj naredite">Zavrnite na ravni domene</td></tr>
+<tr><td data-label="Položaj">Posamezne čudne povezave</td><td data-label="Disavow">Ne</td><td data-label="Kaj naredite">Google jih prezre sam</td></tr>
+<tr><td data-label="Položaj">Nizka ocena v SEO orodju</td><td data-label="Disavow">Ne</td><td data-label="Kaj naredite">Ocena orodja ni Googlova ocena</td></tr>
+<tr><td data-label="Položaj">Padec obiska brez znakov spama</td><td data-label="Disavow">Ne</td><td data-label="Kaj naredite">Najprej poiščite pravi vzrok</td></tr>
 </tbody>
 </table>
 <p>Padec obiska ima redko vzrok v povezavah, pogosteje so krive posodobitve Googla, tehnične napake ali prenova strani brez preusmeritev. Več o tem v članku <a href="/padec-obiska-spletne-strani/">padec obiska spletne strani</a>.</p>

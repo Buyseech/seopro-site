@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.4">
+<link rel="stylesheet" href="/styles.css?v=1.5">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "SEO pri prenovi spletne strani: kako ne izgubiti pozicij", "description": "Prenova spletne strani brez izgube pozicij: kaj pripraviti pred zagonom, kako narediti mapo URL-jev in preusmeritve 301 ter kaj preveriti po zagonu.", "datePublished": "2026-11-27", "inLanguage": "sl-SI", "mainEntityOfPage": "https://seopro.si/prenova-spletne-strani-seo/", "author": {"@type": "Person", "name": "Igor Bajsić", "url": "https://buyseech.com/"}, "publisher": {"@type": "Organization", "name": "SEOPRO.si", "url": "https://seopro.si/"}, "image": "https://seopro.si/assets/img/igor-buyseech.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": "https://seopro.si/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seopro.si/blog/"}, {"@type": "ListItem", "position": 3, "name": "SEO pri prenovi spletne strani: kako ne izgubiti pozicij", "item": "https://seopro.si/prenova-spletne-strani-seo/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ali lahko prenova spletne strani poveča promet?", "acceptedAnswer": {"@type": "Answer", "text": "Da, če stara stran ni bila tehnično urejena, je bila počasna ali ni odgovarjala na to, kar ljudje iščejo. Nova struktura, hitrejše nalaganje in boljša besedila lahko izboljšajo uvrstitve. Pogoj je, da najprej ohranite tisto, kar že deluje: URL-je z obiskom, njihove preusmeritve in vsebino, ki se uvršča."}}, {"@type": "Question", "name": "Kaj je največja napaka pri migraciji spletne strani?", "acceptedAnswer": {"@type": "Answer", "text": "Največja napaka so manjkajoče preusmeritve 301. Brez njih vsi stari URL-ji vračajo napako 404, Google jih postopoma odstrani iz indeksa, povratne povezave pa vodijo v prazno. Druga najpogostejša napaka je oznaka noindex, ki s testne strani ostane na novi strani in Googlu prepove indeksiranje."}}, {"@type": "Question", "name": "Ali potrebujem SEO strokovnjaka pred ali po prenovi?", "acceptedAnswer": {"@type": "Answer", "text": "Pred prenovo. Ko sta struktura in seznam URL-jev določena, so popravki hitri in poceni, ko je stran že na spletu, pa izgubljate obisk vsak dan, dokler napake ne odpravite. Po zagonu je strokovnjak koristen še nekaj tednov za spremljanje indeksiranja in napak v Search Consolu."}}, {"@type": "Question", "name": "Kako dolgo po migraciji lahko pričakujem nihanja?", "acceptedAnswer": {"@type": "Answer", "text": "Po Googlovih navedbah se pri srednje veliki strani večina URL-jev v indeksu premakne v nekaj tednih, pri velikih straneh traja dlje. Uvrstitve v tem času nihajo. Če obisk po dveh do treh mesecih ostaja precej nižji, nekaj ni v redu, najpogosteje preusmeritve ali vsebina."}}, {"@type": "Question", "name": "Zakaj je obisk spletne strani po prenovi padel?", "acceptedAnswer": {"@type": "Answer", "text": "Najpogostejši razlogi so manjkajoče ali napačne preusmeritve, izbrisane strani z obiskom, oznaka noindex ali blokada v robots.txt, krajša besedila in počasnejša stran. V Search Consolu primerjajte klike po straneh pred prenovo in po njej, da vidite, katere strani so izgubile obisk."}}, {"@type": "Question", "name": "Ali moram pred prenovo narediti varnostno kopijo WordPressa?", "acceptedAnswer": {"@type": "Answer", "text": "Da, vedno. Kopija mora vsebovati datoteke in bazo podatkov, naredite jo z vtičnikom za varnostne kopije ali pri ponudniku gostovanja. Shranite jo zunaj strežnika, na katerem teče stran. Kaj še uredite v WordPressu, da se stran dobro uvršča, opisujemo v vodiču SEO za WordPress."}}]}]}</script>
 </head>
 <body>
@@ -71,11 +71,11 @@
 <table>
 <thead><tr><th>Vrsta spremembe</th><th>Tveganje za SEO</th><th>Na kaj pazite</th></tr></thead>
 <tbody>
-<tr><td>Nov dizajn, isti URL-ji</td><td>Nizko</td><td>Besedila, naslovi in notranje povezave ostanejo</td></tr>
-<tr><td>Nova struktura menija in URL-jev</td><td>Visoko</td><td>Preusmeritev 301 za vsak stari URL</td></tr>
-<tr><td>Nova platforma (CMS)</td><td>Visoko</td><td>URL-ji, meta podatki, hitrost nalaganja</td></tr>
-<tr><td>Nova domena</td><td>Zelo visoko</td><td>Preusmeritve in sporočilo o spremembi naslova</td></tr>
-<tr><td>Združevanje več strani v eno</td><td>Srednje</td><td>Vsebina, ki je prinašala obisk, ne sme izginiti</td></tr>
+<tr><td data-label="Vrsta spremembe">Nov dizajn, isti URL-ji</td><td data-label="Tveganje za SEO">Nizko</td><td data-label="Na kaj pazite">Besedila, naslovi in notranje povezave ostanejo</td></tr>
+<tr><td data-label="Vrsta spremembe">Nova struktura menija in URL-jev</td><td data-label="Tveganje za SEO">Visoko</td><td data-label="Na kaj pazite">Preusmeritev 301 za vsak stari URL</td></tr>
+<tr><td data-label="Vrsta spremembe">Nova platforma (CMS)</td><td data-label="Tveganje za SEO">Visoko</td><td data-label="Na kaj pazite">URL-ji, meta podatki, hitrost nalaganja</td></tr>
+<tr><td data-label="Vrsta spremembe">Nova domena</td><td data-label="Tveganje za SEO">Zelo visoko</td><td data-label="Na kaj pazite">Preusmeritve in sporočilo o spremembi naslova</td></tr>
+<tr><td data-label="Vrsta spremembe">Združevanje več strani v eno</td><td data-label="Tveganje za SEO">Srednje</td><td data-label="Na kaj pazite">Vsebina, ki je prinašala obisk, ne sme izginiti</td></tr>
 </tbody>
 </table>
 <p>Google v vodiču o <a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes?hl=sl" target="_blank" rel="noopener">premiku spletnega mesta s spremembami URL-jev</a> sam opozarja, da se uvrstitve med selitvijo začasno spreminjajo. To je normalno. Ni pa normalno, da obisk pade in se po nekaj tednih ne začne vračati.</p>
@@ -97,10 +97,10 @@
 <table>
 <thead><tr><th>Stari URL</th><th>Novi URL</th><th>Kaj naredite</th></tr></thead>
 <tbody>
-<tr><td>/storitve/servis-klim.html</td><td>/servis-klimatskih-naprav/</td><td>301 na enakovredno stran</td></tr>
-<tr><td>/izdelek.php?id=123</td><td>/izdelki/klima-model-x/</td><td>301 na isti izdelek</td></tr>
-<tr><td>/o-podjetju/</td><td>/o-nas/</td><td>301 na enakovredno stran</td></tr>
-<tr><td>/akcija-poletje-2019/</td><td>Ni nove strani</td><td>404, če nima obiska in povezav</td></tr>
+<tr><td data-label="Stari URL">/storitve/servis-klim.html</td><td data-label="Novi URL">/servis-klimatskih-naprav/</td><td data-label="Kaj naredite">301 na enakovredno stran</td></tr>
+<tr><td data-label="Stari URL">/izdelek.php?id=123</td><td data-label="Novi URL">/izdelki/klima-model-x/</td><td data-label="Kaj naredite">301 na isti izdelek</td></tr>
+<tr><td data-label="Stari URL">/o-podjetju/</td><td data-label="Novi URL">/o-nas/</td><td data-label="Kaj naredite">301 na enakovredno stran</td></tr>
+<tr><td data-label="Stari URL">/akcija-poletje-2019/</td><td data-label="Novi URL">Ni nove strani</td><td data-label="Kaj naredite">404, če nima obiska in povezav</td></tr>
 </tbody>
 </table>
 <p>Vsak stari URL preusmerite na najbolj podobno novo stran. Preusmeritev vseh starih naslovov na prvo stran Google obravnava podobno kot neobstoječe strani, zato tak pristop pozicij ne ohrani. Izogibajte se verigam preusmeritev, kjer stari naslov vodi na vmesnega in ta šele na končnega. Notranje povezave v meniju in besedilih popravite tako, da kažejo neposredno na nove URL-je. Podrobnosti o kodah in nastavitvah opisujemo v vodiču, <a href="/301-preusmeritev/">kako pravilno nastaviti preusmeritev 301</a>.</p>
@@ -111,13 +111,13 @@
 <table>
 <thead><tr><th>Kdaj</th><th>Kaj preverite</th><th>Kje</th></tr></thead>
 <tbody>
-<tr><td>Dan zagona</td><td>Ni oznake noindex, robots.txt ne blokira strani</td><td>Izvorna koda, Search Console</td></tr>
-<tr><td>Dan zagona</td><td>Stari URL-ji vračajo 301 na prave strani</td><td>Screaming Frog</td></tr>
-<tr><td>Dan zagona</td><td>Nov zemljevid strani je oddan</td><td>Search Console, Zemljevidi strani</td></tr>
-<tr><td>Dan zagona</td><td>Obrazci in merjenje v GA4 delujejo</td><td>Testno povpraševanje, Google Analytics 4</td></tr>
-<tr><td>Prvi teden</td><td>Napake 404 in strežniške napake</td><td>Search Console, poročilo Strani</td></tr>
-<tr><td>Prvi mesec</td><td>Kliki in prikazi glavnih strani</td><td>Search Console, Učinkovitost</td></tr>
-<tr><td>Prvi trije meseci</td><td>Povpraševanja in naročila iz organskega iskanja</td><td>Google Analytics 4</td></tr>
+<tr><td data-label="Kdaj">Dan zagona</td><td data-label="Kaj preverite">Ni oznake noindex, robots.txt ne blokira strani</td><td data-label="Kje">Izvorna koda, Search Console</td></tr>
+<tr><td data-label="Kdaj">Dan zagona</td><td data-label="Kaj preverite">Stari URL-ji vračajo 301 na prave strani</td><td data-label="Kje">Screaming Frog</td></tr>
+<tr><td data-label="Kdaj">Dan zagona</td><td data-label="Kaj preverite">Nov zemljevid strani je oddan</td><td data-label="Kje">Search Console, Zemljevidi strani</td></tr>
+<tr><td data-label="Kdaj">Dan zagona</td><td data-label="Kaj preverite">Obrazci in merjenje v GA4 delujejo</td><td data-label="Kje">Testno povpraševanje, Google Analytics 4</td></tr>
+<tr><td data-label="Kdaj">Prvi teden</td><td data-label="Kaj preverite">Napake 404 in strežniške napake</td><td data-label="Kje">Search Console, poročilo Strani</td></tr>
+<tr><td data-label="Kdaj">Prvi mesec</td><td data-label="Kaj preverite">Kliki in prikazi glavnih strani</td><td data-label="Kje">Search Console, Učinkovitost</td></tr>
+<tr><td data-label="Kdaj">Prvi trije meseci</td><td data-label="Kaj preverite">Povpraševanja in naročila iz organskega iskanja</td><td data-label="Kje">Google Analytics 4</td></tr>
 </tbody>
 </table>
 <p>Pri selitvi na novo domeno v Search Consolu uporabite še <a href="https://support.google.com/webmasters/answer/9370220?hl=sl" target="_blank" rel="noopener">orodje za spremembo naslova</a>. Preusmeritve pustite aktivne čim dlje, Google priporoča vsaj eno leto, staro domeno pa obdržite, da je ne prevzame kdo drug.</p>

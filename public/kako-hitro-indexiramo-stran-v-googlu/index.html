@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.4">
+<link rel="stylesheet" href="/styles.css?v=1.5">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Zakaj svoje strani ne najdemo v Googlu?", "description": "Preverite, zakaj vaše strani ni v Googlu, kako vzrok najdete v Search Consolu in kako pospešite indeksiranje spletne strani.", "datePublished": "2026-11-27", "inLanguage": "sl-SI", "mainEntityOfPage": "https://seopro.si/kako-hitro-indexiramo-stran-v-googlu/", "author": {"@type": "Person", "name": "Igor Bajsić", "url": "https://buyseech.com/"}, "publisher": {"@type": "Organization", "name": "SEOPRO.si", "url": "https://seopro.si/"}, "image": "https://seopro.si/assets/img/igor-buyseech.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": "https://seopro.si/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seopro.si/blog/"}, {"@type": "ListItem", "position": 3, "name": "Zakaj svoje strani ne najdemo v Googlu?", "item": "https://seopro.si/kako-hitro-indexiramo-stran-v-googlu/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kako dolgo Google potrebuje, da indeksira novo stran?", "acceptedAnswer": {"@type": "Answer", "text": "Običajno od nekaj dni do nekaj tednov, kar navaja tudi Google. Hitreje gre pri straneh, ki jih Google redno obiskuje, imajo notranje povezave in so v sitemapu. Zahteva za indeksiranje prek pregleda URL-ja v Search Consolu postopek pospeši, datuma pa ne zagotovi."}}, {"@type": "Question", "name": "Ali sitemap sam po sebi zagotovi indeksiranje?", "acceptedAnswer": {"@type": "Answer", "text": "Ne. Sitemap Googlu pove, katere strani obstajajo in katere so vam pomembne, odločitev o indeksiranju pa ostane njegova. Stran s tanko vsebino, oznako noindex ali napačnim canonicalom ostane zunaj, tudi če je v sitemapu."}}, {"@type": "Question", "name": "Kako dobim sitemap za svojo spletno stran?", "acceptedAnswer": {"@type": "Answer", "text": "Večina sistemov za upravljanje vsebine ga ustvari sama, naslov pa nato oddate v Search Consolu. Kje ga najdete v WordPressu, Shopifyju in drugih sistemih, opisujemo v članku Kaj je sitemap in zakaj ga potrebuje spletna stran."}}, {"@type": "Question", "name": "Kaj pomeni, da je stran preiskana, a trenutno ni indeksirana?", "acceptedAnswer": {"@type": "Answer", "text": "Google je stran obiskal in prebral, a se je odločil, da je vsaj zaenkrat ne shrani v indeks. Najpogostejši vzroki so tanka ali podvojena vsebina, stran brez notranjih povezav in nizka kakovost celotnega spletišča. Izboljšajte vsebino, povežite stran z drugih strani in po spremembi zahtevajte ponovno indeksiranje."}}, {"@type": "Question", "name": "Ali lahko canonical prepreči indeksiranje?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Če kanonična oznaka kaže na drug URL, Google praviloma indeksira tistega, vašo stran pa obravnava kot dvojnik. To je pravilno za filtre in parametre, za samostojne strani storitev ali izdelkov pa ne. Preverite, da ima vsaka pomembna stran canonical sama nase."}}, {"@type": "Question", "name": "Ali hitrost strani vpliva na indeksiranje?", "acceptedAnswer": {"@type": "Answer", "text": "Posredno. Pri počasnem strežniku in pogostih napakah Google pajka redkeje, zato na večjih straneh nove strani pridejo na vrsto pozneje. Na uvrstitve hitrost vpliva prek meritev uporabniške izkušnje Core Web Vitals. Kako jo izmerite s PageSpeed Insights, razlagamo v članku o hitrosti spletne strani."}}]}]}</script>
 </head>
 <body>
@@ -80,13 +80,13 @@
 <table>
 <thead><tr><th>Kaj pokaže Search Console</th><th>Kaj to pomeni</th><th>Kaj naredite</th></tr></thead>
 <tbody>
-<tr><td>URL ni znan Googlu</td><td>Google strani še ni odkril</td><td>Dodajte jo v sitemap in nanjo povežite</td></tr>
-<tr><td>Blokirano z robots.txt</td><td>Pajek do strani ne sme</td><td>Odstranite pravilo Disallow za ta URL</td></tr>
-<tr><td>Izključeno z oznako noindex</td><td>Stran sama prosi, naj je Google ne indeksira</td><td>Odstranite noindex v kodi ali vtičniku</td></tr>
-<tr><td>Google je izbral drug kanonični URL</td><td>Za glavno različico ima drugo stran</td><td>Uskladite canonical, povezave in sitemap</td></tr>
-<tr><td>Odkrito, trenutno ni indeksirano</td><td>Google za URL ve, a ga še ni obiskal</td><td>Okrepite notranje povezave, preverite strežnik</td></tr>
-<tr><td>Preiskano, trenutno ni indeksirano</td><td>Google je stran prebral in je ni shranil</td><td>Izboljšajte vsebino ali jo združite z drugo</td></tr>
-<tr><td>Ni najdeno (404)</td><td>Stran ne obstaja</td><td>Vrnite vsebino ali preusmerite s 301</td></tr>
+<tr><td data-label="Kaj pokaže Search Console">URL ni znan Googlu</td><td data-label="Kaj to pomeni">Google strani še ni odkril</td><td data-label="Kaj naredite">Dodajte jo v sitemap in nanjo povežite</td></tr>
+<tr><td data-label="Kaj pokaže Search Console">Blokirano z robots.txt</td><td data-label="Kaj to pomeni">Pajek do strani ne sme</td><td data-label="Kaj naredite">Odstranite pravilo Disallow za ta URL</td></tr>
+<tr><td data-label="Kaj pokaže Search Console">Izključeno z oznako noindex</td><td data-label="Kaj to pomeni">Stran sama prosi, naj je Google ne indeksira</td><td data-label="Kaj naredite">Odstranite noindex v kodi ali vtičniku</td></tr>
+<tr><td data-label="Kaj pokaže Search Console">Google je izbral drug kanonični URL</td><td data-label="Kaj to pomeni">Za glavno različico ima drugo stran</td><td data-label="Kaj naredite">Uskladite canonical, povezave in sitemap</td></tr>
+<tr><td data-label="Kaj pokaže Search Console">Odkrito, trenutno ni indeksirano</td><td data-label="Kaj to pomeni">Google za URL ve, a ga še ni obiskal</td><td data-label="Kaj naredite">Okrepite notranje povezave, preverite strežnik</td></tr>
+<tr><td data-label="Kaj pokaže Search Console">Preiskano, trenutno ni indeksirano</td><td data-label="Kaj to pomeni">Google je stran prebral in je ni shranil</td><td data-label="Kaj naredite">Izboljšajte vsebino ali jo združite z drugo</td></tr>
+<tr><td data-label="Kaj pokaže Search Console">Ni najdeno (404)</td><td data-label="Kaj to pomeni">Stran ne obstaja</td><td data-label="Kaj naredite">Vrnite vsebino ali preusmerite s 301</td></tr>
 </tbody>
 </table>
 <p>Statuse vseh strani hkrati vidite v <a href="https://support.google.com/webmasters/answer/7440203?hl=sl" target="_blank" rel="noopener">poročilu o indeksiranju strani</a>. Filtri, iskalni rezultati na strani in podvojene različice naj ostanejo zunaj. Skrbeti vas mora, ko med neindeksiranimi najdete strani, ki prodajajo: storitve, kategorije, izdelke in kontakt.</p>
@@ -131,10 +131,10 @@
 <table>
 <thead><tr><th>Znak</th><th>Verjetni vzrok</th><th>Prvi korak</th></tr></thead>
 <tbody>
-<tr><td>Stran ni znana ali je blokirana</td><td>Tehnika</td><td>Preverite robots.txt, sitemap in povezave</td></tr>
-<tr><td>Noindex ali napačen canonical</td><td>Tehnika</td><td>Popravite nastavitve teme ali vtičnika</td></tr>
-<tr><td>Preiskano, trenutno ni indeksirano</td><td>Vsebina</td><td>Dodajte vsebino, ki je drugje ni</td></tr>
-<tr><td>Več skoraj enakih strani</td><td>Vsebina</td><td>Združite jih v eno močnejšo stran</td></tr>
+<tr><td data-label="Znak">Stran ni znana ali je blokirana</td><td data-label="Verjetni vzrok">Tehnika</td><td data-label="Prvi korak">Preverite robots.txt, sitemap in povezave</td></tr>
+<tr><td data-label="Znak">Noindex ali napačen canonical</td><td data-label="Verjetni vzrok">Tehnika</td><td data-label="Prvi korak">Popravite nastavitve teme ali vtičnika</td></tr>
+<tr><td data-label="Znak">Preiskano, trenutno ni indeksirano</td><td data-label="Verjetni vzrok">Vsebina</td><td data-label="Prvi korak">Dodajte vsebino, ki je drugje ni</td></tr>
+<tr><td data-label="Znak">Več skoraj enakih strani</td><td data-label="Verjetni vzrok">Vsebina</td><td data-label="Prvi korak">Združite jih v eno močnejšo stran</td></tr>
 </tbody>
 </table>
 <p>Pri vsebinskih vzrokih pomaga besedilo, ki odgovori na vprašanja kupca: kaj vpliva na ceno, kakšni so roki, kako poteka postopek. Kako se tehničnega dela lotiti sistematično, opisuje vodič <a href="/tehnicni-seo/">tehnični SEO in njegov vpliv na uvrstitve</a>.</p>

@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.4">
+<link rel="stylesheet" href="/styles.css?v=1.5">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "Kaj je sitemap in zakaj ga potrebuje spletna stran", "description": "Kaj je sitemap, kaj vsebuje, kako ga dobite brezplačno, oddate v Search Console in preverite, ali Googlu res pomaga najti vaše strani.", "datePublished": "2026-11-27", "inLanguage": "sl-SI", "mainEntityOfPage": "https://seopro.si/sitemap/", "author": {"@type": "Person", "name": "Igor Bajsić", "url": "https://buyseech.com/"}, "publisher": {"@type": "Organization", "name": "SEOPRO.si", "url": "https://seopro.si/"}, "image": "https://seopro.si/assets/img/igor-buyseech.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": "https://seopro.si/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seopro.si/blog/"}, {"@type": "ListItem", "position": 3, "name": "Kaj je sitemap in zakaj ga potrebuje spletna stran", "item": "https://seopro.si/sitemap/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kaj vsebuje sitemap?", "acceptedAnswer": {"@type": "Answer", "text": "Sitemap vsebuje seznam URL-jev strani, ki jih želite imeti v Googlu, in za vsakega po želji datum zadnje spremembe (lastmod). Vanj spadajo samo kanonične strani, ki vrnejo kodo 200 in nimajo oznake noindex."}}, {"@type": "Question", "name": "Kako dobim sitemap za svojo spletno stran in ali je brezplačen?", "acceptedAnswer": {"@type": "Answer", "text": "Sitemap je brezplačen. WordPress ga ustvari sam na /wp-sitemap.xml, Yoast in Rank Math na /sitemap_index.xml, Shopify na /sitemap.xml. Če ga vaš sistem nima, uporabite generator sitemapa, na primer brezplačno različico Screaming Froga do 500 URL-jev. Naslov nato oddajte v Google Search Console, kar je prav tako brezplačno."}}, {"@type": "Question", "name": "Ali je sitemap še pomemben?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Google ga še vedno uporablja za odkrivanje novih in spremenjenih strani, posebej pri spletnih trgovinah, novih straneh in straneh z veliko vsebine. Opustil je le ločen »ping« za obveščanje o spremembah, ker sitemap redno bere sam."}}, {"@type": "Question", "name": "Ali ima vsaka spletna stran svoj sitemap?", "acceptedAnswer": {"@type": "Answer", "text": "Ne vsaka, ima pa ga večina sodobnih. WordPress od različice 5.5, Shopify in večina drugih sistemov ga ustvarijo samodejno. Starejše ali ročno izdelane strani ga pogosto nimajo. Preverite tako, da za domeno vpišete /sitemap.xml ali pogledate vrstico Sitemap v datoteki robots.txt."}}, {"@type": "Question", "name": "Kaj je razlika med sitemap.xml in robots.txt?", "acceptedAnswer": {"@type": "Answer", "text": "Sitemap.xml Googlu pove, katere strani naj obišče, robots.txt pa, katerih delov strani ne sme pajkati. Prvi je seznam priporočil, drugi seznam omejitev. Delujeta skupaj: v robots.txt dodate vrstico s potjo do sitemapa, da ga iskalniki najdejo sami."}}, {"@type": "Question", "name": "Ali je lahko sitemap prevelik?", "acceptedAnswer": {"@type": "Answer", "text": "Da. Ena datoteka sme imeti največ 50.000 URL-jev ali 50 MB nestisnjene velikosti. Večjo stran razdelite na več sitemapov in jih povežite v kazalo sitemapov (sitemap index), ki ga oddate v Search Console. Delitev po vrsti strani, na primer izdelki in članki, olajša iskanje napak."}}, {"@type": "Question", "name": "Ali sitemap pomaga tudi pri novih vsebinah?", "acceptedAnswer": {"@type": "Answer", "text": "Da, to je ena njegovih glavnih nalog. Ko objavite nov članek ali izdelek, ga samodejni sitemap doda s svežim datumom lastmod, Google pa ga ob naslednjem branju odkrije. Indeksiranja to ne zagotovi, zato na novo stran povežite tudi z obstoječih strani."}}]}]}</script>
 </head>
 <body>
@@ -83,11 +83,11 @@
 <table>
 <thead><tr><th>Vrsta strani</th><th>Ali sitemap potrebuje</th><th>Zakaj</th></tr></thead>
 <tbody>
-<tr><td>Spletna trgovina s stotinami izdelkov</td><td>Da</td><td>Globoke strani izdelkov Google težje najde</td></tr>
-<tr><td>Nova stran z malo zunanjimi povezavami</td><td>Da</td><td>Drugje skoraj ni poti do nje</td></tr>
-<tr><td>Stran z veliko novimi članki ali novicami</td><td>Da</td><td>Google hitreje vidi nove in spremenjene URL-je</td></tr>
-<tr><td>Stran z veliko slikami ali videi</td><td>Priporočljivo</td><td>Posebni vnosi pomagajo pri iskanju slik in videov</td></tr>
-<tr><td>Majhna stran z do 500 dobro povezanimi stranmi</td><td>Ni nujno</td><td>Google jo najde prek menija in povezav</td></tr>
+<tr><td data-label="Vrsta strani">Spletna trgovina s stotinami izdelkov</td><td data-label="Ali sitemap potrebuje">Da</td><td data-label="Zakaj">Globoke strani izdelkov Google težje najde</td></tr>
+<tr><td data-label="Vrsta strani">Nova stran z malo zunanjimi povezavami</td><td data-label="Ali sitemap potrebuje">Da</td><td data-label="Zakaj">Drugje skoraj ni poti do nje</td></tr>
+<tr><td data-label="Vrsta strani">Stran z veliko novimi članki ali novicami</td><td data-label="Ali sitemap potrebuje">Da</td><td data-label="Zakaj">Google hitreje vidi nove in spremenjene URL-je</td></tr>
+<tr><td data-label="Vrsta strani">Stran z veliko slikami ali videi</td><td data-label="Ali sitemap potrebuje">Priporočljivo</td><td data-label="Zakaj">Posebni vnosi pomagajo pri iskanju slik in videov</td></tr>
+<tr><td data-label="Vrsta strani">Majhna stran z do 500 dobro povezanimi stranmi</td><td data-label="Ali sitemap potrebuje">Ni nujno</td><td data-label="Zakaj">Google jo najde prek menija in povezav</td></tr>
 </tbody>
 </table>
 <p>Tudi pri majhni strani sitemap priporočamo, ker je brezplačen, v Search Consoleu pa vidite, koliko oddanih strani je Google res indeksiral.</p>
@@ -108,12 +108,12 @@
 <table>
 <thead><tr><th>Kaj preverite</th><th>Kje</th><th>Kaj je pravilno</th></tr></thead>
 <tbody>
-<tr><td>Ali Google datoteko prebere</td><td>Search Console, Zemljevidi spletnih mest</td><td>Stanje »Uspešno«</td></tr>
-<tr><td>Koliko oddanih strani je indeksiranih</td><td>Search Console, Indeksiranje strani, filter po sitemapu</td><td>Večina pomembnih strani je indeksiranih</td></tr>
-<tr><td>Statusne kode URL-jev</td><td>Screaming Frog v načinu seznama</td><td>Vsi URL-ji vrnejo kodo 200</td></tr>
-<tr><td>Oznaka noindex</td><td>Screaming Frog ali vtičnik za SEO</td><td>V sitemapu ni nobene strani z noindex</td></tr>
-<tr><td>Kanonični URL-ji</td><td>Izvorna koda strani</td><td>Kanonična oznaka vsakega URL-ja kaže nase</td></tr>
-<tr><td>Pomembne strani</td><td>Primerjava z menijem in seznamom izdelkov</td><td>Nobena ključna stran ne manjka</td></tr>
+<tr><td data-label="Kaj preverite">Ali Google datoteko prebere</td><td data-label="Kje">Search Console, Zemljevidi spletnih mest</td><td data-label="Kaj je pravilno">Stanje »Uspešno«</td></tr>
+<tr><td data-label="Kaj preverite">Koliko oddanih strani je indeksiranih</td><td data-label="Kje">Search Console, Indeksiranje strani, filter po sitemapu</td><td data-label="Kaj je pravilno">Večina pomembnih strani je indeksiranih</td></tr>
+<tr><td data-label="Kaj preverite">Statusne kode URL-jev</td><td data-label="Kje">Screaming Frog v načinu seznama</td><td data-label="Kaj je pravilno">Vsi URL-ji vrnejo kodo 200</td></tr>
+<tr><td data-label="Kaj preverite">Oznaka noindex</td><td data-label="Kje">Screaming Frog ali vtičnik za SEO</td><td data-label="Kaj je pravilno">V sitemapu ni nobene strani z noindex</td></tr>
+<tr><td data-label="Kaj preverite">Kanonični URL-ji</td><td data-label="Kje">Izvorna koda strani</td><td data-label="Kaj je pravilno">Kanonična oznaka vsakega URL-ja kaže nase</td></tr>
+<tr><td data-label="Kaj preverite">Pomembne strani</td><td data-label="Kje">Primerjava z menijem in seznamom izdelkov</td><td data-label="Kaj je pravilno">Nobena ključna stran ne manjka</td></tr>
 </tbody>
 </table>
 <p>Kako brati poročilo in kaj pomenijo posamezna sporočila o napakah, opisuje Googlova pomoč za <a href="https://support.google.com/webmasters/answer/7451001?hl=sl" target="_blank" rel="noopener">poročilo o zemljevidih spletnega mesta</a>. Največ pove razlika med številom oddanih in indeksiranih strani. Če je oddanih 400 strani in indeksiranih 150, imate nalogo, ki je sitemap sam ne bo rešil.</p>

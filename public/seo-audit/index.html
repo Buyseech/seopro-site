@@ -25,7 +25,7 @@
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=1.4">
+<link rel="stylesheet" href="/styles.css?v=1.5">
 <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "SEO audit", "description": "Kaj mora vključevati SEO audit, kako ugotovitve razvrstiti po vplivu na prihodke in kako je videti poročilo, ki ga lahko dejansko uporabite.", "datePublished": "2026-11-27", "inLanguage": "sl-SI", "mainEntityOfPage": "https://seopro.si/seo-audit/", "author": {"@type": "Person", "name": "Igor Bajsić", "url": "https://buyseech.com/"}, "publisher": {"@type": "Organization", "name": "SEOPRO.si", "url": "https://seopro.si/"}, "image": "https://seopro.si/assets/img/igor-buyseech.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": "https://seopro.si/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seopro.si/blog/"}, {"@type": "ListItem", "position": 3, "name": "SEO audit", "item": "https://seopro.si/seo-audit/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Kaj je razlika med SEO auditom in SEO analizo?", "acceptedAnswer": {"@type": "Answer", "text": "Izraza se pogosto uporabljata za isto stvar, v praksi pa je analiza navadno krajši prvi pregled, audit pa podroben pregled vseh področij s seznamom opravil. Brezplačna analiza pri SEOPRO pove, ali in kje lahko kaj premaknemo, poglobljen pregled pa natančno določi, kaj popraviti in v kakšnem vrstnem redu."}}, {"@type": "Question", "name": "Kako podrobno je poročilo po auditu?", "acceptedAnswer": {"@type": "Answer", "text": "Dovolj podrobno, da lahko vsako opravilo izvedete brez dodatnih vprašanj: kaj je narobe, na katerih URL-jih, zakaj šteje, kako popraviti in kdo to naredi. Na začetku mora imeti eno stran povzetka z največjimi priložnostmi. O kakovosti dolžina ne pove ničesar. Pomembno je, ali poročilo vodi v popravke."}}, {"@type": "Question", "name": "Ali audit vključuje tudi konkurenco?", "acceptedAnswer": {"@type": "Answer", "text": "Dober audit vključuje vsaj pregled konkurentov, ki so pred vami pri vaših najpomembnejših ključnih besedah. Pokaže, katere vsebine imajo, česa vi nimate, in od kod dobivajo povratne povezave. Brez tega ne veste, koliko dela potrebujete, da jih dohitite."}}, {"@type": "Question", "name": "Ali lahko audit naredite za lokalni posel ali spletno trgovino?", "acceptedAnswer": {"@type": "Answer", "text": "Da, audit se prilagodi vrsti posla. Pri lokalnem podjetju je poudarek na Googlovem profilu podjetja, mnenjih in lokalnih iskanjih, pri spletni trgovini pa na kategorijah, izdelkih, filtrih in podvojenih straneh, ki jih trgovine pogosto ustvarijo same."}}, {"@type": "Question", "name": "Ali po auditu dobim tudi seznam prioritet?", "acceptedAnswer": {"@type": "Answer", "text": "Morali bi ga. Seznam prioritet je najpomembnejši del audita, ker iz stotin ugotovitev izbere tiste z največjim vplivom na povpraševanja in prodajo. Če ga ponudnik ne pripravi, ste dobili samo popis napak in morate o vrstnem redu odločati sami."}}, {"@type": "Question", "name": "Kaj pove SEO ocena iz brezplačnih orodij?", "acceptedAnswer": {"@type": "Answer", "text": "SEO ocena (SEO score) je številka, ki jo orodje izračuna iz tehničnih opozoril, ki jih najde. Koristna je kot hiter signal, da je nekaj narobe, ne pove pa, ali stran prinaša kupce. Stran z oceno 70 lahko prodaja bolje od strani z oceno 100."}}, {"@type": "Question", "name": "Kako pogosto naj naredim audit strani?", "acceptedAnswer": {"@type": "Answer", "text": "Poglobljen audit je smiseln enkrat na leto, pred prenovo ali selitvijo strani in po nenadnem padcu obiska. Vmes zadostuje sprotno spremljanje v Search Consoleu, kjer opozorila o indeksiranju in varnosti vidite takoj, ko se pojavijo."}}]}]}</script>
 </head>
 <body>
@@ -81,15 +81,15 @@
 <table>
 <thead><tr><th>Področje</th><th>Kaj se preveri</th><th>Orodje ali vir</th></tr></thead>
 <tbody>
-<tr><td>Tehnični SEO</td><td>Indeksiranje, hitrost, preusmeritve, podvojene strani</td><td>Search Console, Screaming Frog</td></tr>
-<tr><td>Ključne besede</td><td>Za kaj se prikazujete in kaj iščejo kupci</td><td>Search Console, Ahrefs</td></tr>
-<tr><td>Vsebina in on-page</td><td>Iskalni namen, naslovi, meta opisi, prazne strani</td><td>Ročni pregled, Search Console</td></tr>
-<tr><td>Notranje povezovanje</td><td>Ali pomembne strani dobijo dovolj povezav</td><td>Screaming Frog</td></tr>
-<tr><td>Povratne povezave</td><td>Kakovost profila, spam povezave, vrzeli</td><td>Ahrefs, Search Console</td></tr>
-<tr><td>Konkurenca</td><td>Kdo je pred vami in zakaj</td><td>Ročni pregled rezultatov iskanja</td></tr>
-<tr><td>Lokalni SEO</td><td>Googlov profil podjetja, podatki o podjetju, mnenja</td><td>Googlov profil podjetja</td></tr>
-<tr><td>GEO pripravljenost</td><td>Ali vas AI odgovori lahko najdejo in citirajo</td><td>Ročni pregled v ChatGPT-ju in Googlu</td></tr>
-<tr><td>Merjenje</td><td>Ali se povpraševanja in nakupi beležijo</td><td>Google Analytics 4</td></tr>
+<tr><td data-label="Področje">Tehnični SEO</td><td data-label="Kaj se preveri">Indeksiranje, hitrost, preusmeritve, podvojene strani</td><td data-label="Orodje ali vir">Search Console, Screaming Frog</td></tr>
+<tr><td data-label="Področje">Ključne besede</td><td data-label="Kaj se preveri">Za kaj se prikazujete in kaj iščejo kupci</td><td data-label="Orodje ali vir">Search Console, Ahrefs</td></tr>
+<tr><td data-label="Področje">Vsebina in on-page</td><td data-label="Kaj se preveri">Iskalni namen, naslovi, meta opisi, prazne strani</td><td data-label="Orodje ali vir">Ročni pregled, Search Console</td></tr>
+<tr><td data-label="Področje">Notranje povezovanje</td><td data-label="Kaj se preveri">Ali pomembne strani dobijo dovolj povezav</td><td data-label="Orodje ali vir">Screaming Frog</td></tr>
+<tr><td data-label="Področje">Povratne povezave</td><td data-label="Kaj se preveri">Kakovost profila, spam povezave, vrzeli</td><td data-label="Orodje ali vir">Ahrefs, Search Console</td></tr>
+<tr><td data-label="Področje">Konkurenca</td><td data-label="Kaj se preveri">Kdo je pred vami in zakaj</td><td data-label="Orodje ali vir">Ročni pregled rezultatov iskanja</td></tr>
+<tr><td data-label="Področje">Lokalni SEO</td><td data-label="Kaj se preveri">Googlov profil podjetja, podatki o podjetju, mnenja</td><td data-label="Orodje ali vir">Googlov profil podjetja</td></tr>
+<tr><td data-label="Področje">GEO pripravljenost</td><td data-label="Kaj se preveri">Ali vas AI odgovori lahko najdejo in citirajo</td><td data-label="Orodje ali vir">Ročni pregled v ChatGPT-ju in Googlu</td></tr>
+<tr><td data-label="Področje">Merjenje</td><td data-label="Kaj se preveri">Ali se povpraševanja in nakupi beležijo</td><td data-label="Orodje ali vir">Google Analytics 4</td></tr>
 </tbody>
 </table>
 <p>Vsaka stran ne potrebuje enake globine na vseh področjih. Pri zobozdravniku v Mariboru bo lokalni del obsežen, pri spletni trgovini s tisoči izdelkov pa tehnični pregled in kategorije. Pregled konkurentov je ločeno delo, ki ga podrobneje opisujemo v članku o <a href="/analiza-konkurence/">analizi konkurence za SEO</a>.</p>
@@ -108,12 +108,12 @@
 <table>
 <thead><tr><th>Kdaj</th><th>Tipična ugotovitev</th><th>Zakaj takrat</th></tr></thead>
 <tbody>
-<tr><td>Takoj</td><td>Prodajne strani niso indeksirane</td><td>Brez indeksa ni obiska</td></tr>
-<tr><td>Takoj</td><td>GA4 ne beleži povpraševanj</td><td>Brez merjenja ne veste, kaj deluje</td></tr>
-<tr><td>V prvem mesecu</td><td>Donosne besede na 2. strani Googla</td><td>Najkrajša pot do novih klikov</td></tr>
-<tr><td>V prvem mesecu</td><td>Dve strani za isto ključno besedo</td><td>Strani si odžirata uvrstitve</td></tr>
-<tr><td>Pozneje</td><td>Manjkajoči opisi slik na blogu</td><td>Majhen vpliv na prodajo</td></tr>
-<tr><td>Pozneje</td><td>Opozorila o dolžini meta opisov</td><td>Kozmetika, ko je ostalo urejeno</td></tr>
+<tr><td data-label="Kdaj">Takoj</td><td data-label="Tipična ugotovitev">Prodajne strani niso indeksirane</td><td data-label="Zakaj takrat">Brez indeksa ni obiska</td></tr>
+<tr><td data-label="Kdaj">Takoj</td><td data-label="Tipična ugotovitev">GA4 ne beleži povpraševanj</td><td data-label="Zakaj takrat">Brez merjenja ne veste, kaj deluje</td></tr>
+<tr><td data-label="Kdaj">V prvem mesecu</td><td data-label="Tipična ugotovitev">Donosne besede na 2. strani Googla</td><td data-label="Zakaj takrat">Najkrajša pot do novih klikov</td></tr>
+<tr><td data-label="Kdaj">V prvem mesecu</td><td data-label="Tipična ugotovitev">Dve strani za isto ključno besedo</td><td data-label="Zakaj takrat">Strani si odžirata uvrstitve</td></tr>
+<tr><td data-label="Kdaj">Pozneje</td><td data-label="Tipična ugotovitev">Manjkajoči opisi slik na blogu</td><td data-label="Zakaj takrat">Majhen vpliv na prodajo</td></tr>
+<tr><td data-label="Kdaj">Pozneje</td><td data-label="Tipična ugotovitev">Opozorila o dolžini meta opisov</td><td data-label="Zakaj takrat">Kozmetika, ko je ostalo urejeno</td></tr>
 </tbody>
 </table>
 <p>Stran na 2. strani Googla (11. do 20. mesto) je videti blizu cilja, vendar tam skoraj nihče ne klikne. Zato so donosne ključne besede tik pod prvo stranjo skoraj vedno visoko na seznamu.</p>
