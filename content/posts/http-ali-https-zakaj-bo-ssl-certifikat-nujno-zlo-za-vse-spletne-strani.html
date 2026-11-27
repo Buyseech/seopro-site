@@ -1,0 +1,101 @@
+TITLE: HTTP vs HTTPS: zakaj je SSL certifikat pomemben za SEO
+H1: HTTPS in SSL certifikat: zakaj sta pomembna za SEO
+DESC: HTTP vs HTTPS za SEO: koliko certifikat vpliva na uvrstitve, kaj se zgodi, če stran ostane na HTTP, in katere napake pri prehodu stanejo povpraševanja.
+DATE: 2026-11-27
+NUM: 37
+CLUSTER: I Tehnični SEO in hitrost
+RELATED: tehnicni-seo, 301-preusmeritev, canonical-url
+ROBOTS: noindex, nofollow
+<p>Da, HTTPS je za SEO pomemben, vendar vas certifikat sam ne bo dvignil na vrh Googla. Google HTTPS od leta 2014 upošteva kot majhen signal za uvrstitve. Veliko večjo škodo naredi stran, ki ostane na HTTP: brskalnik ob njej izpiše »Ni varno«, obiskovalec obrazca ne izpolni, slabo izpeljan prehod pa razdeli signale med dve različici iste strani.</p>
+<p>Pri vprašanju HTTP vs HTTPS se večina lastnikov ustavi pri certifikatu. Gostitelj ga namesti, v naslovni vrstici izgine opozorilo in zadeva se zdi urejena. Stran pa je lahko še vedno dosegljiva na obeh naslovih, brez pravih preusmeritev in s kanonično oznako, ki kaže na staro različico.</p>
+<p>V članku boste izvedeli, kaj sta HTTPS in SSL certifikat, koliko res vplivata na uvrstitve, kje se prehod najpogosteje zalomi in kako preverite, da vas certifikat ne stane povpraševanj in naročil.</p>
+
+<h2>Kaj je HTTPS in kaj SSL certifikat</h2>
+<p>HTTPS je šifrirana različica protokola HTTP, po katerem si brskalnik in strežnik izmenjujeta podatke. Pri HTTP potujejo podatki kot navadno besedilo, zato jih lahko prestreže vsakdo na poti, na primer v javnem omrežju Wi-Fi. Pri HTTPS so šifrirani.</p>
+<p>Za šifriranje strežnik potrebuje certifikat. Vsi mu rečemo SSL certifikat, čeprav šifriranje danes poteka po novejšem protokolu TLS, SSL pa je zastarel. Certifikat izda overitelj in z njim potrdi, da domena res pripada strežniku, s katerim se brskalnik povezuje.</p>
+<table>
+<thead><tr><th>Lastnost</th><th>HTTP</th><th>HTTPS</th></tr></thead>
+<tbody>
+<tr><td>Začetek naslova</td><td>http://</td><td>https://</td></tr>
+<tr><td>Prenos podatkov</td><td>Nešifriran</td><td>Šifriran s TLS</td></tr>
+<tr><td>Oznaka v Chromu</td><td>»Ni varno«</td><td>Brez opozorila</td></tr>
+<tr><td>Obrazci in plačila</td><td>Opozorilo ob vnosu podatkov</td><td>Brez opozorila</td></tr>
+<tr><td>Protokol HTTP/2 v brskalnikih</td><td>Ne deluje</td><td>Deluje</td></tr>
+<tr><td>Signal za Google</td><td>Brez prednosti</td><td>Majhen pozitiven signal</td></tr>
+</tbody>
+</table>
+<p>SSL certifikati se ločijo po stopnji preverjanja. Certifikat DV potrdi samo lastništvo domene in ga pri večini gostiteljev dobite brezplačno. Certifikata OV in EV preverita tudi podjetje, ki stoji za domeno. Za Google med njimi ni razlike: šifriranje je enako in signal za uvrstitve tudi.</p>
+
+<h2>HTTP vs HTTPS: ali je HTTPS pomemben za SEO</h2>
+<p>HTTPS je pomemben kot osnova, ki jo mora imeti vsaka stran. Google je avgusta 2014 v objavi <a href="https://developers.google.com/search/blog/2014/08/https-as-ranking-signal" target="_blank" rel="noopener">HTTPS kot signal za uvrstitve</a> potrdil, da imajo šifrirane strani rahlo prednost, in zapisal, da signal vpliva na manj kot 1 % poizvedb. Danes je HTTPS eden od dejavnikov, ki jih Google našteva pri <a href="https://developers.google.com/search/docs/appearance/page-experience?hl=sl" target="_blank" rel="noopener">izkušnji na strani</a>.</p>
+<p>Večji je posredni vpliv. Če stran deluje na obeh protokolih, ima Google pred sabo dve kopiji vsake strani. Med enakima stranema praviloma izbere različico HTTPS za kanonično (glavno), a samo, če mu tega ne otežite s preusmeritvami, ki kažejo drugam, ali z notranjimi povezavami na http://. Ko signali niso usklajeni, se povratne povezave in zgodovina strani razdelijo med dva naslova.</p>
+<p>Certifikat vas ne bo premaknil z 12. na 3. mesto, brez pravilnih preusmeritev pa izgubite del signalov, ki ste jih leta gradili.</p>
+
+<h2>Kaj se zgodi, če stran ostane na HTTP</h2>
+<p>Stran na HTTP še deluje, vendar jo brskalniki vse bolj odkrito označujejo kot tvegano. Chrome od julija 2018 vsako stran na HTTP označi z »Ni varno«, od oktobra 2018 pa opozorilo ob vnosu v obrazec obarva rdeče. Za Chrome 154 (oktober 2026) je Google napovedal, da bo privzeto vklopil nastavitev, ki uporabnika pred odprtjem javne strani na HTTP vpraša, ali res želi nadaljevati.</p>
+<p>Obiskovalec tako vidi opozorilo, preden prebere prvi stavek, ob obrazcu pa še enkrat. Ko se za prehod odločite pozneje, je to selitev na nove naslove, ki jo morate izpeljati premišljeno.</p>
+<p>Če prek obrazca zbirate osebne podatke, GDPR zahteva ustrezno varovanje. Kaj to pomeni za vaše podjetje, preverite pri pravniku ali Informacijskem pooblaščencu.</p>
+
+<h2>Kaj HTTPS pomeni za vaša povpraševanja in naročila</h2>
+<p>HTTPS na povpraševanja vpliva v zadnjem koraku, kjer šteje največ. Veriga gre takole: donosna ključna beseda pripelje obiskovalca, ki je pripravljen kupiti, stran odgovori na to, kar išče, obiskovalec pa izpolni obrazec, pokliče ali odda naročilo. Opozorilo »Ni varno« se pokaže prav pri obrazcu, torej tam, kjer se obiskovalec odloča, ali vam bo zaupal ime, telefonsko številko ali podatke kartice.</p>
+<p>Na majhnem slovenskem trgu je to še dražje. Če za vašo storitev na mesec išče le nekaj deset ljudi, je vsak, ki odide zaradi opozorila, izgubljen kupec.</p>
+<p>Druga točka, kjer se veriga pretrga, je prehod brez preusmeritev 301. Spletna trgovina, ki takrat izgubi uvrstitve kategorij, to vidi neposredno v prihodkih.</p>
+<p>Kako zelo odloča zadnji korak, kaže primer mednarodne stranke SEOPRO, enega največjih nočnih klubov v Aziji. Brez novih povezav in brez nove vsebine, samo s popravki načina, kako obiskovalci stopijo v stik, so povpraševanja za rezervacije v prvem tednu zrasla s 103 na 183 na teden. HTTPS sledi isti logiki: obiskovalcu odstranite razlog za dvom, preden vas kontaktira.</p>
+<p>Preverite, ali obrazci, košarica in blagajna delujejo brez opozorila in ali v Search Consoleu spremljate različico https://.</p>
+<p><a class="btn" href="/#review">Zahtevajte brezplačno SEO analizo s pregledom HTTPS <span aria-hidden="true">&rarr;</span></a></p>
+
+<h2>Pogoste napake pri prehodu na HTTPS</h2>
+<p>Namestitev certifikata je najlažji del. Težave nastanejo pri korakih, ki morajo slediti, in te so najpogostejše:</p>
+<table>
+<thead><tr><th>Napaka</th><th>Posledica</th><th>Rešitev</th></tr></thead>
+<tbody>
+<tr><td>Brez preusmeritev 301</td><td>Dve različici strani v indeksu</td><td>Vsak naslov HTTP preusmerite na HTTPS</td></tr>
+<tr><td>Vse stare strani preusmerjene na domačo</td><td>Podstrani izgubijo uvrstitve</td><td>Vsako stran preusmerite na njen par</td></tr>
+<tr><td>Veriga več preusmeritev</td><td>Počasnejše nalaganje in šibkejši signali</td><td>Ena preusmeritev na končni naslov</td></tr>
+<tr><td>Kanonična oznaka kaže na HTTP</td><td>Google dobi nasprotujoča si navodila</td><td>Vse kanonične oznake na HTTPS</td></tr>
+<tr><td>Mešana vsebina</td><td>Opozorilo ali blokirane slike in skripte</td><td>Vse vire nalagajte prek HTTPS</td></tr>
+<tr><td>Stare notranje povezave</td><td>Nepotrebne preusmeritve pri vsakem kliku</td><td>Posodobite meni, vsebino in nogo</td></tr>
+<tr><td>Zemljevid strani s starimi naslovi</td><td>Google obiskuje stare naslove</td><td>V sitemap samo naslovi HTTPS</td></tr>
+<tr><td>Potekel certifikat</td><td>Brskalnik pokaže celozaslonsko opozorilo</td><td>Samodejno podaljševanje</td></tr>
+</tbody>
+</table>
+<p>Pri mešani vsebini (mixed content) brskalnik vire na HTTP samodejno nadgradi ali blokira, kot pojasnjuje web.dev v članku <a href="https://web.dev/articles/what-is-mixed-content" target="_blank" rel="noopener">kaj je mešana vsebina</a>. Pri certifikatih pazite na novost: od 15. marca 2026 javni certifikati veljajo največ 200 dni, do leta 2029 pa se bo rok skrajšal na 47 dni. Ročno podaljševanje zato ni več realna možnost.</p>
+
+<h2>Kako preveriti preusmeritve in canonical</h2>
+<p>Osnovno preverjanje lahko naredite sami. Potrebujete brskalnik, Google Search Console in po želji pajka, kot je Screaming Frog.</p>
+<ol>
+<li>V brskalnik vpišite štiri različice naslova: s http:// in https://, z www in brez. Vse morajo z eno samo preusmeritvijo pristati na istem končnem naslovu.</li>
+<li>S preverjevalnikom statusne kode preverite, da je preusmeritev trajna (301 ali 308), ne začasna (302).</li>
+<li>Odprite izvorno kodo nekaj strani in poiščite rel="canonical". Naslov se mora začeti s https:// in kazati na končno različico.</li>
+<li>V Search Consoleu z orodjem za pregled URL-ja preverite, kateri kanonični naslov je izbral Google, in v poročilu o indeksiranju strani poglejte, ali so med neindeksiranimi strani s preusmeritvijo s HTTP.</li>
+<li>S pajkom preiščite celotno stran in poiščite notranje povezave na http:// ter mešano vsebino.</li>
+</ol>
+<p>Če stran šele selite, sledite Googlovemu vodiču za <a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes?hl=sl" target="_blank" rel="noopener">selitev spletnega mesta s spremembo URL-jev</a>, saj Google prehod s HTTP na HTTPS obravnava kot selitev. Kako pravilno nastavite trajne preusmeritve, podrobno razlagamo v članku o <a href="/301-preusmeritev/">preusmeritvi 301</a>, kako Googlu poveste, katera različica je glavna, pa v vodiču o <a href="/canonical-url/">kanonični oznaki (canonical URL)</a>. Zemljevid strani po prehodu znova oddajte v Search Consoleu, več o tem v članku <a href="/sitemap/">kaj je sitemap</a>.</p>
+
+<h2>HTTPS pri WordPressu in spletnih trgovinah</h2>
+<p>Pri WordPressu je certifikat danes večinoma en klik v nadzorni plošči gostitelja, težave nastanejo pozneje. V meniju Nastavitve, Splošno morata biti naslov WordPressa in naslov spletnega mesta zapisana s https://, sicer WordPress sam ustvarja povezave na staro različico. Povezave na slike v starejših prispevkih so v bazi pogosto shranjene s http://, zato jih zamenjajte z orodjem za iskanje in zamenjavo v bazi. Celotno nastavitev opisuje vodič <a href="/wordpress-seo/">SEO za WordPress</a>.</p>
+<p>Spletne trgovine imajo več naslovov. Shopify certifikat ureja sam, pri WooCommerceu in trgovinah po meri pa preverite, da košarica, blagajna in plačilni modul ne nalagajo virov prek HTTP. Kaj še vpliva na organsko prodajo, preberete v vodiču <a href="/seo-za-spletne-trgovine/">SEO za spletne trgovine</a>.</p>
+<p>Certifikat ne ščiti pred zastarelimi vtičniki, šibkimi gesli ali vdorom. Kaj storiti, ko napadalci dobijo dostop do strani, opisujemo v članku <a href="/hekerji-napadli-tudi-vaso-spletno-stran/">hekerji so napadli spletno stran</a>.</p>
+
+<h2>Kdaj potrebujete tehnični pregled</h2>
+<p>Tehnični pregled potrebujete, če ste stran selili, prenovili ali zamenjali gostitelja, če brskalnik kje izpiše opozorilo ali če Search Console še kaže strani na http://. HTTPS je le ena od točk, ki jih zajame <a href="/tehnicni-seo/">tehnični SEO</a>, poleg indeksiranja, hitrosti in strukture strani.</p>
+<p>SEOPRO certifikatov ne prodaja in strani ne gostuje, ker dela samo SEO. V brezplačni SEO analizi preverimo, ali je prehod na HTTPS izpeljan brez izgube signalov in ali opozorila obiskovalcev ne odganjajo pri obrazcu. Certifikat uredi vaš gostitelj ali razvijalec, mi pa preverimo, da je vse povezano pravilno.</p>
+
+<h2>Pogosta vprašanja o HTTPS in SSL certifikatu</h2>
+<h3>Ali HTTPS sam izboljša uvrstitve?</h3>
+<p>Le malo. Google HTTPS od leta 2014 upošteva kot lahek signal, ki je ob začetku vplival na manj kot 1 % poizvedb. Vsebina in povratne povezave odločajo veliko več. Pomembnejše je, da HTTPS prepreči opozorila v brskalniku in podvojene različice strani, ki razdelijo signale.</p>
+<h3>Kaj je mixed content in zakaj je problem?</h3>
+<p>Mixed content ali mešana vsebina pomeni, da se stran naloži prek HTTPS, posamezne slike, skripte ali pisave pa prek HTTP. Brskalnik jih nadgradi ali blokira, zato se lahko pokvarita videz strani ali obrazec, obiskovalec pa vidi opozorilo. Rešitev je, da vse vire nalagate prek HTTPS.</p>
+<h3>Ali je brezplačen SSL dovolj?</h3>
+<p>Za večino podjetij in spletnih trgovin da. Brezplačni certifikati za spletno stran (DV) šifrirajo podatke enako kot plačljivi, Google pa med njimi pri uvrstitvah ne dela razlike. Plačljiv certifikat OV ali EV izberite, če ga zahteva vaš plačilni ponudnik ali notranja pravila.</p>
+<h3>Kako preverim, ali je vse na strani res pod HTTPS?</h3>
+<p>Odprite ključne strani, tudi obrazec in blagajno, in preverite, da brskalnik ne kaže opozorila. V orodjih za razvijalce brskalnika (tipka F12) zavihek Console izpiše mešano vsebino. Za celotno stran uporabite pajka, ki najde vse notranje povezave in vire na http://.</p>
+<h3>Ali moram po prehodu na HTTPS urediti še preusmeritve?</h3>
+<p>Da, to je najpomembnejši korak. Vsak stari naslov HTTP mora s trajno preusmeritvijo 301 voditi na svoj par na HTTPS, ne na domačo stran. Brez tega Google indeksira dve različici. Posodobite tudi kanonične oznake, notranje povezave in zemljevid strani.</p>
+<h3>Kako zavarujem WordPress stran?</h3>
+<p>Začnite s HTTPS na celotni strani, nato redno posodabljajte WordPress, teme in vtičnike ter odstranite tiste, ki jih ne uporabljate. Uporabite močna gesla in dvostopenjsko prijavo za skrbnike ter nastavite samodejne varnostne kopije. Certifikat ščiti samo prenos podatkov.</p>
+
+<h2>Certifikat je osnova, prehod je tisto, kar šteje</h2>
+<p>HTTPS je danes nujen za vsako stran, ki zbira povpraševanja ali prodaja. Sam vas ne bo uvrstil višje, brez njega pa brskalnik obiskovalce opozarja ravno pri obrazcu in blagajni. Za SEO odloča, kako je prehod izpeljan: ena različica strani, preusmeritve 301 na pravi par, kanonične oznake in notranje povezave na HTTPS ter certifikat, ki se podaljšuje sam.</p>
+<p>Če niste prepričani, ali je vaša stran pravilno prešla na HTTPS, nam jo pošljite. Preverili bomo preusmeritve, kanonične oznake in indeksiranje ter vam povedali, kje izgubljate povpraševanja.</p>
+<p><a class="btn" href="/#review">Pošljite nam svojo stran v brezplačno analizo <span aria-hidden="true">&rarr;</span></a></p>

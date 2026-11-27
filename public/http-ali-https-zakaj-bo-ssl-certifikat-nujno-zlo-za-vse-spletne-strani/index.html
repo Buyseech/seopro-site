@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="sl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google Analytics 4: add seopro.si's own GA4 snippet here (do not reuse the buyseech.com or seopack.net ID). -->
+<title>HTTP vs HTTPS: zakaj je SSL certifikat pomemben za SEO | SEOPRO Blog</title>
+<meta name="description" content="HTTP vs HTTPS za SEO: koliko certifikat vpliva na uvrstitve, kaj se zgodi, če stran ostane na HTTP, in katere napake pri prehodu stanejo povpraševanja.">
+<link rel="canonical" href="https://seopro.si/http-ali-https-zakaj-bo-ssl-certifikat-nujno-zlo-za-vse-spletne-strani/">
+<meta name="robots" content="noindex, nofollow">
+<meta name="author" content="Igor Bajsić">
+<meta name="theme-color" content="#04091A">
+<meta name="color-scheme" content="dark">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="SEOPRO.si">
+<meta property="og:title" content="HTTP vs HTTPS: zakaj je SSL certifikat pomemben za SEO | SEOPRO Blog">
+<meta property="og:description" content="HTTP vs HTTPS za SEO: koliko certifikat vpliva na uvrstitve, kaj se zgodi, če stran ostane na HTTP, in katere napake pri prehodu stanejo povpraševanja.">
+<meta property="og:url" content="https://seopro.si/http-ali-https-zakaj-bo-ssl-certifikat-nujno-zlo-za-vse-spletne-strani/">
+<meta property="og:image" content="https://seopro.si/assets/img/igor-buyseech.jpg">
+<meta property="og:locale" content="sl_SI">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HTTP vs HTTPS: zakaj je SSL certifikat pomemben za SEO | SEOPRO Blog">
+<meta name="twitter:description" content="HTTP vs HTTPS za SEO: koliko certifikat vpliva na uvrstitve, kaj se zgodi, če stran ostane na HTTP, in katere napake pri prehodu stanejo povpraševanja.">
+<meta name="twitter:image" content="https://seopro.si/assets/img/igor-buyseech.jpg">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/anton-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/manrope-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css?v=1.3">
+<script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "BlogPosting", "headline": "HTTPS in SSL certifikat: zakaj sta pomembna za SEO", "description": "HTTP vs HTTPS za SEO: koliko certifikat vpliva na uvrstitve, kaj se zgodi, če stran ostane na HTTP, in katere napake pri prehodu stanejo povpraševanja.", "datePublished": "2026-11-27", "inLanguage": "sl-SI", "mainEntityOfPage": "https://seopro.si/http-ali-https-zakaj-bo-ssl-certifikat-nujno-zlo-za-vse-spletne-strani/", "author": {"@type": "Person", "name": "Igor Bajsić", "url": "https://buyseech.com/"}, "publisher": {"@type": "Organization", "name": "SEOPRO.si", "url": "https://seopro.si/"}, "image": "https://seopro.si/assets/img/igor-buyseech.jpg"}, {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "SEOPRO", "item": "https://seopro.si/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://seopro.si/blog/"}, {"@type": "ListItem", "position": 3, "name": "HTTPS in SSL certifikat: zakaj sta pomembna za SEO", "item": "https://seopro.si/http-ali-https-zakaj-bo-ssl-certifikat-nujno-zlo-za-vse-spletne-strani/"}]}, {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Ali HTTPS sam izboljša uvrstitve?", "acceptedAnswer": {"@type": "Answer", "text": "Le malo. Google HTTPS od leta 2014 upošteva kot lahek signal, ki je ob začetku vplival na manj kot 1 % poizvedb. Vsebina in povratne povezave odločajo veliko več. Pomembnejše je, da HTTPS prepreči opozorila v brskalniku in podvojene različice strani, ki razdelijo signale."}}, {"@type": "Question", "name": "Kaj je mixed content in zakaj je problem?", "acceptedAnswer": {"@type": "Answer", "text": "Mixed content ali mešana vsebina pomeni, da se stran naloži prek HTTPS, posamezne slike, skripte ali pisave pa prek HTTP. Brskalnik jih nadgradi ali blokira, zato se lahko pokvarita videz strani ali obrazec, obiskovalec pa vidi opozorilo. Rešitev je, da vse vire nalagate prek HTTPS."}}, {"@type": "Question", "name": "Ali je brezplačen SSL dovolj?", "acceptedAnswer": {"@type": "Answer", "text": "Za večino podjetij in spletnih trgovin da. Brezplačni certifikati za spletno stran (DV) šifrirajo podatke enako kot plačljivi, Google pa med njimi pri uvrstitvah ne dela razlike. Plačljiv certifikat OV ali EV izberite, če ga zahteva vaš plačilni ponudnik ali notranja pravila."}}, {"@type": "Question", "name": "Kako preverim, ali je vse na strani res pod HTTPS?", "acceptedAnswer": {"@type": "Answer", "text": "Odprite ključne strani, tudi obrazec in blagajno, in preverite, da brskalnik ne kaže opozorila. V orodjih za razvijalce brskalnika (tipka F12) zavihek Console izpiše mešano vsebino. Za celotno stran uporabite pajka, ki najde vse notranje povezave in vire na http://."}}, {"@type": "Question", "name": "Ali moram po prehodu na HTTPS urediti še preusmeritve?", "acceptedAnswer": {"@type": "Answer", "text": "Da, to je najpomembnejši korak. Vsak stari naslov HTTP mora s trajno preusmeritvijo 301 voditi na svoj par na HTTPS, ne na domačo stran. Brez tega Google indeksira dve različici. Posodobite tudi kanonične oznake, notranje povezave in zemljevid strani."}}, {"@type": "Question", "name": "Kako zavarujem WordPress stran?", "acceptedAnswer": {"@type": "Answer", "text": "Začnite s HTTPS na celotni strani, nato redno posodabljajte WordPress, teme in vtičnike ter odstranite tiste, ki jih ne uporabljate. Uporabite močna gesla in dvostopenjsko prijavo za skrbnike ter nastavite samodejne varnostne kopije. Certifikat ščiti samo prenos podatkov."}}]}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Preskoči na vsebino</a>
+<header class="site-header">
+  <nav class="wrap nav" aria-label="Glavni meni">
+    <a class="logo" href="/">SEOPRO<span>.</span></a>
+    <div class="nav-links">
+      <a href="/#who">Komu pomagamo</a>
+      <a href="/#services">Kako delamo</a>
+      <a href="/#results">Rezultati</a>
+      <a href="/#people">Ekipa</a>
+      <a href="/blog/">Blog</a>
+      <a class="btn btn--sm" href="/#review">Potrebujemo več strank</a>
+      <button class="nav-toggle" type="button" aria-label="Odpri meni" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <a href="/#who">Komu pomagamo</a>
+    <a href="/#services">Kako delamo</a>
+    <a href="/#results">Rezultati</a>
+    <a href="/#people">Ekipa</a>
+    <a href="/blog/">Blog</a>
+  </div>
+</header>
+
+<main id="main" class="legal sr-article">
+  <article class="wrap legal-in">
+    <p class="eyebrow"><a href="/blog/">SEOPRO Blog</a></p>
+    <h1 class="h2">HTTPS in SSL certifikat: zakaj sta pomembna za SEO</h1>
+    <p class="sr-meta"><time datetime="2026-11-27">27. november 2026</time> · Igor Bajsić · 9 min branja</p>
+    
+    <div class="sr-body">
+<p>Da, HTTPS je za SEO pomemben, vendar vas certifikat sam ne bo dvignil na vrh Googla. Google HTTPS od leta 2014 upošteva kot majhen signal za uvrstitve. Veliko večjo škodo naredi stran, ki ostane na HTTP: brskalnik ob njej izpiše »Ni varno«, obiskovalec obrazca ne izpolni, slabo izpeljan prehod pa razdeli signale med dve različici iste strani.</p>
+<p>Pri vprašanju HTTP vs HTTPS se večina lastnikov ustavi pri certifikatu. Gostitelj ga namesti, v naslovni vrstici izgine opozorilo in zadeva se zdi urejena. Stran pa je lahko še vedno dosegljiva na obeh naslovih, brez pravih preusmeritev in s kanonično oznako, ki kaže na staro različico.</p>
+<p>V članku boste izvedeli, kaj sta HTTPS in SSL certifikat, koliko res vplivata na uvrstitve, kje se prehod najpogosteje zalomi in kako preverite, da vas certifikat ne stane povpraševanj in naročil.</p>
+
+<h2>Kaj je HTTPS in kaj SSL certifikat</h2>
+<p>HTTPS je šifrirana različica protokola HTTP, po katerem si brskalnik in strežnik izmenjujeta podatke. Pri HTTP potujejo podatki kot navadno besedilo, zato jih lahko prestreže vsakdo na poti, na primer v javnem omrežju Wi-Fi. Pri HTTPS so šifrirani.</p>
+<p>Za šifriranje strežnik potrebuje certifikat. Vsi mu rečemo SSL certifikat, čeprav šifriranje danes poteka po novejšem protokolu TLS, SSL pa je zastarel. Certifikat izda overitelj in z njim potrdi, da domena res pripada strežniku, s katerim se brskalnik povezuje.</p>
+<table>
+<thead><tr><th>Lastnost</th><th>HTTP</th><th>HTTPS</th></tr></thead>
+<tbody>
+<tr><td>Začetek naslova</td><td>http://</td><td>https://</td></tr>
+<tr><td>Prenos podatkov</td><td>Nešifriran</td><td>Šifriran s TLS</td></tr>
+<tr><td>Oznaka v Chromu</td><td>»Ni varno«</td><td>Brez opozorila</td></tr>
+<tr><td>Obrazci in plačila</td><td>Opozorilo ob vnosu podatkov</td><td>Brez opozorila</td></tr>
+<tr><td>Protokol HTTP/2 v brskalnikih</td><td>Ne deluje</td><td>Deluje</td></tr>
+<tr><td>Signal za Google</td><td>Brez prednosti</td><td>Majhen pozitiven signal</td></tr>
+</tbody>
+</table>
+<p>SSL certifikati se ločijo po stopnji preverjanja. Certifikat DV potrdi samo lastništvo domene in ga pri večini gostiteljev dobite brezplačno. Certifikata OV in EV preverita tudi podjetje, ki stoji za domeno. Za Google med njimi ni razlike: šifriranje je enako in signal za uvrstitve tudi.</p>
+
+<h2>HTTP vs HTTPS: ali je HTTPS pomemben za SEO</h2>
+<p>HTTPS je pomemben kot osnova, ki jo mora imeti vsaka stran. Google je avgusta 2014 v objavi <a href="https://developers.google.com/search/blog/2014/08/https-as-ranking-signal" target="_blank" rel="noopener">HTTPS kot signal za uvrstitve</a> potrdil, da imajo šifrirane strani rahlo prednost, in zapisal, da signal vpliva na manj kot 1 % poizvedb. Danes je HTTPS eden od dejavnikov, ki jih Google našteva pri <a href="https://developers.google.com/search/docs/appearance/page-experience?hl=sl" target="_blank" rel="noopener">izkušnji na strani</a>.</p>
+<p>Večji je posredni vpliv. Če stran deluje na obeh protokolih, ima Google pred sabo dve kopiji vsake strani. Med enakima stranema praviloma izbere različico HTTPS za kanonično (glavno), a samo, če mu tega ne otežite s preusmeritvami, ki kažejo drugam, ali z notranjimi povezavami na http://. Ko signali niso usklajeni, se povratne povezave in zgodovina strani razdelijo med dva naslova.</p>
+<p>Certifikat vas ne bo premaknil z 12. na 3. mesto, brez pravilnih preusmeritev pa izgubite del signalov, ki ste jih leta gradili.</p>
+
+<h2>Kaj se zgodi, če stran ostane na HTTP</h2>
+<p>Stran na HTTP še deluje, vendar jo brskalniki vse bolj odkrito označujejo kot tvegano. Chrome od julija 2018 vsako stran na HTTP označi z »Ni varno«, od oktobra 2018 pa opozorilo ob vnosu v obrazec obarva rdeče. Za Chrome 154 (oktober 2026) je Google napovedal, da bo privzeto vklopil nastavitev, ki uporabnika pred odprtjem javne strani na HTTP vpraša, ali res želi nadaljevati.</p>
+<p>Obiskovalec tako vidi opozorilo, preden prebere prvi stavek, ob obrazcu pa še enkrat. Ko se za prehod odločite pozneje, je to selitev na nove naslove, ki jo morate izpeljati premišljeno.</p>
+<p>Če prek obrazca zbirate osebne podatke, GDPR zahteva ustrezno varovanje. Kaj to pomeni za vaše podjetje, preverite pri pravniku ali Informacijskem pooblaščencu.</p>
+
+<h2>Kaj HTTPS pomeni za vaša povpraševanja in naročila</h2>
+<p>HTTPS na povpraševanja vpliva v zadnjem koraku, kjer šteje največ. Veriga gre takole: donosna ključna beseda pripelje obiskovalca, ki je pripravljen kupiti, stran odgovori na to, kar išče, obiskovalec pa izpolni obrazec, pokliče ali odda naročilo. Opozorilo »Ni varno« se pokaže prav pri obrazcu, torej tam, kjer se obiskovalec odloča, ali vam bo zaupal ime, telefonsko številko ali podatke kartice.</p>
+<p>Na majhnem slovenskem trgu je to še dražje. Če za vašo storitev na mesec išče le nekaj deset ljudi, je vsak, ki odide zaradi opozorila, izgubljen kupec.</p>
+<p>Druga točka, kjer se veriga pretrga, je prehod brez preusmeritev 301. Spletna trgovina, ki takrat izgubi uvrstitve kategorij, to vidi neposredno v prihodkih.</p>
+<p>Kako zelo odloča zadnji korak, kaže primer mednarodne stranke SEOPRO, enega največjih nočnih klubov v Aziji. Brez novih povezav in brez nove vsebine, samo s popravki načina, kako obiskovalci stopijo v stik, so povpraševanja za rezervacije v prvem tednu zrasla s 103 na 183 na teden. HTTPS sledi isti logiki: obiskovalcu odstranite razlog za dvom, preden vas kontaktira.</p>
+<p>Preverite, ali obrazci, košarica in blagajna delujejo brez opozorila in ali v Search Consoleu spremljate različico https://.</p>
+<p><a class="btn" href="/#review">Zahtevajte brezplačno SEO analizo s pregledom HTTPS <span aria-hidden="true">&rarr;</span></a></p>
+
+<h2>Pogoste napake pri prehodu na HTTPS</h2>
+<p>Namestitev certifikata je najlažji del. Težave nastanejo pri korakih, ki morajo slediti, in te so najpogostejše:</p>
+<table>
+<thead><tr><th>Napaka</th><th>Posledica</th><th>Rešitev</th></tr></thead>
+<tbody>
+<tr><td>Brez preusmeritev 301</td><td>Dve različici strani v indeksu</td><td>Vsak naslov HTTP preusmerite na HTTPS</td></tr>
+<tr><td>Vse stare strani preusmerjene na domačo</td><td>Podstrani izgubijo uvrstitve</td><td>Vsako stran preusmerite na njen par</td></tr>
+<tr><td>Veriga več preusmeritev</td><td>Počasnejše nalaganje in šibkejši signali</td><td>Ena preusmeritev na končni naslov</td></tr>
+<tr><td>Kanonična oznaka kaže na HTTP</td><td>Google dobi nasprotujoča si navodila</td><td>Vse kanonične oznake na HTTPS</td></tr>
+<tr><td>Mešana vsebina</td><td>Opozorilo ali blokirane slike in skripte</td><td>Vse vire nalagajte prek HTTPS</td></tr>
+<tr><td>Stare notranje povezave</td><td>Nepotrebne preusmeritve pri vsakem kliku</td><td>Posodobite meni, vsebino in nogo</td></tr>
+<tr><td>Zemljevid strani s starimi naslovi</td><td>Google obiskuje stare naslove</td><td>V sitemap samo naslovi HTTPS</td></tr>
+<tr><td>Potekel certifikat</td><td>Brskalnik pokaže celozaslonsko opozorilo</td><td>Samodejno podaljševanje</td></tr>
+</tbody>
+</table>
+<p>Pri mešani vsebini (mixed content) brskalnik vire na HTTP samodejno nadgradi ali blokira, kot pojasnjuje web.dev v članku <a href="https://web.dev/articles/what-is-mixed-content" target="_blank" rel="noopener">kaj je mešana vsebina</a>. Pri certifikatih pazite na novost: od 15. marca 2026 javni certifikati veljajo največ 200 dni, do leta 2029 pa se bo rok skrajšal na 47 dni. Ročno podaljševanje zato ni več realna možnost.</p>
+
+<h2>Kako preveriti preusmeritve in canonical</h2>
+<p>Osnovno preverjanje lahko naredite sami. Potrebujete brskalnik, Google Search Console in po želji pajka, kot je Screaming Frog.</p>
+<ol>
+<li>V brskalnik vpišite štiri različice naslova: s http:// in https://, z www in brez. Vse morajo z eno samo preusmeritvijo pristati na istem končnem naslovu.</li>
+<li>S preverjevalnikom statusne kode preverite, da je preusmeritev trajna (301 ali 308), ne začasna (302).</li>
+<li>Odprite izvorno kodo nekaj strani in poiščite rel="canonical". Naslov se mora začeti s https:// in kazati na končno različico.</li>
+<li>V Search Consoleu z orodjem za pregled URL-ja preverite, kateri kanonični naslov je izbral Google, in v poročilu o indeksiranju strani poglejte, ali so med neindeksiranimi strani s preusmeritvijo s HTTP.</li>
+<li>S pajkom preiščite celotno stran in poiščite notranje povezave na http:// ter mešano vsebino.</li>
+</ol>
+<p>Če stran šele selite, sledite Googlovemu vodiču za <a href="https://developers.google.com/search/docs/crawling-indexing/site-move-with-url-changes?hl=sl" target="_blank" rel="noopener">selitev spletnega mesta s spremembo URL-jev</a>, saj Google prehod s HTTP na HTTPS obravnava kot selitev. Kako pravilno nastavite trajne preusmeritve, podrobno razlagamo v članku o <a href="/301-preusmeritev/">preusmeritvi 301</a>, kako Googlu poveste, katera različica je glavna, pa v vodiču o <a href="/canonical-url/">kanonični oznaki (canonical URL)</a>. Zemljevid strani po prehodu znova oddajte v Search Consoleu, več o tem v članku <a href="/sitemap/">kaj je sitemap</a>.</p>
+
+<h2>HTTPS pri WordPressu in spletnih trgovinah</h2>
+<p>Pri WordPressu je certifikat danes večinoma en klik v nadzorni plošči gostitelja, težave nastanejo pozneje. V meniju Nastavitve, Splošno morata biti naslov WordPressa in naslov spletnega mesta zapisana s https://, sicer WordPress sam ustvarja povezave na staro različico. Povezave na slike v starejših prispevkih so v bazi pogosto shranjene s http://, zato jih zamenjajte z orodjem za iskanje in zamenjavo v bazi. Celotno nastavitev opisuje vodič <a href="/wordpress-seo/">SEO za WordPress</a>.</p>
+<p>Spletne trgovine imajo več naslovov. Shopify certifikat ureja sam, pri WooCommerceu in trgovinah po meri pa preverite, da košarica, blagajna in plačilni modul ne nalagajo virov prek HTTP. Kaj še vpliva na organsko prodajo, preberete v vodiču <a href="/seo-za-spletne-trgovine/">SEO za spletne trgovine</a>.</p>
+<p>Certifikat ne ščiti pred zastarelimi vtičniki, šibkimi gesli ali vdorom. Kaj storiti, ko napadalci dobijo dostop do strani, opisujemo v članku <a href="/hekerji-napadli-tudi-vaso-spletno-stran/">hekerji so napadli spletno stran</a>.</p>
+
+<h2>Kdaj potrebujete tehnični pregled</h2>
+<p>Tehnični pregled potrebujete, če ste stran selili, prenovili ali zamenjali gostitelja, če brskalnik kje izpiše opozorilo ali če Search Console še kaže strani na http://. HTTPS je le ena od točk, ki jih zajame <a href="/tehnicni-seo/">tehnični SEO</a>, poleg indeksiranja, hitrosti in strukture strani.</p>
+<p>SEOPRO certifikatov ne prodaja in strani ne gostuje, ker dela samo SEO. V brezplačni SEO analizi preverimo, ali je prehod na HTTPS izpeljan brez izgube signalov in ali opozorila obiskovalcev ne odganjajo pri obrazcu. Certifikat uredi vaš gostitelj ali razvijalec, mi pa preverimo, da je vse povezano pravilno.</p>
+
+<h2>Pogosta vprašanja o HTTPS in SSL certifikatu</h2>
+<h3>Ali HTTPS sam izboljša uvrstitve?</h3>
+<p>Le malo. Google HTTPS od leta 2014 upošteva kot lahek signal, ki je ob začetku vplival na manj kot 1 % poizvedb. Vsebina in povratne povezave odločajo veliko več. Pomembnejše je, da HTTPS prepreči opozorila v brskalniku in podvojene različice strani, ki razdelijo signale.</p>
+<h3>Kaj je mixed content in zakaj je problem?</h3>
+<p>Mixed content ali mešana vsebina pomeni, da se stran naloži prek HTTPS, posamezne slike, skripte ali pisave pa prek HTTP. Brskalnik jih nadgradi ali blokira, zato se lahko pokvarita videz strani ali obrazec, obiskovalec pa vidi opozorilo. Rešitev je, da vse vire nalagate prek HTTPS.</p>
+<h3>Ali je brezplačen SSL dovolj?</h3>
+<p>Za večino podjetij in spletnih trgovin da. Brezplačni certifikati za spletno stran (DV) šifrirajo podatke enako kot plačljivi, Google pa med njimi pri uvrstitvah ne dela razlike. Plačljiv certifikat OV ali EV izberite, če ga zahteva vaš plačilni ponudnik ali notranja pravila.</p>
+<h3>Kako preverim, ali je vse na strani res pod HTTPS?</h3>
+<p>Odprite ključne strani, tudi obrazec in blagajno, in preverite, da brskalnik ne kaže opozorila. V orodjih za razvijalce brskalnika (tipka F12) zavihek Console izpiše mešano vsebino. Za celotno stran uporabite pajka, ki najde vse notranje povezave in vire na http://.</p>
+<h3>Ali moram po prehodu na HTTPS urediti še preusmeritve?</h3>
+<p>Da, to je najpomembnejši korak. Vsak stari naslov HTTP mora s trajno preusmeritvijo 301 voditi na svoj par na HTTPS, ne na domačo stran. Brez tega Google indeksira dve različici. Posodobite tudi kanonične oznake, notranje povezave in zemljevid strani.</p>
+<h3>Kako zavarujem WordPress stran?</h3>
+<p>Začnite s HTTPS na celotni strani, nato redno posodabljajte WordPress, teme in vtičnike ter odstranite tiste, ki jih ne uporabljate. Uporabite močna gesla in dvostopenjsko prijavo za skrbnike ter nastavite samodejne varnostne kopije. Certifikat ščiti samo prenos podatkov.</p>
+
+<h2>Certifikat je osnova, prehod je tisto, kar šteje</h2>
+<p>HTTPS je danes nujen za vsako stran, ki zbira povpraševanja ali prodaja. Sam vas ne bo uvrstil višje, brez njega pa brskalnik obiskovalce opozarja ravno pri obrazcu in blagajni. Za SEO odloča, kako je prehod izpeljan: ena različica strani, preusmeritve 301 na pravi par, kanonične oznake in notranje povezave na HTTPS ter certifikat, ki se podaljšuje sam.</p>
+<p>Če niste prepričani, ali je vaša stran pravilno prešla na HTTPS, nam jo pošljite. Preverili bomo preusmeritve, kanonične oznake in indeksiranje ter vam povedali, kje izgubljate povpraševanja.</p>
+<p><a class="btn" href="/#review">Pošljite nam svojo stran v brezplačno analizo <span aria-hidden="true">&rarr;</span></a></p>
+    </div>
+    <p class="sr-sign">Igor Bajsić, SEOPRO</p>
+
+    <aside class="sr-cta" aria-label="Brezplačna analiza">
+      <h2>Vas zanima, kje se vaša stran <span>zatika?</span></h2>
+      <p>Pošljite nam naslov spletne strani in ključne besede, za katere bi se radi prikazovali. Igor jo pregleda in vam pove, kaj bi prineslo največ.</p>
+      <a class="btn" href="/#review">Brezplačna analiza strani</a>
+    </aside>
+
+    <section class="sr-related" aria-labelledby="related-title">
+      <h2 id="related-title">Preberite <span>še</span></h2>
+      <div class="sr-posts">
+      <a class="sr-post" href="/tehnicni-seo/">
+        <time datetime="2026-11-27">27. november 2026</time>
+        <h3>Tehnični SEO: kaj je in zakaj vpliva na uvrstitve</h3>
+        <p>Kaj vključuje tehnični SEO, zakaj vpliva na uvrstitve in povpraševanja ter kako odkrijete skrite napake, ki zavirajo vašo spletno stran.</p>
+        <span class="more">Preberi več &rarr;</span>
+      </a>
+      <a class="sr-post" href="/mednarodni-seo/">
+        <time datetime="2026-11-27">27. november 2026</time>
+        <h3>Mednarodni SEO za slovenske izvoznike</h3>
+        <p>Globalni SEO za slovenske izvoznike: kdaj se splača, .si, .com ali podmape, kako nastaviti hreflang in kako merite povpraševanja iz tujine.</p>
+        <span class="more">Preberi več &rarr;</span>
+      </a>
+      <a class="sr-post" href="/hitrost-spletne-strani/">
+        <time datetime="2026-11-27">27. november 2026</time>
+        <h3>Hitrost spletne strani in PageSpeed</h3>
+        <p>Kaj pomeni PageSpeed rezultat, kako Google meri Core Web Vitals, zakaj je stran počasna in katere popravke se splača narediti najprej.</p>
+        <span class="more">Preberi več &rarr;</span>
+      </a>
+      </div>
+    </section>
+  </article>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-in">
+    <div class="footer-top">
+      <span class="footer-logo">SEOPRO<span>.</span></span>
+      <div class="footer-links">
+        <a href="mailto:igor@seopro.si"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>igor@seopro.si</span></a>
+        <a href="https://www.youtube.com/@Buyseech" target="_blank" rel="noopener"><svg viewBox="0 0 68 48" width="24" height="17" aria-hidden="true" focusable="false"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3S12.8.3 7.5 1.7a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#FF0000"/><path d="M27 34V14l18 10z" fill="#fff"/></svg><span>YouTube</span></a>
+        <a href="https://www.linkedin.com/in/igor-buyseech" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false"><rect width="24" height="24" rx="4" fill="#0A66C2"/><path fill="#fff" d="M7.1 9.3H4.8V19h2.3V9.3zM6 5a1.35 1.35 0 1 0 0 2.7A1.35 1.35 0 0 0 6 5zm13.2 8.8c0-2.6-1.4-4.7-4-4.7-1.3 0-2.2.7-2.6 1.4V9.3H10.4V19h2.3v-4.8c0-1.3.3-2.6 1.9-2.6 1.6 0 1.6 1.5 1.6 2.7V19h2.3l.7-5.2z"/></svg><span>LinkedIn</span></a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 SEOPRO.si · SEOPRO, spletna optimizacija, Igor Bajsić s.p. · <a href="/blog/">Blog</a> · <a href="/zasebnost/">Zasebnost in podatki o podjetju</a></p>
+  </div>
+</footer>
+
+<script src="/site.js?v=1.1" defer></script>
+</body>
+</html>
