@@ -31,13 +31,13 @@ ROBOTS: noindex, nofollow
 <tr><td>Perplexity</td><td>Lastno iskanje in pajek PerplexityBot</td><td>Ali robots.txt dovoli PerplexityBot</td></tr>
 </tbody>
 </table>
-<p>Google v dokumentaciji <a href="https://developers.google.com/search/docs/appearance/ai-features?hl=sl" target="_blank" rel="noopener">o funkcijah umetne inteligence in vašem spletnem mestu</a> pojasnjuje, da za AI preglede ni posebnih zahtev: stran mora biti indeksirana in primerna za prikaz z izrezkom. AI pregledi lahko vprašanje razbijejo na več podvprašanj (query fan-out) in za vsako poiščejo vire. Zato se lahko pojavite tudi tam, kjer v klasičnih rezultatih niste na 1. strani, če vaša stran jasno odgovori na eno od podvprašanj.</p>
-<p>Na učne podatke ne vplivate neposredno. Vplivate pa na to, kaj o vašem podjetju piše na spletu: na vaši strani, v medijih, imenikih in mnenjih strank. Model o podjetju sklepa iz tega, kar dosledno ponavljajo različni viri.</p>
+<p>Google v dokumentaciji <a href="https://developers.google.com/search/docs/appearance/ai-features?hl=sl" target="_blank" rel="noopener">o funkcijah umetne inteligence in vašem spletnem mestu</a> pojasnjuje, da za AI preglede ni posebnih zahtev: stran mora biti indeksirana in primerna za prikaz z izrezkom. AI pregledi lahko vprašanje razbijejo na več podvprašanj (query fan-out) in za vsako poiščejo vire. Tako se lahko pojavite tudi tam, kjer v klasičnih rezultatih niste na 1. strani.</p>
+<p>Na učne podatke vplivate posredno, s tem, kar o vašem podjetju dosledno piše na vaši strani, v medijih, imenikih in mnenjih strank.</p>
 
 <h2>Kako optimizirati vsebino za AI odgovore</h2>
 <p>AI najraje navaja vsebino, pri kateri odgovor najdete v prvih dveh stavkih in ga lahko izrežete brez konteksta. Takole se lotite svojih strani:</p>
 <ol>
-<li><strong>Zberite vprašanja kupcev.</strong> Zapišite, kaj vas stranke sprašujejo po telefonu in e-pošti ter kako bi isto vprašale ChatGPT. Ta vprašanja so daljša in bolj pogovorna od klasičnih iskanj.</li>
+<li><strong>Zberite vprašanja kupcev.</strong> Zapišite, kaj vas stranke sprašujejo po telefonu in e-pošti ter kako bi isto vprašale ChatGPT.</li>
 <li><strong>Odgovorite takoj.</strong> Pod vsakim naslovom naj bo prvi stavek neposreden odgovor s številko, rokom ali jasnim da ali ne.</li>
 <li><strong>Bodite konkretni.</strong> Za koga je storitev, kje delate, koliko časa traja in kaj vključuje. Pri stavku »kakovostne storitve po ugodnih cenah« AI nima česa citirati.</li>
 <li><strong>Uporabite tabele in sezname</strong> za primerjave, korake in specifikacije.</li>
@@ -46,7 +46,7 @@ ROBOTS: noindex, nofollow
 <p>Googlov vodič za <a href="https://developers.google.com/search/docs/fundamentals/creating-helpful-content?hl=sl" target="_blank" rel="noopener">ustvarjanje koristne, zanesljive vsebine</a> velja za AI preglede enako kot za klasične rezultate.</p>
 
 <h2>Tehnični in avtorski signali zaupanja</h2>
-<p>Tudi dobra vsebina ne pomaga, če je AI pajek (crawler) ne more prebrati ali ji ne zaupa. Preverite naslednje:</p>
+<p>Vsebina ne pomaga, če je AI pajek (crawler) ne more prebrati ali ji ne zaupa.</p>
 <ul>
 <li><strong>Dostop pajkov.</strong> V datoteki robots.txt ne blokirajte Googlebota, Bingbota ter pajkov OAI-SearchBot in PerplexityBot. OpenAI v <a href="https://platform.openai.com/docs/bots" target="_blank" rel="noopener">opisu svojih pajkov</a> pojasnjuje, kateri služi iskanju in kateri učenju modelov, zato ju lahko urejate ločeno.</li>
 <li><strong>Besedilo v HTML-ju.</strong> Veliko AI pajkov ne izvede JavaScripta. Če se besedilo naloži šele s skripto, ga morda ne vidijo.</li>
@@ -63,7 +63,7 @@ ROBOTS: noindex, nofollow
 <li>Pri vsakem odgovoru zapišite, ali vas omeni, ali poveže vašo stran in ali so podatki o vas pravilni.</li>
 <li>Zapišite, katere strani in podjetja AI navaja namesto vas. To so viri, od katerih se lahko učite.</li>
 </ol>
-<p>Preizkus ponovite enkrat na mesec z enakimi vprašanji. Odgovori se med poskusi razlikujejo, zato štejte, kako pogosto se pojavite, in ne sklepajte iz enega odgovora.</p>
+<p>Preizkus ponovite enkrat na mesec z enakimi vprašanji. Odgovori se med poskusi razlikujejo, zato en posnetek zaslona ne dokazuje ničesar.</p>
 
 <h2>Kaj vidnost v AI odgovorih pomeni za povpraševanja</h2>
 <p>Vidnost v AI odgovorih se pri prihodkih pozna takrat, ko vas AI omeni pri vprašanjih ljudi, ki izbirajo ponudnika. Pri splošnih informativnih vprašanjih uporabnik pogosto dobi odgovor in ne klikne nikamor. Pri vprašanju, kot je »katero podjetje za montažo toplotnih črpalk na Gorenjskem priporočaš«, pa AI sestavi kratek seznam, in kdor je na njem, pride v ožji izbor.</p>
@@ -71,7 +71,7 @@ ROBOTS: noindex, nofollow
 <p>Kje se veriga najpogosteje pretrga:</p>
 <ul>
 <li><strong>AI vas omeni z napačnimi podatki.</strong> Stara cena, opuščena storitev ali napačen naslov. Popravite vir, najpogosteje svojo stran ali stare vpise v imenikih.</li>
-<li><strong>AI navede članek brez poti do nakupa.</strong> Obiskovalec pride na blog, ne najde pa kontakta ali povezave do storitve.</li>
+<li><strong>AI navede članek brez poti do nakupa.</strong> Na blogu ni kontakta ali povezave do storitve.</li>
 <li><strong>Ničesar ne merite.</strong> V Google Analytics 4 spremljajte promet z virov, kot so chatgpt.com, perplexity.ai in gemini.google.com, in povpraševanja, ki jih prinese. Klike iz Googlovih AI pregledov Search Console šteje med običajne spletne rezultate.</li>
 <li><strong>Stran se v Googlu še ne uvršča.</strong> Potem vas tudi AI pregledi redko navedejo. Prvi korak je urejena osnova, ki jo opisujemo na strani <a href="/optimizacija-spletnih-strani/">SEO za podjetja v Sloveniji</a>.</li>
 </ul>
@@ -82,21 +82,18 @@ ROBOTS: noindex, nofollow
 <li><strong>Iskanje bližnjic.</strong> Obljube, da vas bo ChatGPT priporočal v nekaj dneh, in množično objavljanje člankov z vašim imenom so ista past kot kupljene povezave. Google tako ravnanje v <a href="https://developers.google.com/search/docs/essentials/spam-policies?hl=sl" target="_blank" rel="noopener">pravilih o neželeni vsebini</a> obravnava kot spam.</li>
 <li><strong>GEO kot ločen projekt.</strong> Če GEO in SEO vodita različna izvajalca brez skupnega načrta, se delo podvaja, navodila pa si nasprotujejo.</li>
 <li><strong>Zaprti pajki.</strong> Nekatere strani so v robots.txt zaprle vse AI pajke, tudi tiste, ki skrbijo za prikaz v AI iskanju.</li>
-<li><strong>Sklepanje iz enega odgovora.</strong> En posnetek zaslona iz ChatGPT-ja ne dokazuje niti uspeha niti neuspeha.</li>
 </ul>
 <p>Naredite opisani preizkus z vprašanji kupcev in preverite svoj robots.txt. Če ne veste, kje začeti, vam pomaga <a href="/#review">brezplačna SEO analiza</a>.</p>
 
 <h2>Kako vam SEOPRO pomaga do vidnosti v AI iskanju</h2>
-<p>SEOPRO dela samo SEO in nič drugega, AI SEO, torej vidnost v ChatGPT-ju, Geminiju in Googlovih AI pregledih, pa je del tega dela. Začnemo z brezplačno analizo: pregledamo tehnično stanje strani, dostop pajkov ter ključne besede in vprašanja, ki vam lahko prinesejo kupce. Nato vam naravnost povemo, ali lahko kaj premaknemo in kakšen doprinos lahko pričakujete. Če ne moremo pomagati, vam to povemo.</p>
+<p>SEOPRO dela samo SEO in nič drugega, AI SEO, torej vidnost v ChatGPT-ju, Geminiju in Googlovih AI pregledih, pa je del tega dela. Začnemo z brezplačno analizo: pregledamo tehnično stanje strani, dostop pajkov ter ključne besede in vprašanja, ki vam lahko prinesejo kupce. Nato vam naravnost povemo, ali lahko kaj premaknemo, in če ne moremo pomagati, vam to povemo.</p>
 <p>Vsako taktiko najprej preizkusimo na več kot 700 lastnih domenah, ki so naši živi testni laboratoriji. Poročamo o povpraševanjih, naročilih in prihodkih. Brez 40-stranskih SEO poročil, ki jih nihče ne prebere.</p>
 
 <h2>Pogosta vprašanja o GEO optimizaciji</h2>
 <h3>Ali je GEO samo novo ime za SEO?</h3>
-<p>Večinoma da. Osnova je enaka: tehnično urejena stran, vsebina, ki odgovori na vprašanje, in zaupanja vredne omembe. Novo je, da pišete za daljša pogovorna vprašanja, preverjate dostop AI pajkov ter spremljate omembe in promet iz AI odgovorov. GEO brez urejenega SEO-ja redko deluje.</p>
+<p>Večinoma da. Osnova je enaka: tehnično urejena stran, vsebina, ki odgovori na vprašanje, in zaupanja vredne omembe. Novo je, da pišete za daljša pogovorna vprašanja, preverjate dostop AI pajkov in merite promet iz AI odgovorov.</p>
 <h3>Kako hitro se pokaže učinek GEO optimizacije?</h3>
 <p>Popravljena stran se lahko v ChatGPT-ju z iskanjem in v AI pregledih pojavi, ko jo pajki znova obiščejo, pogosto v nekaj tednih. Na znanje samega modela vplivate počasneje, ker se modeli posodabljajo redkeje. Stabilno vidnost pri konkurenčnih vprašanjih običajno gradite od 3 do 6 mesecev ali dlje.</p>
-<h3>Ali ChatGPT in Google AI Overviews uporabljata iste vire?</h3>
-<p>Ne povsem. Googlovi AI pregledi izhajajo iz Googlovega indeksa, ChatGPT pri iskanju uporablja svoj pajek OAI-SearchBot in zunanje iskalne partnerje, brez iskanja pa odgovarja iz učnih podatkov. Stran, ki je dobro indeksirana in odprta za AI pajke, ima možnosti pri obeh sistemih.</p>
 <h3>Ali GEO deluje tudi za lokalna podjetja v Sloveniji?</h3>
 <p>Da, pri vprašanjih, kot je »zobozdravnik v Kopru, ki dela ob sobotah«. AI pri lokalnih vprašanjih črpa iz strani podjetja, Googlovega profila podjetja, mnenj strank in imenikov. Prvi korak so enaki podatki o imenu, naslovu, delovnem času in storitvah na vseh teh mestih. V manjših krajih urejen profil lažje izstopa.</p>
 <h3>Kaj je bolj pomembno: klasični SEO ali GEO?</h3>
@@ -107,5 +104,5 @@ ROBOTS: noindex, nofollow
 <p>ChatGPT SEO je pogovorno ime za optimizacijo, da vas ChatGPT omeni v odgovorih in poveže vašo stran. Gre za GEO, usmerjen v en sistem: odprt dostop za OAI-SearchBot, jasni odgovori na strani in omembe drugje. Kako si pri samem delu pomagate z AI, opisujemo v članku o <a href="/ai-orodja-za-seo/">AI orodjih za SEO</a>.</p>
 
 <h2>Vidnost v AI odgovorih se začne pri dobrem SEO-ju</h2>
-<p>Za GEO optimizacijo ne potrebujete trika. Potrebujete stran, ki jo pajki lahko preberejo, odgovore na vprašanja svojih kupcev v prvih stavkih in omembe na drugih zaupanja vrednih straneh. Meriti pa se splača tisto, kar plača račune: koliko povpraševanj in naročil prinese promet iz Googla in AI odgovorov.</p>
+<p>Za vidnost v AI odgovorih ne potrebujete trika. Potrebujete stran, ki jo pajki lahko preberejo, odgovore na vprašanja svojih kupcev v prvih stavkih in omembe na drugih zaupanja vrednih straneh. Meriti pa se splača tisto, kar plača račune: koliko povpraševanj in naročil prinese promet iz Googla in AI odgovorov.</p>
 <p>Če želite vedeti, kje je vaša stran danes in kaj bi se dalo premakniti, nam jo pošljite. SEOPRO jo bo pregledal in vam pošteno povedal, ali in kako lahko pomaga.</p>
