@@ -628,3 +628,16 @@ a:hover{color:var(--accent-hover)}
 .hero h1 .fit-1{font-size:12.4cqi}
 .hero h1 .fit-2{font-size:7.28cqi}
 .hero-sub.fit-3{font-size:6.22cqi}
+
+/* Small footnote under the YouTube banner */
+.sr-note{margin-top:14px;font-size:14px;color:var(--mute);text-align:left}
+.sr-center{text-align:center}
+/* "S kom sodelujemo" paragraph centred like the chips under it */
+.markets-lede{text-align:center}
+/* Hero name tag: allow the longer Slovenian name to wrap */
+.portrait figcaption{max-width:100%}
+.portrait .name{white-space:normal}
+/* Carons (Š, Č) need room: push the second line down a little */
+.hero h1 .fit-1{line-height:1.02}
+.hero h1 .fit-2{line-height:1.12}
+.review-copy .h2 .yl{margin-top:.08em}

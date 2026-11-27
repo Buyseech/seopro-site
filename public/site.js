@@ -90,7 +90,7 @@
         if (typeof gtag === 'function') gtag('event', 'generate_lead', { form_name: 'site_review' });
       })
       .catch(function () {
-        status.textContent = 'Nekaj je šlo narobe. Prosimo, pišite na igor@buyseech.com.';
+        status.textContent = 'Nekaj je šlo narobe. Prosimo, pišite na igor@seopro.si.';
       })
       .then(function () {
         button.disabled = false;
