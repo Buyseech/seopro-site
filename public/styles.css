@@ -648,3 +648,8 @@ a:hover{color:var(--accent-hover)}
 .mk-h .l:not(.yl){color:inherit}
 .stat-n{white-space:nowrap}
 .review-copy .h2 .yl{line-height:1.1;margin-top:.12em}
+/* Hero headline: two lines, each sized to fill the column */
+.hero h1.h1-2l{line-height:1.2}
+.h1-2l .l{display:block;white-space:nowrap}
+.h1-2l .l1{font-size:8.25cqi}
+.h1-2l .l2{font-size:8.25cqi}
